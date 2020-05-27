@@ -10,9 +10,9 @@ namespace MusicPlayer
     {
         public string songTitle { get; set; }
         public string artistName { get; set; }
-        public Uri songLocation{ get; set; }
+        public string songLocation{ get; set; }
 
-        public Song(string songTitle, string artistName, Uri songLocation)
+        public Song(string songTitle, string artistName, string songLocation)
         {
             this.songTitle = songTitle;
             this.artistName = artistName;

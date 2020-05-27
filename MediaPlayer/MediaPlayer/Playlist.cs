@@ -10,38 +10,38 @@ namespace MusicPlayer
 {
     class Playlist
     {
-        public string playlistName { get; set; }
-        public List<Song> songList { get; set; }
+        public string PlaylistName { get; set; }
+        public List<Song> SongList { get; set; }
 
         public Playlist(string playlistName)
         {
-            this.playlistName = playlistName;
-            this.songList = new List<Song>();
+            this.PlaylistName = playlistName;
+            this.SongList = new List<Song>();
 
         }
 
         public void addSong(Song song)
         {
-            this.songList.Add(song);
+            this.SongList.Add(song);
         }
 
         public Song getFirstSong()
         {
-            return this.songList.First();
+            return this.SongList.First();
         }
 
         public Song getSongByIndex(int index)
         {
-            return this.songList[index];
+            return this.SongList[index];
         }
 
         public Song getNextSong(Song currentSong)
         {
-            int indexOfCurrentSong = this.songList.IndexOf(currentSong);
+            int indexOfCurrentSong = this.SongList.IndexOf(currentSong);
             Song nextSong = null;
             try
             {
-                nextSong = songList[indexOfCurrentSong + 1];
+                nextSong = SongList[indexOfCurrentSong + 1];
             }
             catch (IndexOutOfRangeException)
             {
@@ -52,11 +52,11 @@ namespace MusicPlayer
 
         public Song getPreviousSong(Song currentSong)
         {
-            int indexOfCurrentSong = this.songList.IndexOf(currentSong);
+            int indexOfCurrentSong = this.SongList.IndexOf(currentSong);
             Song previousSong = null;
             try
             {
-                previousSong = songList[indexOfCurrentSong - 1];
+                previousSong = SongList[indexOfCurrentSong - 1];
             }
             catch (IndexOutOfRangeException)
             {
@@ -68,8 +68,8 @@ namespace MusicPlayer
         public Song getRandomSong()
         {
             Random random = new Random();
-            int randomIndex = random.Next(this.songList.Count);
-            return this.songList[randomIndex];
+            int randomIndex = random.Next(this.SongList.Count);
+            return this.SongList[randomIndex];
         }
     }
 }

@@ -35,6 +35,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="NAudio">
+      <HintPath>..\..\..\..\..\..\musicPlayer\MediaPlayer\MediaPlayer\NAudio.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
@@ -49,6 +52,9 @@
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="WPFSoundVisualizationLib">
+      <HintPath>..\..\..\..\..\..\musicPlayer\MediaPlayer\MediaPlayer\WPFSoundVisualizationLibrary\bin\Debug\WPFSoundVisualizationLib.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -63,6 +69,8 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Factory.cs" />
+    <Compile Include="MainViewModel.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Playlist.cs" />
     <Compile Include="Song.cs" />

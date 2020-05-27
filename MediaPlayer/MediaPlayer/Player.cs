@@ -5,19 +5,35 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Media;
+using NAudio.Wave;
+using WPFSoundVisualizationLib;
 
 namespace MusicPlayer
 {
     class Player
     {
         public Song currentSong { get; set; }
-        private System.Windows.Media.MediaPlayer musicPlayer;
+        private WaveOut musicPlayer;
+        private WaveChannel32 inputStream;
+        private WaveStream activeStream;
         public Playlist playlist{ get; set; }
+
+        public WaveStream ActiveStream
+        {
+            get { return activeStream; }
+            protected set
+            {
+                WaveStream oldValue = activeStream;
+                activeStream = value;
+                //if (oldValue != activeStream) 
+                    //NotifyPropertyChanged("ActiveStream");
+            }
+        }
 
         public Player()
         {
             this.currentSong = null;
-            this.musicPlayer = new System.Windows.Media.MediaPlayer();
+            this.musicPlayer = new WaveOut();
             this.playlist = null;
         }
 
@@ -32,10 +48,37 @@ namespace MusicPlayer
 
         public void play()
         {
-            if (playlistAndSongNotNull())
+            /*if (playlistAndSongNotNull())
             {
                 musicPlayer.Open(currentSong.songLocation);
                 musicPlayer.Play();
+            }*/
+            if (System.IO.File.Exists(currentSong.songLocation))
+            {
+                try
+                {
+                    musicPlayer = new WaveOut()
+                    {
+                        DesiredLatency = 100
+                    };
+                    ActiveStream = new Mp3FileReader(currentSong.songLocation);
+                    inputStream = new WaveChannel32(ActiveStream);
+                    //sampleAggregator = new SampleAggregator(fftDataSize);
+                    //inputStream.Sample += inputStream_Sample;
+                    musicPlayer.Init(inputStream);
+                    //ChannelLength = inputStream.TotalTime.TotalSeconds;
+                    //FileTag = TagLib.File.Create(path);
+                    //GenerateWaveformData(path);
+                    //CanPlay = true;
+                    musicPlayer.Play();
+                }
+                catch
+                {
+                    ActiveStream = null;
+                    
+                    Console.WriteLine("catched error");
+                    Console.ReadLine();
+                }
             }
         }
 

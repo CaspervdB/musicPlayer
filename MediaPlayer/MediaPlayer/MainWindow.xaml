@@ -6,8 +6,32 @@
         xmlns:local="clr-namespace:MediaPlayer"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+    <!--We link the view to the MainWindowViewModel so it can funtion as the viewmodel voor this view-->
+    <Window.DataContext>
+        <local:MainViewModel/>
+    </Window.DataContext>
     <Grid>
-        <TextBlock HorizontalAlignment="Left" Height="55" Margin="23,10,0,0" TextWrapping="Wrap" Text="MusicPlayer" VerticalAlignment="Top" Width="283"/>
-
+        <ListBox x:Name="PlaylistCollectionBox" ItemsSource="{Binding PlaylistCollection}" SelectedItem="{Binding SelectedPlaylist}" Margin="0,0,576.6,0">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch">
+                        <!-- As PlaylistCollection is out Itemsource, we can bind to the objects in that list (Playlist) and their properties. -->
+                        <TextBlock Text="{Binding PlaylistName}" Margin="0,0,5,0"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <ListBox x:Name="Playlist" ItemsSource="{Binding SelectedPlaylist}" SelectedItem="{Binding CurrentSong}" Margin="217,0,385.6,0">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch">
+                        <!-- As Playlist is out Itemsource, we can bind to the objects in that list (Song) and their properties. -->
+                        <TextBlock Text="{Binding songTitle}" Margin="0,0,5,0"/>
+                        <TextBlock Text="|" Margin="0,0,5,0"/>
+                        <TextBlock Text="{Binding artistName}" Margin="0,0,5,0"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
     </Grid>
 </Window>

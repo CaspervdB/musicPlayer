@@ -24,5 +24,7 @@ namespace MediaPlayer
         {
             InitializeComponent();
         }
+        //hier mag eigenlijk niks komen te staan ivm true mvvm!
+        
     }
 }
