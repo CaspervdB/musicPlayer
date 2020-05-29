@@ -64,7 +64,7 @@ namespace MediaPlayer
             this.player = new Player();
             this.playlistCollection = Factory.createPlaylistCollection();
             this.player.currentSong = playlistCollection[0].SongList[0];
-            Console.WriteLine(player.currentSong.songTitle);
+            Console.WriteLine(player.currentSong.SongTitle);
             Console.ReadLine();
 
         }
