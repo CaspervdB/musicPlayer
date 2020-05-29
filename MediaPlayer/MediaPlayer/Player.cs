@@ -1,24 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using NAudio.Wave;
+using System;
 using System.IO;
-using System.Linq;
-using System.Security.Policy;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Media;
-using NAudio.Wave;
-using WPFSoundVisualizationLib;
 
 namespace MusicPlayer
 {
     class Player
     {
-        public Song currentSong { get; set; }
+        private Song currentSong { get; set; }
         private WaveOut musicPlayer;
         private WaveChannel32 inputStream;
         private WaveStream activeStream;
-        public Playlist playlist{ get; set; }
+        public Playlist playlist { get; set; }
+        private String musicFolderPath;
 
         public WaveStream ActiveStream
         {
@@ -28,7 +21,7 @@ namespace MusicPlayer
                 WaveStream oldValue = activeStream;
                 activeStream = value;
                 //if (oldValue != activeStream) 
-                    //NotifyPropertyChanged("ActiveStream");
+                //NotifyPropertyChanged("ActiveStream");
             }
         }
 
@@ -37,6 +30,42 @@ namespace MusicPlayer
             this.currentSong = null;
             this.musicPlayer = new WaveOut();
             this.playlist = null;
+            this.musicFolderPath = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName, @"music\");
+        }
+
+        public Song CurrentSong
+        {
+            get { return this.currentSong; }
+            set
+            {
+                string filePath = Path.Combine(this.musicFolderPath, value.SongLocation);
+
+                if (File.Exists(filePath))
+                {
+                    this.currentSong = value;
+                    try
+                    {
+                        musicPlayer = new WaveOut()
+                        {
+                            DesiredLatency = 100
+                        };
+                        ActiveStream = new Mp3FileReader(filePath);
+                        inputStream = new WaveChannel32(ActiveStream);
+                        musicPlayer.Init(inputStream);
+
+                        Console.WriteLine("playing");
+                        Console.ReadLine();
+                    }
+                    catch
+                    {
+                        ActiveStream = null;
+
+                        Console.WriteLine("catched error");
+                        Console.ReadLine();
+                    }
+                }
+
+            }
         }
 
         private Boolean playlistAndSongNotNull()
@@ -48,47 +77,11 @@ namespace MusicPlayer
             return true;
         }
 
+
+
         public void play()
         {
-            String projectFolder = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;                    
-            String filePath = Path.Combine(projectFolder, @"music\", currentSong.SongLocation);
-            Console.WriteLine(filePath);
-            Console.ReadLine();
-
-
-            if (File.Exists(filePath))
-            {
-                try
-                {
-                    musicPlayer = new WaveOut()
-                    {
-                        DesiredLatency = 100
-                    };
-                    ActiveStream = new Mp3FileReader(filePath);
-                    inputStream = new WaveChannel32(ActiveStream);
-                    //sampleAggregator = new SampleAggregator(fftDataSize);
-                    //inputStream.Sample += inputStream_Sample;
-                    musicPlayer.Init(inputStream);
-                    //ChannelLength = inputStream.TotalTime.TotalSeconds;
-                    //FileTag = TagLib.File.Create(path);
-                    //GenerateWaveformData(path);
-                    //CanPlay = true;
-                    musicPlayer.Play();
-                    Console.WriteLine("playing");
-                    Console.ReadLine();
-                }
-                catch
-                {
-                    ActiveStream = null;
-
-                    Console.WriteLine("catched error");
-                    Console.ReadLine();
-                }
-            }
-            else {
-                Console.WriteLine("not exists");
-                Console.ReadLine();
-            }
+            this.musicPlayer.Play();
         }
 
         public void pause()
@@ -101,7 +94,7 @@ namespace MusicPlayer
             if (playlistAndSongNotNull())
             {
                 Song nextSong = this.playlist.getNextSong(this.currentSong);
-                if(nextSong != null)
+                if (nextSong != null)
                 {
                     this.currentSong = nextSong;
                     play();
