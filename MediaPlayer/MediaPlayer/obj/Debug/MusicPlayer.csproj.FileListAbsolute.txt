@@ -19,3 +19,35 @@ C:\Users\Sietze Koonstra\source\repos\MediaPlayer\MediaPlayer\obj\Debug\MusicPla
 C:\Users\Sietze Koonstra\source\repos\MediaPlayer\MediaPlayer\obj\Debug\MediaPlayer.exe
 C:\Users\Sietze Koonstra\source\repos\MediaPlayer\MediaPlayer\obj\Debug\MediaPlayer.pdb
 C:\Users\Sietze Koonstra\source\repos\MediaPlayer\MediaPlayer\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\MediaPlayer.exe.config
+C:\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\MediaPlayer.exe
+C:\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\MediaPlayer.pdb
+C:\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\NAudio.dll
+C:\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\WPFSoundVisualizationLib.dll
+C:\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\WPFSoundVisualizationLib.pdb
+C:\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\WPFSoundVisualizationLib.xml
+C:\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\MusicPlayer.csprojAssemblyReference.cache
+C:\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\MainWindow.g.cs
+C:\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\App.g.cs
+C:\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\MediaPlayer_MarkupCompile.cache
+C:\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\MediaPlayer_MarkupCompile.lref
+C:\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\MainWindow.baml
+C:\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\MediaPlayer.g.resources
+C:\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\MediaPlayer.Properties.Resources.resources
+C:\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\MusicPlayer.csproj.GenerateResource.cache
+C:\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\MusicPlayer.csproj.CoreCompileInputs.cache
+C:\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\MusicPlayer.csproj.CopyComplete
+C:\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\MediaPlayer.exe
+C:\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\MediaPlayer.pdb
+C:\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\CommonServiceLocator.dll
+C:\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\GalaSoft.MvvmLight.dll
+C:\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\GalaSoft.MvvmLight.Extras.dll
+C:\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\GalaSoft.MvvmLight.Platform.dll
+C:\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\System.Windows.Interactivity.dll
+C:\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\GalaSoft.MvvmLight.pdb
+C:\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\GalaSoft.MvvmLight.xml
+C:\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\GalaSoft.MvvmLight.Extras.pdb
+C:\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\GalaSoft.MvvmLight.Extras.xml
+C:\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\GalaSoft.MvvmLight.Platform.pdb
+C:\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\GalaSoft.MvvmLight.Platform.xml

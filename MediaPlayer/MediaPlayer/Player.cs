@@ -82,6 +82,11 @@ namespace MusicPlayer
             }
         }
 
+        public void pause()
+        {
+            this.musicPlayer.Pause();
+        }
+
         public void next()
         {
             if (playlistAndSongNotNull())

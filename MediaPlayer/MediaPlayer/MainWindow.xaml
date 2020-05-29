@@ -33,5 +33,7 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
+        <Button Content="Play" HorizontalAlignment="Left" Margin="516,170,0,0" VerticalAlignment="Top" Width="75" Command="{Binding PlayButton}"/>
+        <Button Content="Pause" HorizontalAlignment="Left" Margin="611,170,0,0" VerticalAlignment="Top" Width="75" Command="{Binding PauseButton}"/>
     </Grid>
 </Window>
