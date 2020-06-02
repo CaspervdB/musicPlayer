@@ -12,6 +12,8 @@ namespace MusicPlayer
         private WaveStream activeStream;
         public Playlist playlist { get; set; }
         private String musicFolderPath;
+        bool isPlaying = false;
+        bool isPaused = false;
 
         public WaveStream ActiveStream
         {
@@ -45,6 +47,10 @@ namespace MusicPlayer
                     this.currentSong = value;
                     try
                     {
+                        if(isPlaying)
+                        {
+                            stop();
+                        }
                         musicPlayer = new WaveOut()
                         {
                             DesiredLatency = 100
@@ -52,8 +58,8 @@ namespace MusicPlayer
                         ActiveStream = new Mp3FileReader(filePath);
                         inputStream = new WaveChannel32(ActiveStream);
                         musicPlayer.Init(inputStream);
-
-                        Console.WriteLine("playing");
+                        this.isPlaying = true;
+                        Console.WriteLine("current song set");
                         Console.ReadLine();
                     }
                     catch
@@ -81,7 +87,19 @@ namespace MusicPlayer
 
         public void play()
         {
+            if(CurrentSong == null)
+            {
+                if(playlist == null)
+                {
+                    return;
+                } else
+                {
+                    CurrentSong = playlist.getFirstSong();
+                }
+            }
             this.musicPlayer.Play();
+            Console.WriteLine("playing");
+            Console.ReadLine();
         }
 
         public void pause()
@@ -89,14 +107,34 @@ namespace MusicPlayer
             this.musicPlayer.Pause();
         }
 
+        public void stop()
+        {
+            if(musicPlayer != null)
+            {
+                musicPlayer.Stop();
+            }
+            if(activeStream != null)
+            {
+                inputStream.Close();
+                inputStream = null;
+                activeStream.Close();
+                activeStream = null;
+            }
+            if (musicPlayer != null)
+            {
+                musicPlayer.Dispose();
+                musicPlayer = null;
+            }
+        }
+
         public void next()
         {
             if (playlistAndSongNotNull())
             {
-                Song nextSong = this.playlist.getNextSong(this.currentSong);
+                Song nextSong = this.playlist.getNextSong(this.CurrentSong);
                 if (nextSong != null)
                 {
-                    this.currentSong = nextSong;
+                    this.CurrentSong = nextSong;
                     play();
                 }
             }
@@ -106,10 +144,10 @@ namespace MusicPlayer
         {
             if (playlistAndSongNotNull())
             {
-                Song previousSong = this.playlist.getPreviousSong(this.currentSong);
+                Song previousSong = this.playlist.getPreviousSong(this.CurrentSong);
                 if (previousSong != null)
                 {
-                    this.currentSong = previousSong;
+                    this.CurrentSong = previousSong;
                     play();
                 }
             }
@@ -122,7 +160,7 @@ namespace MusicPlayer
                 Song nextRandomSong = this.playlist.getRandomSong();
                 if (nextRandomSong != null)
                 {
-                    this.currentSong = nextRandomSong;
+                    this.CurrentSong = nextRandomSong;
                     play();
                 }
             }
