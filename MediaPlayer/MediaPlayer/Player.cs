@@ -38,6 +38,10 @@ namespace MusicPlayer
             get { return this.currentSong; }
             set
             {
+                if(value == null)
+                {
+                    return;
+                }
                 string filePath = Path.Combine(this.musicFolderPath, value.SongLocation);
 
                 if (File.Exists(filePath))
@@ -89,30 +93,64 @@ namespace MusicPlayer
             this.musicPlayer.Pause();
         }
 
+<<<<<<< Updated upstream
         public void next()
+=======
+        public void stop()
+        {
+            if(musicPlayer != null)
+            {
+                musicPlayer.Stop();
+            }
+            if(activeStream != null)
+            {
+                inputStream.Close();
+                inputStream = null;
+                activeStream.Close();
+                activeStream = null;
+            }
+            if (musicPlayer != null)
+            {
+                musicPlayer.Dispose();
+                musicPlayer = null;
+            }
+        }
+
+        public Song getNextSong()
+>>>>>>> Stashed changes
         {
             if (playlistAndSongNotNull())
             {
                 Song nextSong = this.playlist.getNextSong(this.currentSong);
                 if (nextSong != null)
                 {
+<<<<<<< Updated upstream
                     this.currentSong = nextSong;
                     play();
+=======
+                    return nextSong;
+>>>>>>> Stashed changes
                 }
             }
+            return null;
         }
 
-        public void previous()
+        public Song getPreviousSong()
         {
             if (playlistAndSongNotNull())
             {
                 Song previousSong = this.playlist.getPreviousSong(this.currentSong);
                 if (previousSong != null)
                 {
+<<<<<<< Updated upstream
                     this.currentSong = previousSong;
                     play();
+=======
+                    return previousSong;
+>>>>>>> Stashed changes
                 }
             }
+            return null;
         }
 
         public void nextRandom()

@@ -21,7 +21,11 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
+<<<<<<< Updated upstream
         <ListBox x:Name="Playlist" ItemsSource="{Binding SelectedPlaylist}" SelectedItem="{Binding CurrentSong}" Margin="217,0,385.6,0">
+=======
+        <ListBox x:Name="PlaylistSongs" ItemsSource="{Binding SelectedPlaylist.SongList, Mode=TwoWay}" SelectedItem="{Binding CurrentSong, Mode=TwoWay}" Margin="217,0,385.6,0">
+>>>>>>> Stashed changes
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch">

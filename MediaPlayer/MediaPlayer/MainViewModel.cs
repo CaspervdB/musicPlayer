@@ -27,11 +27,17 @@ namespace MediaPlayer
             set
             {
                 playlistCollection = value;
+<<<<<<< Updated upstream
                 NotifyPropertyChanged();
             }
         }
 
         public List<Song> SelectedPlaylist
+=======
+            }
+        }
+        public Playlist SelectedPlaylist
+>>>>>>> Stashed changes
         {
             get {
                 if (player.playlist != null){
@@ -41,8 +47,15 @@ namespace MediaPlayer
                     return null;
                 }
             }
+<<<<<<< Updated upstream
             set { player.playlist.SongList = value;
                 NotifyPropertyChanged("Playlist");
+=======
+            set { 
+                player.playlist = value;
+                Console.WriteLine("Playlist selected");
+                NotifyPropertyChanged();
+>>>>>>> Stashed changes
             }
         }
 
@@ -52,11 +65,29 @@ namespace MediaPlayer
             set
             {
                 player.CurrentSong = value;
+<<<<<<< Updated upstream
+=======
+                player.play();
+>>>>>>> Stashed changes
                 
                 NotifyPropertyChanged();
             }
         }
 
+<<<<<<< Updated upstream
+=======
+        private void previous()
+        {
+            CurrentSong = player.getPreviousSong();
+            NotifyPropertyChanged("CurrentSong");
+        }
+
+        private void next()
+        {
+            CurrentSong = player.getNextSong();
+        }
+
+>>>>>>> Stashed changes
         public MainViewModel()
         {
             PlayButton = new RelayCommand(() => player.play());
