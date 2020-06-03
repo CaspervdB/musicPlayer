@@ -11,6 +11,6 @@
     </Window.DataContext>
     <Grid Margin="0,0,0,17">
         <Button Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="363" Margin="10,38,0,0" Height="45" Command="{Binding ButtonCommand}"/>
-        <TextBox HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="{Binding Link}" VerticalAlignment="Top" Width="363" Margin="10,10,0,0"/>
+        <TextBox Name="LinkTextBox" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="{Binding Link}" VerticalAlignment="Top" Width="363" Margin="10,10,0,0"/>
     </Grid>
 </Window>

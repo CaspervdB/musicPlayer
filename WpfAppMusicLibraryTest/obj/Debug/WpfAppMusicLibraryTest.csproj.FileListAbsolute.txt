@@ -63,8 +63,6 @@ C:\xampp\htdocs\Lora\musicPlayer\WpfAppMusicLibraryTest\bin\Debug\CommonServiceL
 C:\xampp\htdocs\Lora\musicPlayer\WpfAppMusicLibraryTest\bin\Debug\GalaSoft.MvvmLight.dll
 C:\xampp\htdocs\Lora\musicPlayer\WpfAppMusicLibraryTest\bin\Debug\GalaSoft.MvvmLight.Extras.dll
 C:\xampp\htdocs\Lora\musicPlayer\WpfAppMusicLibraryTest\bin\Debug\GalaSoft.MvvmLight.Platform.dll
-C:\xampp\htdocs\Lora\musicPlayer\WpfAppMusicLibraryTest\bin\Debug\libvideo.dll
-C:\xampp\htdocs\Lora\musicPlayer\WpfAppMusicLibraryTest\bin\Debug\MediaToolkit.dll
 C:\xampp\htdocs\Lora\musicPlayer\WpfAppMusicLibraryTest\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
 C:\xampp\htdocs\Lora\musicPlayer\WpfAppMusicLibraryTest\bin\Debug\Newtonsoft.Json.dll
 C:\xampp\htdocs\Lora\musicPlayer\WpfAppMusicLibraryTest\bin\Debug\System.Buffers.dll

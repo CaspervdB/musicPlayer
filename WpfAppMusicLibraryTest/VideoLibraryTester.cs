@@ -1,31 +1,22 @@
-﻿using MediaToolkit;
-using MediaToolkit.Model;
-using System;
+﻿using System;
 using System.ComponentModel;
 using System.IO;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
-using VideoLibrary;
 using YoutubeExplode;
 using YoutubeExplode.Videos.Streams;
 
 namespace WpfAppMusicLibraryTest
 {
-    class VideoLibraryTester : INotifyPropertyChanged
+    class VideoLibraryTester
     {
-        public event PropertyChangedEventHandler PropertyChanged;
-        private string link;
-
-        public string Link
+        private MainWindowViewModel mainWindowViewModel;
+        public String url
         {
-            get { return link; }
+            get { return mainWindowViewModel.Link; }
             set
             {
-                if (value.Contains("youtube.com/watch?v="))
-                {
-                    link = value;
-                }
-                NotifyPropertyChanged("");
+                mainWindowViewModel.Link = value;
             }
         }
 
@@ -33,7 +24,6 @@ namespace WpfAppMusicLibraryTest
         {
             var source = @"C:\xampp\htdocs\Lora\musicPlayer\WpfAppMusicLibraryTest\test\";
             var youtube = new YoutubeClient();
-            var url = "https://www.youtube.com/watch?v=4z2yNxfBRM4";
             var video = await youtube.Videos.GetAsync(url);
             var title = video.Title;
             var legalTitle = string.Join("", title.Split(Path.GetInvalidFileNameChars())); // Removes all possible illegal filename characetrs from the title
@@ -46,11 +36,6 @@ namespace WpfAppMusicLibraryTest
                 // Download the stream to file
                 await youtube.Videos.Streams.DownloadAsync(streamInfo, $"{source + legalTitle}.mp3");
             }
-        }
-
-        private void NotifyPropertyChanged([CallerMemberName] String propertyName = "")
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }
