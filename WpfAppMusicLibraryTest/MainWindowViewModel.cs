@@ -20,10 +20,9 @@ namespace WpfAppMusicLibraryTest
             get { return link; }
             set
             {
-                if (!string.Equals(this.link, value) && value.Contains("youtube.com/watch?v="))
+                if (!string.Equals(this.link, value))
                 {
                     this.link = value;
-                    Console.WriteLine(link);
                 }
                 NotifyPropertyChanged("LinkTextBox");
             }
@@ -34,7 +33,7 @@ namespace WpfAppMusicLibraryTest
         public MainWindowViewModel()
         {
             this.vlt = new VideoLibraryTester();
-            ButtonCommand = new RelayCommand(async () => await vlt.SaveAudioToDisk2Async());
+            ButtonCommand = new RelayCommand(async () => await vlt.SaveAudioToDisk2Async(link));
         }
         private void NotifyPropertyChanged([CallerMemberName] String propertyName = "")
         {
