@@ -24,8 +24,6 @@ C:\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\MediaPlayer.exe
 C:\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\MediaPlayer.pdb
 C:\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\NAudio.dll
 C:\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\WPFSoundVisualizationLib.dll
-C:\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\WPFSoundVisualizationLib.pdb
-C:\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\WPFSoundVisualizationLib.xml
 C:\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\MusicPlayer.csprojAssemblyReference.cache
 C:\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\MainWindow.g.cs
 C:\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\App.g.cs
@@ -81,3 +79,6 @@ C:\Users\Gebruiker\Documents\Jochem\Jaar2\Periode_4\C#\musicPlayer\MediaPlayer\M
 C:\Users\Gebruiker\Documents\Jochem\Jaar2\Periode_4\C#\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\MusicPlayer.csproj.CopyComplete
 C:\Users\Gebruiker\Documents\Jochem\Jaar2\Periode_4\C#\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\MediaPlayer.exe
 C:\Users\Gebruiker\Documents\Jochem\Jaar2\Periode_4\C#\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\MediaPlayer.pdb
+C:\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\TagLibSharp.dll
+C:\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\TagLibSharp.pdb
+C:\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\TagLibSharp.xml

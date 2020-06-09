@@ -3,6 +3,7 @@ using MusicPlayer;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Globalization;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
@@ -18,8 +19,15 @@ namespace MediaPlayer
         private List<Playlist> playlistCollection = new List<Playlist>();
         public ICommand PlayButton { get; set; }
         public ICommand PauseButton { get; set; }
+        public ICommand NextButton { get; set; }
+        public ICommand PreviousButton { get; set; }
 
-        private Player player;
+        private static Player player;
+
+        public static Player getPlayerInstance()
+        {
+            return player;
+        }
 
         public List<Playlist> PlaylistCollection
         {
@@ -27,55 +35,40 @@ namespace MediaPlayer
             set
             {
                 playlistCollection = value;
-<<<<<<< Updated upstream
-                NotifyPropertyChanged();
-            }
-        }
-
-        public List<Song> SelectedPlaylist
-=======
             }
         }
         public Playlist SelectedPlaylist
->>>>>>> Stashed changes
         {
             get {
                 if (player.playlist != null){
-                    return player.playlist.SongList;
+                    return player.playlist;
                 } else
                 {
                     return null;
                 }
             }
-<<<<<<< Updated upstream
-            set { player.playlist.SongList = value;
-                NotifyPropertyChanged("Playlist");
-=======
             set { 
                 player.playlist = value;
                 Console.WriteLine("Playlist selected");
                 NotifyPropertyChanged();
->>>>>>> Stashed changes
             }
         }
-
         public Song CurrentSong
         {
             get { return player.CurrentSong; }
             set
             {
+                if(value == null)
+                {
+                    return;
+                }
                 player.CurrentSong = value;
-<<<<<<< Updated upstream
-=======
                 player.play();
->>>>>>> Stashed changes
-                
-                NotifyPropertyChanged();
+                /*
+                NotifyPropertyChanged();*/
             }
         }
 
-<<<<<<< Updated upstream
-=======
         private void previous()
         {
             CurrentSong = player.getPreviousSong();
@@ -85,18 +78,20 @@ namespace MediaPlayer
         private void next()
         {
             CurrentSong = player.getNextSong();
+            NotifyPropertyChanged("CurrentSong");
         }
 
->>>>>>> Stashed changes
         public MainViewModel()
         {
             PlayButton = new RelayCommand(() => player.play());
             PauseButton = new RelayCommand(() => player.pause());
-            this.player = new Player();
+            NextButton = new RelayCommand(() => next());
+            PreviousButton = new RelayCommand(() => previous());
+            player = new Player();
             this.playlistCollection = Factory.createPlaylistCollection();
-            this.player.CurrentSong = playlistCollection[0].SongList[1];
-            Console.WriteLine(player.CurrentSong.SongTitle);
-            Console.ReadLine();
+            /*this.player.playlist = playlistCollection[0];*/
+
+            
 
         }
 
@@ -104,5 +99,7 @@ namespace MediaPlayer
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+
+
     }
 }

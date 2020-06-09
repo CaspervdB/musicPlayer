@@ -64,11 +64,15 @@
     <Reference Include="System.Xaml">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
     </Reference>
+    <Reference Include="TagLibSharp, Version=2.2.0.0, Culture=neutral, PublicKeyToken=db62eba44689b5b0, processorArchitecture=MSIL">
+      <HintPath>..\packages\TagLibSharp.2.2.0\lib\net45\TagLibSharp.dll</HintPath>
+    </Reference>
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
-    <Reference Include="WPFSoundVisualizationLib">
-      <HintPath>..\..\..\..\..\..\musicPlayer\MediaPlayer\MediaPlayer\WPFSoundVisualizationLibrary\bin\Debug\WPFSoundVisualizationLib.dll</HintPath>
+    <Reference Include="WPFSoundVisualizationLib, Version=0.3.4442.43191, Culture=neutral, PublicKeyToken=eb44ed7102b4fcc1, processorArchitecture=MSIL">
+      <HintPath>..\packages\WPFSVL.1.0.0\lib\net40\WPFSoundVisualizationLib.dll</HintPath>
+      <Private>True</Private>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -76,6 +80,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Visualizer.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

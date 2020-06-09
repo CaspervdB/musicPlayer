@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MediaPlayer"
+        xmlns:svl="clr-namespace:WPFSoundVisualizationLib;assembly=WPFSoundVisualizationLib"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <!--We link the view to the MainWindowViewModel so it can funtion as the viewmodel voor this view-->
@@ -11,7 +12,7 @@
         <local:MainViewModel/>
     </Window.DataContext>
     <Grid>
-        <ListBox x:Name="PlaylistCollectionBox" ItemsSource="{Binding PlaylistCollection}" SelectedItem="{Binding SelectedPlaylist}" Margin="0,0,576.6,0">
+        <ListBox x:Name="PlaylistCollectionBox" ItemsSource="{Binding PlaylistCollection}" SelectedItem="{Binding SelectedPlaylist, Mode=TwoWay}" Margin="0,0,576.6,0">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch">
@@ -21,23 +22,24 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-<<<<<<< Updated upstream
-        <ListBox x:Name="Playlist" ItemsSource="{Binding SelectedPlaylist}" SelectedItem="{Binding CurrentSong}" Margin="217,0,385.6,0">
-=======
-        <ListBox x:Name="PlaylistSongs" ItemsSource="{Binding SelectedPlaylist.SongList, Mode=TwoWay}" SelectedItem="{Binding CurrentSong, Mode=TwoWay}" Margin="217,0,385.6,0">
->>>>>>> Stashed changes
+        <ListBox x:Name="PlaylistSongs" ItemsSource="{Binding SelectedPlaylist.SongList, Mode=TwoWay}" SelectedItem="{Binding CurrentSong}" Margin="217,0,385.6,0">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch">
                         <!-- As Playlist is out Itemsource, we can bind to the objects in that list (Song) and their properties. -->
-                        <TextBlock Text="{Binding songTitle}" Margin="0,0,5,0"/>
+                        <TextBlock Text="{Binding SongTitle}" Margin="0,0,5,0"/>
                         <TextBlock Text="|" Margin="0,0,5,0"/>
-                        <TextBlock Text="{Binding artistName}" Margin="0,0,5,0"/>
+                        <TextBlock Text="{Binding ArtistName}" Margin="0,0,5,0"/>
                     </StackPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
         <Button Content="Play" HorizontalAlignment="Left" Margin="516,170,0,0" VerticalAlignment="Top" Width="75" Command="{Binding PlayButton}"/>
-        <Button Content="Pause" HorizontalAlignment="Left" Margin="611,170,0,0" VerticalAlignment="Top" Width="75" Command="{Binding PauseButton}"/>
+        <Button Content="Pause" HorizontalAlignment="Left" Margin="596,170,0,0" VerticalAlignment="Top" Width="75" Command="{Binding PauseButton}"/>
+        <Button Content="Previous" HorizontalAlignment="Left" Margin="516,194,0,0" VerticalAlignment="Top" Width="75" Command="{Binding PreviousButton}"/>
+        <Button Content="Next" HorizontalAlignment="Left" Margin="596,194,0,0" VerticalAlignment="Top" Width="75" Command="{Binding NextButton}"/>
+        <svl:WaveformTimeline x:Name="waveformTimeline"
+                                  Margin="5,287,4.6,5"
+                                  BorderThickness="1" />
     </Grid>
 </Window>

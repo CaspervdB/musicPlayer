@@ -13,6 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+using WPFSoundVisualizationLib;
+
 namespace MediaPlayer
 {
     /// <summary>
@@ -23,7 +25,10 @@ namespace MediaPlayer
         public MainWindow()
         {
             InitializeComponent();
+
+            waveformTimeline.RegisterSoundPlayer(MainViewModel.getPlayerInstance());
         }
+        
         //hier mag eigenlijk niks komen te staan ivm true mvvm!
 
     }
