@@ -48,11 +48,11 @@ namespace MediaPlayer
 
         public Song CurrentSong
         {
-            get { return player.currentSong; }
+            get { return player.CurrentSong; }
             set
             {
-                player.currentSong = value;
-                player.play();
+                player.CurrentSong = value;
+                
                 NotifyPropertyChanged();
             }
         }
@@ -63,8 +63,8 @@ namespace MediaPlayer
             PauseButton = new RelayCommand(() => player.pause());
             this.player = new Player();
             this.playlistCollection = Factory.createPlaylistCollection();
-            this.player.currentSong = playlistCollection[0].SongList[0];
-            Console.WriteLine(player.currentSong.songTitle);
+            this.player.CurrentSong = playlistCollection[0].SongList[1];
+            Console.WriteLine(player.CurrentSong.SongTitle);
             Console.ReadLine();
 
         }

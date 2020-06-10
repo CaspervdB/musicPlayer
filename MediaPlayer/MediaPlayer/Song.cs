@@ -8,15 +8,15 @@ namespace MusicPlayer
 {
     class Song
     {
-        public string songTitle { get; set; }
-        public string artistName { get; set; }
-        public string songLocation{ get; set; }
+        public string SongTitle { get; set; }
+        public string ArtistName { get; set; }
+        public string SongLocation{ get; set; }
 
         public Song(string songTitle, string artistName, string songLocation)
         {
-            this.songTitle = songTitle;
-            this.artistName = artistName;
-            this.songLocation = songLocation;
+            this.SongTitle = songTitle;
+            this.ArtistName = artistName;
+            this.SongLocation = songLocation;
         }
     }
 }
