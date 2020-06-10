@@ -25,7 +25,7 @@ namespace MusicPlayer
         private TimeSpan repeatStop;
         private bool inRepeatSet;
         private Visualizer visualizer;
-        private Visualizer waverFormVisualizer;
+        private Visualizer waveFormVisualizer;
         private readonly int fftDataSize = (int)FFTDataSize.FFT2048;
         private bool inChannelSet;
         private float[] waveformData;
@@ -101,12 +101,13 @@ namespace MusicPlayer
                         };
                         ActiveStream = new Mp3FileReader(filePath);
                         inputStream = new WaveChannel32(ActiveStream);
+                        this.visualizer = new Visualizer(fftDataSize);
+                        inputStream.Sample += inputStream_Sample;
                         musicPlayer.Init(inputStream);
                         //this.isPlaying = true;
                         ChannelLength = inputStream.TotalTime.TotalSeconds;
                         FileTag = TagLib.File.Create(filePath);
-                        Console.WriteLine("current song set");
-                        Console.ReadLine();
+                        GenerateWaveformData(filePath);
                     }
                     catch
                     {
@@ -221,6 +222,7 @@ namespace MusicPlayer
                 }
             }
             this.musicPlayer.Play();
+            this.isPlaying = true;
             Console.WriteLine("playing");
             Console.ReadLine();
         }
@@ -322,7 +324,7 @@ namespace MusicPlayer
             int frameCount = (int)((double)waveformInputStream.Length / (double)frameLength);
             int waveformLength = frameCount * 2;
             byte[] readBuffer = new byte[frameLength];
-            waverFormVisualizer = new Visualizer(frameLength);
+            waveFormVisualizer = new Visualizer(frameLength);
 
             float maxLeftPointLevel = float.MinValue;
             float maxRightPointLevel = float.MinValue;
@@ -340,6 +342,13 @@ namespace MusicPlayer
             {
                 waveformInputStream.Read(readBuffer, 0, readBuffer.Length);
 
+                waveformData.Add(waveFormVisualizer.LeftMaxVolume);
+                waveformData.Add(waveFormVisualizer.RightMaxVolume);
+
+                if (waveFormVisualizer.LeftMaxVolume > maxLeftPointLevel)
+                    maxLeftPointLevel = waveFormVisualizer.LeftMaxVolume;
+                if (waveFormVisualizer.RightMaxVolume > maxRightPointLevel)
+                    maxRightPointLevel = waveFormVisualizer.RightMaxVolume;
 
                 if (readCount > waveMaxPointIndexes[currentPointIndex])
                 {
@@ -394,7 +403,7 @@ namespace MusicPlayer
 
         void waveStream_Sample(object sender, SampleEventArgs e)
         {
-            waverFormVisualizer.Add(e.Left, e.Right);
+            waveFormVisualizer.Add(e.Left, e.Right);
         }
 
         void positionTimer_Tick(object sender, EventArgs e)
@@ -404,6 +413,19 @@ namespace MusicPlayer
             inChannelTimerUpdate = false;
         }
 
+        private void GenerateWaveformData(string path)
+        {
+            if (waveformGenerateWorker.IsBusy)
+            {
+                pendingWaveformPath = path;
+                waveformGenerateWorker.CancelAsync();
+                return;
+            }
+
+            if (!waveformGenerateWorker.IsBusy && 2000 != 0)
+                waveformGenerateWorker.RunWorkerAsync(new WaveformGenerationParams(2000, path));
+        }
+
         private void waveformGenerateWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             if (e.Cancelled)
@@ -411,6 +433,18 @@ namespace MusicPlayer
                 if (!waveformGenerateWorker.IsBusy && 2000 != 0) // 2000 is compression count 46
                     waveformGenerateWorker.RunWorkerAsync(new WaveformGenerationParams(2000, pendingWaveformPath));
             }
+        }
+        private void inputStream_Sample(object sender, SampleEventArgs e)
+        {
+            visualizer.Add(e.Left, e.Right);
+            long repeatStartPosition = (long)((SelectionBegin.TotalSeconds / ActiveStream.TotalTime.TotalSeconds) * ActiveStream.Length);
+            long repeatStopPosition = (long)((SelectionEnd.TotalSeconds / ActiveStream.TotalTime.TotalSeconds) * ActiveStream.Length);
+            if (((SelectionEnd - SelectionBegin) >= TimeSpan.FromMilliseconds(200)) && ActiveStream.Position >= repeatStopPosition) // 200 = repeatthreshhold
+            {
+                visualizer.Clear();
+                ActiveStream.Position = repeatStartPosition;
+            }
+            Console.WriteLine("generating");
         }
     }
 }

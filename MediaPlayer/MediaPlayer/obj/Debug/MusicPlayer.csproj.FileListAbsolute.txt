@@ -82,3 +82,42 @@ C:\Users\Gebruiker\Documents\Jochem\Jaar2\Periode_4\C#\musicPlayer\MediaPlayer\M
 C:\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\TagLibSharp.dll
 C:\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\TagLibSharp.pdb
 C:\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\TagLibSharp.xml
+C:\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\PresentationCore.dll
+C:\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\PresentationFramework.dll
+C:\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\System.Design.dll
+C:\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\System.Xaml.dll
+C:\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\UIAutomationProvider.dll
+C:\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\WindowsBase.dll
+C:\musicPlayer - kopie\MediaPlayer\MediaPlayer\obj\Debug\MainWindow.g.cs
+C:\musicPlayer - kopie\MediaPlayer\MediaPlayer\obj\Debug\App.g.cs
+C:\musicPlayer - kopie\MediaPlayer\MediaPlayer\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\musicPlayer - kopie\MediaPlayer\MediaPlayer\obj\Debug\MediaPlayer_MarkupCompile.cache
+C:\musicPlayer - kopie\MediaPlayer\MediaPlayer\obj\Debug\MediaPlayer_MarkupCompile.lref
+C:\musicPlayer - kopie\MediaPlayer\MediaPlayer\bin\Debug\MediaPlayer.exe.config
+C:\musicPlayer - kopie\MediaPlayer\MediaPlayer\bin\Debug\MediaPlayer.exe
+C:\musicPlayer - kopie\MediaPlayer\MediaPlayer\bin\Debug\MediaPlayer.pdb
+C:\musicPlayer - kopie\MediaPlayer\MediaPlayer\bin\Debug\CommonServiceLocator.dll
+C:\musicPlayer - kopie\MediaPlayer\MediaPlayer\bin\Debug\GalaSoft.MvvmLight.dll
+C:\musicPlayer - kopie\MediaPlayer\MediaPlayer\bin\Debug\GalaSoft.MvvmLight.Extras.dll
+C:\musicPlayer - kopie\MediaPlayer\MediaPlayer\bin\Debug\GalaSoft.MvvmLight.Platform.dll
+C:\musicPlayer - kopie\MediaPlayer\MediaPlayer\bin\Debug\NAudio.dll
+C:\musicPlayer - kopie\MediaPlayer\MediaPlayer\bin\Debug\System.Windows.Interactivity.dll
+C:\musicPlayer - kopie\MediaPlayer\MediaPlayer\bin\Debug\TagLibSharp.dll
+C:\musicPlayer - kopie\MediaPlayer\MediaPlayer\bin\Debug\WPFSoundVisualizationLib.dll
+C:\musicPlayer - kopie\MediaPlayer\MediaPlayer\bin\Debug\GalaSoft.MvvmLight.pdb
+C:\musicPlayer - kopie\MediaPlayer\MediaPlayer\bin\Debug\GalaSoft.MvvmLight.xml
+C:\musicPlayer - kopie\MediaPlayer\MediaPlayer\bin\Debug\GalaSoft.MvvmLight.Extras.pdb
+C:\musicPlayer - kopie\MediaPlayer\MediaPlayer\bin\Debug\GalaSoft.MvvmLight.Extras.xml
+C:\musicPlayer - kopie\MediaPlayer\MediaPlayer\bin\Debug\GalaSoft.MvvmLight.Platform.pdb
+C:\musicPlayer - kopie\MediaPlayer\MediaPlayer\bin\Debug\GalaSoft.MvvmLight.Platform.xml
+C:\musicPlayer - kopie\MediaPlayer\MediaPlayer\bin\Debug\TagLibSharp.pdb
+C:\musicPlayer - kopie\MediaPlayer\MediaPlayer\bin\Debug\TagLibSharp.xml
+C:\musicPlayer - kopie\MediaPlayer\MediaPlayer\obj\Debug\MusicPlayer.csprojAssemblyReference.cache
+C:\musicPlayer - kopie\MediaPlayer\MediaPlayer\obj\Debug\MainWindow.baml
+C:\musicPlayer - kopie\MediaPlayer\MediaPlayer\obj\Debug\MediaPlayer.g.resources
+C:\musicPlayer - kopie\MediaPlayer\MediaPlayer\obj\Debug\MediaPlayer.Properties.Resources.resources
+C:\musicPlayer - kopie\MediaPlayer\MediaPlayer\obj\Debug\MusicPlayer.csproj.GenerateResource.cache
+C:\musicPlayer - kopie\MediaPlayer\MediaPlayer\obj\Debug\MusicPlayer.csproj.CoreCompileInputs.cache
+C:\musicPlayer - kopie\MediaPlayer\MediaPlayer\obj\Debug\MusicPlayer.csproj.CopyComplete
+C:\musicPlayer - kopie\MediaPlayer\MediaPlayer\obj\Debug\MediaPlayer.exe
+C:\musicPlayer - kopie\MediaPlayer\MediaPlayer\obj\Debug\MediaPlayer.pdb
