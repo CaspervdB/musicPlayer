@@ -21,12 +21,17 @@ namespace MusicPlayer
         bool isPlaying = false;
         bool isPaused = false;
 
+        private bool disposed;
+
         private TimeSpan repeatStart;
         private TimeSpan repeatStop;
         private bool inRepeatSet;
         private Visualizer visualizer;
         private Visualizer waveFormVisualizer;
         private readonly int fftDataSize = (int)FFTDataSize.FFT2048;
+
+       
+
         private bool inChannelSet;
         private float[] waveformData;
         private double channelLength;
@@ -112,7 +117,7 @@ namespace MusicPlayer
                     catch
                     {
                         ActiveStream = null;
-
+                        isPlaying = false; //toegevoegd door jochem
                         Console.WriteLine("catched error");
                         Console.ReadLine();
                     }
@@ -122,6 +127,29 @@ namespace MusicPlayer
         }
 
         public bool IsPlaying => throw new NotImplementedException();
+
+        internal void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+        protected virtual void Dispose(bool disposing)
+        {
+            if (!disposed)
+            {
+                if (disposing)
+                {
+                    stop();
+                }
+
+                disposed = true;
+            }
+        }
+
+
+
+
 
         public double ChannelPosition
         {
@@ -250,6 +278,7 @@ namespace MusicPlayer
                 musicPlayer.Dispose();
                 musicPlayer = null;
             }
+            inputStream.Sample -= inputStream_Sample;
         }
 
         public Song getNextSong()

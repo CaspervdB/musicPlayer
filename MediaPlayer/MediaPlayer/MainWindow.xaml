@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:MediaPlayer"
         xmlns:svl="clr-namespace:WPFSoundVisualizationLib;assembly=WPFSoundVisualizationLib"
         mc:Ignorable="d"
+        xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity" xmlns:command="http://www.galasoft.ch/mvvmlight"
         Title="MainWindow" Height="450" Width="800">
     <!--We link the view to the MainWindowViewModel so it can funtion as the viewmodel voor this view-->
     <Window.DataContext>
@@ -41,5 +42,10 @@
         <svl:WaveformTimeline x:Name="waveformTimeline"
                                   Margin="5,287,4.6,5"
                                   BorderThickness="1" />
+        <i:Interaction.Triggers>
+            <i:EventTrigger EventName="Closing">
+                <command:EventToCommand Command="{Binding WindowClosing}" PassEventArgsToCommand="True" />
+            </i:EventTrigger>
+        </i:Interaction.Triggers>
     </Grid>
 </Window>

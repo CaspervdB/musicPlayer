@@ -21,6 +21,16 @@ namespace MediaPlayer
         public ICommand PauseButton { get; set; }
         public ICommand NextButton { get; set; }
         public ICommand PreviousButton { get; set; }
+        public ICommand WindowClosing
+        {
+            get
+            {
+                return new RelayCommand<CancelEventArgs>(
+                    (args) => {
+                        MainViewModel.getPlayerInstance().Dispose();
+                    });
+            }
+        }
 
         private static Player player;
 
@@ -87,6 +97,7 @@ namespace MediaPlayer
             PauseButton = new RelayCommand(() => player.pause());
             NextButton = new RelayCommand(() => next());
             PreviousButton = new RelayCommand(() => previous());
+            
             player = new Player();
             this.playlistCollection = Factory.createPlaylistCollection();
             /*this.player.playlist = playlistCollection[0];*/

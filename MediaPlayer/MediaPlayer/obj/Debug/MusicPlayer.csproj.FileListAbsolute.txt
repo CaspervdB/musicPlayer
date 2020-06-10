@@ -63,8 +63,6 @@ C:\Users\Gebruiker\Documents\Jochem\Jaar2\Periode_4\C#\musicPlayer\MediaPlayer\M
 C:\Users\Gebruiker\Documents\Jochem\Jaar2\Periode_4\C#\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\GalaSoft.MvvmLight.Extras.xml
 C:\Users\Gebruiker\Documents\Jochem\Jaar2\Periode_4\C#\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\GalaSoft.MvvmLight.Platform.pdb
 C:\Users\Gebruiker\Documents\Jochem\Jaar2\Periode_4\C#\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\GalaSoft.MvvmLight.Platform.xml
-C:\Users\Gebruiker\Documents\Jochem\Jaar2\Periode_4\C#\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\WPFSoundVisualizationLib.pdb
-C:\Users\Gebruiker\Documents\Jochem\Jaar2\Periode_4\C#\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\WPFSoundVisualizationLib.xml
 C:\Users\Gebruiker\Documents\Jochem\Jaar2\Periode_4\C#\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\MusicPlayer.csprojAssemblyReference.cache
 C:\Users\Gebruiker\Documents\Jochem\Jaar2\Periode_4\C#\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\MainWindow.g.cs
 C:\Users\Gebruiker\Documents\Jochem\Jaar2\Periode_4\C#\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\App.g.cs
@@ -121,3 +119,7 @@ C:\musicPlayer - kopie\MediaPlayer\MediaPlayer\obj\Debug\MusicPlayer.csproj.Core
 C:\musicPlayer - kopie\MediaPlayer\MediaPlayer\obj\Debug\MusicPlayer.csproj.CopyComplete
 C:\musicPlayer - kopie\MediaPlayer\MediaPlayer\obj\Debug\MediaPlayer.exe
 C:\musicPlayer - kopie\MediaPlayer\MediaPlayer\obj\Debug\MediaPlayer.pdb
+C:\Users\Gebruiker\Documents\Jochem\Jaar2\Periode_4\C#\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\TagLibSharp.dll
+C:\Users\Gebruiker\Documents\Jochem\Jaar2\Periode_4\C#\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\WPFSoundVisualizationLib.dll
+C:\Users\Gebruiker\Documents\Jochem\Jaar2\Periode_4\C#\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\TagLibSharp.pdb
+C:\Users\Gebruiker\Documents\Jochem\Jaar2\Periode_4\C#\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\TagLibSharp.xml
