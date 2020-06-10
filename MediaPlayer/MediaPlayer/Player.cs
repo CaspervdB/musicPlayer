@@ -269,8 +269,10 @@ namespace MusicPlayer
             if(activeStream != null)
             {
                 inputStream.Close();
+                //inputStream.Dispose();
                 inputStream = null;
                 activeStream.Close();
+                //activeStream.Dispose();
                 activeStream = null;
             }
             if (musicPlayer != null)
@@ -278,7 +280,7 @@ namespace MusicPlayer
                 musicPlayer.Dispose();
                 musicPlayer = null;
             }
-            inputStream.Sample -= inputStream_Sample;
+            
         }
 
         public Song getNextSong()
@@ -473,7 +475,8 @@ namespace MusicPlayer
                 visualizer.Clear();
                 ActiveStream.Position = repeatStartPosition;
             }
-            Console.WriteLine("generating");
+            //Console.WriteLine("generating"); 
+            //Door deze regel duurt het afsluiten langer
         }
     }
 }
