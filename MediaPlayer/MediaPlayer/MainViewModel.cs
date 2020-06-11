@@ -21,6 +21,7 @@ namespace MediaPlayer
         public ICommand PauseButton { get; set; }
         public ICommand NextButton { get; set; }
         public ICommand PreviousButton { get; set; }
+        public ICommand AddSongButton { get; set; }
         public ICommand WindowClosing
         {
             get
@@ -90,6 +91,12 @@ namespace MediaPlayer
             CurrentSong = player.getNextSong();
             NotifyPropertyChanged("CurrentSong");
         }
+        private void addsong()
+        {
+            AddMusicWindow addMusicWindow = new AddMusicWindow();
+            addMusicWindow.ShowDialog();
+        }
+
 
         public MainViewModel()
         {
@@ -97,7 +104,7 @@ namespace MediaPlayer
             PauseButton = new RelayCommand(() => player.pause());
             NextButton = new RelayCommand(() => next());
             PreviousButton = new RelayCommand(() => previous());
-            
+            AddSongButton = new RelayCommand(() => addsong());
             player = new Player();
             this.playlistCollection = Factory.createPlaylistCollection();
             /*this.player.playlist = playlistCollection[0];*/
