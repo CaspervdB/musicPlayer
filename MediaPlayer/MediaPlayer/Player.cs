@@ -4,13 +4,12 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
-using System.Windows.Media;
 using System.Windows.Threading;
 using WPFSoundVisualizationLib;
 
 namespace MusicPlayer
 {
-    class Player: ISpectrumPlayer, IWaveformPlayer, INotifyPropertyChanged
+    class Player : ISpectrumPlayer, IWaveformPlayer, INotifyPropertyChanged
     {
         private Song currentSong { get; set; }
         private WaveOut musicPlayer;
@@ -29,8 +28,6 @@ namespace MusicPlayer
         private Visualizer visualizer;
         private Visualizer waveFormVisualizer;
         private readonly int fftDataSize = (int)FFTDataSize.FFT2048;
-
-       
 
         private bool inChannelSet;
         private float[] waveformData;
@@ -96,7 +93,7 @@ namespace MusicPlayer
                     this.currentSong = value;
                     try
                     {
-                        if(isPlaying)
+                        if (IsPlaying)
                         {
                             stop();
                         }
@@ -126,7 +123,18 @@ namespace MusicPlayer
             }
         }
 
-        public bool IsPlaying => throw new NotImplementedException();
+        public bool IsPlaying
+        {
+            get { return isPlaying; }
+            protected set
+           {
+                bool oldValue = isPlaying;
+                isPlaying = value;
+                if (oldValue != isPlaying)
+                    NotifyPropertyChanged("IsPlaying");
+                positionTimer.IsEnabled = value;
+            }
+        }
 
         internal void Dispose()
         {
@@ -195,7 +203,8 @@ namespace MusicPlayer
             }
         }
 
-        public TimeSpan SelectionBegin {
+        public TimeSpan SelectionBegin
+        {
             get { return repeatStart; }
             set
             {
@@ -210,7 +219,8 @@ namespace MusicPlayer
                 }
             }
         }
-        public TimeSpan SelectionEnd {
+        public TimeSpan SelectionEnd
+        {
             get { return repeatStop; }
             set
             {
@@ -239,18 +249,19 @@ namespace MusicPlayer
 
         public void play()
         {
-            if(CurrentSong == null)
+            if (CurrentSong == null)
             {
-                if(playlist == null)
+                if (playlist == null)
                 {
                     return;
-                } else
+                }
+                else
                 {
                     CurrentSong = playlist.getFirstSong();
                 }
             }
             this.musicPlayer.Play();
-            this.isPlaying = true;
+            this.IsPlaying = true;
             Console.WriteLine("playing");
             Console.ReadLine();
         }
@@ -258,15 +269,16 @@ namespace MusicPlayer
         public void pause()
         {
             this.musicPlayer.Pause();
+            this.IsPlaying = false;
         }
 
         public void stop()
         {
-            if(musicPlayer != null)
+            if (musicPlayer != null)
             {
                 musicPlayer.Stop();
             }
-            if(activeStream != null)
+            if (activeStream != null)
             {
                 inputStream.Close();
                 //inputStream.Dispose();
@@ -280,7 +292,7 @@ namespace MusicPlayer
                 musicPlayer.Dispose();
                 musicPlayer = null;
             }
-            
+            this.IsPlaying = false;
         }
 
         public Song getNextSong()
