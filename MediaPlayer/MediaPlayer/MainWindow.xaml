@@ -13,7 +13,32 @@
         <local:MainViewModel/>
     </Window.DataContext>
     <Grid>
-        <ListBox x:Name="PlaylistCollectionBox" ItemsSource="{Binding PlaylistCollection}" SelectedItem="{Binding SelectedPlaylist, Mode=TwoWay}" Margin="0,0,576.6,116">
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>            
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="20"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+
+
+
+        <ListBox x:Name="PlaylistCollectionBox" ItemsSource="{Binding PlaylistCollection}" SelectedItem="{Binding SelectedPlaylist, Mode=TwoWay}"
+        Grid.Column="1" Grid.Row="1" Grid.RowSpan="3">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch">
@@ -23,7 +48,8 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        <ListBox x:Name="PlaylistSongs" ItemsSource="{Binding SelectedPlaylist.SongList, Mode=TwoWay}" SelectedItem="{Binding CurrentSong}" Margin="217,0,385.6,116">
+        <ListBox x:Name="PlaylistSongs" ItemsSource="{Binding SelectedPlaylist.SongList, Mode=TwoWay}" SelectedItem="{Binding CurrentSong}"
+        Grid.Column="3" Grid.Row="1" Grid.RowSpan="3" Grid.ColumnSpan="2">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch">
@@ -35,22 +61,20 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        <Button Content="Play" HorizontalAlignment="Left" Margin="516,170,0,0" VerticalAlignment="Top" Width="75" Command="{Binding PlayButton}"/>
-        <Button Content="Pause" HorizontalAlignment="Left" Margin="596,170,0,0" VerticalAlignment="Top" Width="75" Command="{Binding PauseButton}"/>
-        <Button Content="Previous" HorizontalAlignment="Left" Margin="516,194,0,0" VerticalAlignment="Top" Width="75" Command="{Binding PreviousButton}"/>
-        <Button Content="Next" HorizontalAlignment="Left" Margin="596,194,0,0" VerticalAlignment="Top" Width="75" Command="{Binding NextButton}"/>
-        <Button Content="Add a Song" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="707,10,0,0" Command="{Binding AddSongButton}"/>
+        <Button Content="Play" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="75" Command="{Binding PlayButton}" Grid.Column="5" Grid.Row="1" Margin="10,0,0,0" Height="19"/>
+        <Button Content="Pause" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="75" Command="{Binding PauseButton}" Grid.Column="5" Grid.Row="1" Margin="10,22,0,0" Height="19"/>
+        <Button Content="Previous" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Command="{Binding PreviousButton}" Grid.Column="5" Grid.Row="1" Margin="10,44,0,0" Height="19"/>
+        <Button Content="Next" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Command="{Binding NextButton}" Grid.Column="5" Grid.Row="1" Margin="10,66,0,0" Height="19"/>
+        <Button Content="Add a Song" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Command="{Binding AddSongButton}" Grid.Column="5" Grid.Row="2" Margin="10,0,0,0" Height="19"/>
         <svl:WaveformTimeline x:Name="waveformTimeline"
-                                  Margin="5,305,203,5"
-                                  BorderThickness="1" />
+                                  BorderThickness="1" Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="5" />
         <svl:SpectrumAnalyzer x:Name="spectrumAnalyzer"
-                                  Margin="596,305,10,10"
-                                  BarCount="16" />
+                                  BarCount="16" Grid.Column="6" Grid.Row="5"/>
         <i:Interaction.Triggers>
             <i:EventTrigger EventName="Closing">
                 <command:EventToCommand Command="{Binding WindowClosing}" PassEventArgsToCommand="True" />
             </i:EventTrigger>
         </i:Interaction.Triggers>
-        
+
     </Grid>
 </Window>
