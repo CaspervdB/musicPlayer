@@ -52,8 +52,15 @@ namespace MusicPlayer
                         ActiveStream = new Mp3FileReader(filePath);
                         inputStream = new WaveChannel32(ActiveStream);
                         musicPlayer.Init(inputStream);
+<<<<<<< Updated upstream
 
                         Console.WriteLine("playing");
+=======
+                        this.isPlaying = true;
+                        ChannelLength = inputStream.TotalTime.TotalSeconds;
+                        FileTag = TagLib.File.Create(filePath);
+                        Console.WriteLine("current song set");
+>>>>>>> Stashed changes
                         Console.ReadLine();
                     }
                     catch

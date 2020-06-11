@@ -18,6 +18,12 @@ namespace MediaPlayer
         private List<Playlist> playlistCollection = new List<Playlist>();
         public ICommand PlayButton { get; set; }
         public ICommand PauseButton { get; set; }
+<<<<<<< Updated upstream
+=======
+        public ICommand NextButton { get; set; }
+        public ICommand PreviousButton { get; set; }
+        public ICommand AddSongButton { get; set; }
+>>>>>>> Stashed changes
 
         private Player player;
 
@@ -57,11 +63,39 @@ namespace MediaPlayer
             }
         }
 
+<<<<<<< Updated upstream
+=======
+        private void previous()
+        {
+            CurrentSong = player.getPreviousSong();
+            NotifyPropertyChanged("CurrentSong");
+        }
+
+        private void next()
+        {
+            CurrentSong = player.getNextSong();
+            NotifyPropertyChanged("CurrentSong");
+        }
+
+        private void addsong()
+        {
+            AddMusicWindow addMusicWindow = new AddMusicWindow();
+            addMusicWindow.ShowDialog();
+        }
+
+>>>>>>> Stashed changes
         public MainViewModel()
         {
             PlayButton = new RelayCommand(() => player.play());
             PauseButton = new RelayCommand(() => player.pause());
+<<<<<<< Updated upstream
             this.player = new Player();
+=======
+            NextButton = new RelayCommand(() => next());
+            PreviousButton = new RelayCommand(() => previous());
+            AddSongButton = new RelayCommand(() => addsong());
+            player = new Player();
+>>>>>>> Stashed changes
             this.playlistCollection = Factory.createPlaylistCollection();
             this.player.CurrentSong = playlistCollection[0].SongList[1];
             Console.WriteLine(player.CurrentSong.SongTitle);

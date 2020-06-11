@@ -34,6 +34,16 @@
             </ListBox.ItemTemplate>
         </ListBox>
         <Button Content="Play" HorizontalAlignment="Left" Margin="516,170,0,0" VerticalAlignment="Top" Width="75" Command="{Binding PlayButton}"/>
+<<<<<<< Updated upstream
         <Button Content="Pause" HorizontalAlignment="Left" Margin="611,170,0,0" VerticalAlignment="Top" Width="75" Command="{Binding PauseButton}"/>
+=======
+        <Button Content="Pause" HorizontalAlignment="Left" Margin="596,170,0,0" VerticalAlignment="Top" Width="75" Command="{Binding PauseButton}"/>
+        <Button Content="Previous" HorizontalAlignment="Left" Margin="516,194,0,0" VerticalAlignment="Top" Width="75" Command="{Binding PreviousButton}"/>
+        <Button Content="Next" HorizontalAlignment="Left" Margin="596,194,0,0" VerticalAlignment="Top" Width="75" Command="{Binding NextButton}"/>
+        <svl:WaveformTimeline x:Name="waveformTimeline"
+                                  Margin="5,287,4.6,5"
+                                  BorderThickness="1" />
+        <Button Content="Add a Song" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="707,10,0,0" Command="{Binding AddSongButton}"/>
+>>>>>>> Stashed changes
     </Grid>
 </Window>

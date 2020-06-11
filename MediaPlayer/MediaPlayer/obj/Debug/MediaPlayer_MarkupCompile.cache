@@ -10,11 +10,19 @@ none
 false
 DEBUG;TRACE
 C:\xampp\htdocs\Lora\musicPlayer\MediaPlayer\MediaPlayer\App.xaml
+<<<<<<< Updated upstream
 11151548125
 
 111491202660
 1241698611781
 MainWindow.xaml;
+=======
+21403641018
+
+13-576442283
+137-1174301078
+MainWindow.xaml;AddMusicWindow.xaml;
+>>>>>>> Stashed changes
 
 True
 
