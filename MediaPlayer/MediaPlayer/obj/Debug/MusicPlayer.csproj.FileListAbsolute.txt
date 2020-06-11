@@ -143,4 +143,7 @@ C:\xampp\htdocs\Lora\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\MusicPlayer.c
 C:\xampp\htdocs\Lora\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\MusicPlayer.csproj.CopyComplete
 C:\xampp\htdocs\Lora\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\MediaPlayer.exe
 C:\xampp\htdocs\Lora\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\MediaPlayer.pdb
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes

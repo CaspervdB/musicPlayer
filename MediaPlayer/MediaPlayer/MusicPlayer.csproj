@@ -107,6 +107,9 @@
     <Reference Include="YoutubeExplode, Version=5.0.5.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\YoutubeExplode.5.0.5\lib\net461\YoutubeExplode.dll</HintPath>
     </Reference>
+    <Reference Include="YoutubeExplode, Version=5.0.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\YoutubeExplode.5.0.5\lib\net461\YoutubeExplode.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -114,12 +117,18 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
     <Compile Include="MusicExport.cs" />
     <Compile Include="Visualizer.cs" />
     <Compile Include="AddMusicWindow.xaml.cs">
       <DependentUpon>AddMusicWindow.xaml</DependentUpon>
     </Compile>
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>

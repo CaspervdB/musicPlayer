@@ -14,7 +14,11 @@ namespace WpfAppMusicLibraryTest
         public async Task SaveAudioToDisk2Async(String link)
         {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             var source = @"C:\xampp\htdocs\Lora\musicPlayer\WpfAppMusicLibraryTest\test\";
+=======
+            var source = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName, @"test\");
+>>>>>>> Stashed changes
 =======
             var source = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName, @"test\");
 >>>>>>> Stashed changes

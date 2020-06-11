@@ -23,6 +23,9 @@ namespace MediaPlayer
         public ICommand NextButton { get; set; }
         public ICommand PreviousButton { get; set; }
         public ICommand AddSongButton { get; set; }
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 
         private Player player;
@@ -83,6 +86,9 @@ namespace MediaPlayer
             addMusicWindow.ShowDialog();
         }
 
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
         public MainViewModel()
         {

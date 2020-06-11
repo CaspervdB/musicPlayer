@@ -53,9 +53,12 @@ namespace MusicPlayer
                         inputStream = new WaveChannel32(ActiveStream);
                         musicPlayer.Init(inputStream);
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 
                         Console.WriteLine("playing");
 =======
+=======
+>>>>>>> Stashed changes
                         this.isPlaying = true;
                         ChannelLength = inputStream.TotalTime.TotalSeconds;
                         FileTag = TagLib.File.Create(filePath);

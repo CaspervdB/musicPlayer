@@ -44,6 +44,9 @@
                                   Margin="5,287,4.6,5"
                                   BorderThickness="1" />
         <Button Content="Add a Song" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="707,10,0,0" Command="{Binding AddSongButton}"/>
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
     </Grid>
 </Window>
