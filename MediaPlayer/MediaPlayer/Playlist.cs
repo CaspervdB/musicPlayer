@@ -43,7 +43,7 @@ namespace MusicPlayer
             {
                 nextSong = SongList[indexOfCurrentSong + 1];
             }
-            catch (IndexOutOfRangeException)
+            catch (ArgumentOutOfRangeException)
             {
                 return null;
             }
@@ -58,7 +58,7 @@ namespace MusicPlayer
             {
                 previousSong = SongList[indexOfCurrentSong - 1];
             }
-            catch (IndexOutOfRangeException)
+            catch (ArgumentOutOfRangeException)
             {
                 return null;
             }

@@ -1,4 +1,11 @@
+<<<<<<< HEAD
 ﻿C:\Users\caspe\Desktop\New folder\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\GeneratedInternalTypeHelper.g.i.cs
 
 FC:\Users\caspe\Desktop\New folder\musicPlayer\MediaPlayer\MediaPlayer\MainWindow.xaml;;
+=======
+﻿C:\xampp\htdocs\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\GeneratedInternalTypeHelper.g.i.cs
+
+FC:\xampp\htdocs\musicPlayer\MediaPlayer\MediaPlayer\AddMusicWindow.xaml;;
+FC:\xampp\htdocs\musicPlayer\MediaPlayer\MediaPlayer\MainWindow.xaml;;
+>>>>>>> master
 

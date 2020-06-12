@@ -3,6 +3,7 @@ using MusicPlayer;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Globalization;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
@@ -18,8 +19,26 @@ namespace MediaPlayer
         private List<Playlist> playlistCollection = new List<Playlist>();
         public ICommand PlayButton { get; set; }
         public ICommand PauseButton { get; set; }
+        public ICommand NextButton { get; set; }
+        public ICommand PreviousButton { get; set; }
+        public ICommand AddSongButton { get; set; }
+        public ICommand WindowClosing
+        {
+            get
+            {
+                return new RelayCommand<CancelEventArgs>(
+                    (args) => {
+                        MainViewModel.getPlayerInstance().Dispose();
+                    });
+            }
+        }
 
-        private Player player;
+        private static Player player;
+
+        public static Player getPlayerInstance()
+        {
+            return player;
+        }
 
         public List<Playlist> PlaylistCollection
         {
@@ -27,45 +46,70 @@ namespace MediaPlayer
             set
             {
                 playlistCollection = value;
-                NotifyPropertyChanged();
             }
         }
-
-        public List<Song> SelectedPlaylist
+        public Playlist SelectedPlaylist
         {
             get {
                 if (player.playlist != null){
-                    return player.playlist.SongList;
+                    return player.playlist;
                 } else
                 {
                     return null;
                 }
             }
-            set { player.playlist.SongList = value;
-                NotifyPropertyChanged("Playlist");
+            set { 
+                player.playlist = value;
+                Console.WriteLine("Playlist selected");
+                NotifyPropertyChanged();
             }
         }
-
         public Song CurrentSong
         {
             get { return player.CurrentSong; }
             set
             {
+                if(value == null)
+                {
+                    return;
+                }
                 player.CurrentSong = value;
-                
-                NotifyPropertyChanged();
+                player.play();
+                /*
+                NotifyPropertyChanged();*/
             }
         }
+
+        private void previous()
+        {
+            CurrentSong = player.getPreviousSong();
+            NotifyPropertyChanged("CurrentSong");
+        }
+
+        private void next()
+        {
+            CurrentSong = player.getNextSong();
+            NotifyPropertyChanged("CurrentSong");
+        }
+        private void addsong()
+        {
+            AddMusicWindow addMusicWindow = new AddMusicWindow();
+            addMusicWindow.ShowDialog();
+        }
+
 
         public MainViewModel()
         {
             PlayButton = new RelayCommand(() => player.play());
             PauseButton = new RelayCommand(() => player.pause());
-            this.player = new Player();
+            NextButton = new RelayCommand(() => next());
+            PreviousButton = new RelayCommand(() => previous());
+            AddSongButton = new RelayCommand(() => addsong());
+            player = new Player();
             this.playlistCollection = Factory.createPlaylistCollection();
-            this.player.CurrentSong = playlistCollection[0].SongList[1];
-            Console.WriteLine(player.CurrentSong.SongTitle);
-            Console.ReadLine();
+            /*this.player.playlist = playlistCollection[0];*/
+
+            
 
         }
 
@@ -73,5 +117,7 @@ namespace MediaPlayer
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+
+
     }
 }
