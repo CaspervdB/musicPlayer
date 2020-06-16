@@ -41,6 +41,8 @@ namespace MediaPlayer
         {
             return player;
         }
+
+        public Playlist SelectedPlaylistInDownloadWindow { get; set; }
         public string Link
         {
             get { return link; }
@@ -137,7 +139,7 @@ namespace MediaPlayer
         private async Task DownloadSongAsync()
         {
             MusicExport musicExport = new MusicExport();
-            await musicExport.SaveAudioToDiskAsync(link, "eerste playlist");
+            await musicExport.SaveAudioToDiskAsync(link, SelectedPlaylistInDownloadWindow);
         }
 
 
