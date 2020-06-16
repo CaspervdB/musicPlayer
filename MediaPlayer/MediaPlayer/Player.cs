@@ -17,9 +17,7 @@ namespace MusicPlayer
         private WaveChannel32 inputStream;
         private WaveStream activeStream;
         public Songlist Songlist { get; set; }
-        private String musicFolderPath;
         bool isPlaying = false;
-        bool isPaused = false;
 
         private bool disposed;
 
@@ -37,7 +35,6 @@ namespace MusicPlayer
         private bool inChannelTimerUpdate;
         private float[] fullLevelData;
         private string pendingWaveformPath;
-        private TagLib.File fileTag;
 
         private readonly DispatcherTimer positionTimer = new DispatcherTimer(DispatcherPriority.ApplicationIdle);
         private readonly BackgroundWorker waveformGenerateWorker = new BackgroundWorker();
@@ -51,30 +48,13 @@ namespace MusicPlayer
             {
                 WaveStream oldValue = activeStream;
                 activeStream = value;
-                //if (oldValue != activeStream) 
-                //NotifyPropertyChanged("ActiveStream");
             }
         }
-
-        public TagLib.File FileTag
-        {
-            get { return fileTag; }
-            set
-            {
-                TagLib.File oldValue = fileTag;
-                fileTag = value;
-                if (oldValue != fileTag)
-                    NotifyPropertyChanged("FileTag");
-            }
-        }
-
         public Player()
         {
             this.currentSong = null;
             this.musicPlayer = new WaveOut();
             this.Songlist = new Songlist();
-            //this.playlist = new Playlist("Default");
-            this.musicFolderPath = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName, @"music\");
             positionTimer.Interval = TimeSpan.FromMilliseconds(50);
             positionTimer.Tick += positionTimer_Tick;
 
@@ -88,9 +68,8 @@ namespace MusicPlayer
             get { return this.currentSong; }
             set
             {
-                string filePath = Path.Combine(this.musicFolderPath, value.SongLocation);
-
-                if (File.Exists(filePath))
+                string songLocation = value.SongLocation;
+                if (File.Exists(songLocation))
                 {
                     this.currentSong = value;
                     try
@@ -103,20 +82,18 @@ namespace MusicPlayer
                         {
                             DesiredLatency = 100
                         };
-                        ActiveStream = new Mp3FileReader(filePath);
+                        ActiveStream = new Mp3FileReader(songLocation);
                         inputStream = new WaveChannel32(ActiveStream);
                         this.visualizer = new Visualizer(fftDataSize);
                         inputStream.Sample += inputStream_Sample;
                         musicPlayer.Init(inputStream);
-                        //this.isPlaying = true;
                         ChannelLength = inputStream.TotalTime.TotalSeconds;
-                        FileTag = TagLib.File.Create(filePath);
-                        GenerateWaveformData(filePath);
+                        GenerateWaveformData(songLocation);
                     }
                     catch
                     {
                         ActiveStream = null;
-                        isPlaying = false; //toegevoegd door jochem
+                        isPlaying = false;
                         Console.WriteLine("catched error");
                         Console.ReadLine();
                     }
@@ -156,10 +133,6 @@ namespace MusicPlayer
                 disposed = true;
             }
         }
-
-
-
-
 
         public double ChannelPosition
         {
@@ -247,8 +220,6 @@ namespace MusicPlayer
             return true;
         }
 
-
-
         public void play()
         {
             if (CurrentSong == null)
@@ -285,10 +256,8 @@ namespace MusicPlayer
             if (activeStream != null)
             {
                 inputStream.Close();
-                //inputStream.Dispose();
                 inputStream = null;
                 activeStream.Close();
-                //activeStream.Dispose();
                 activeStream = null;
             }
             if (musicPlayer != null)
@@ -491,8 +460,6 @@ namespace MusicPlayer
                 visualizer.Clear();
                 ActiveStream.Position = repeatStartPosition;
             }
-            //Console.WriteLine("generating"); 
-            //Door deze regel duurt het afsluiten langer
         }
     }
 }
