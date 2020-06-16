@@ -4,6 +4,7 @@ using System;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using System.Threading.Tasks;
 using System.Windows.Input;
 
 namespace MediaPlayer
@@ -16,6 +17,7 @@ namespace MediaPlayer
         public ICommand NextButton { get; set; }
         public ICommand PreviousButton { get; set; }
         public ICommand AddSongButton { get; set; }
+        public ICommand DownloadCommand { get; set; }
         public ICommand WindowClosing
         {
             get
@@ -26,13 +28,25 @@ namespace MediaPlayer
                     });
             }
         }
-
+        private string link;
         private static Player player;
         private PlaylistManager playlistManager;
 
         public static Player getPlayerInstance()
         {
             return player;
+        }
+        public string Link
+        {
+            get { return link; }
+            set
+            {
+                if (!string.Equals(this.link, value))
+                {
+                    this.link = value;
+                }
+                NotifyPropertyChanged("LinkTextBox");
+            }
         }
 
         public ObservableCollection<Playlist> PlaylistCollection
@@ -115,6 +129,11 @@ namespace MediaPlayer
             AddMusicWindow addMusicWindow = new AddMusicWindow();
             addMusicWindow.ShowDialog();
         }
+        private async Task DownloadSongAsync()
+        {
+            MusicExport musicExport = new MusicExport();
+            await musicExport.SaveAudioToDiskAsync(link, SelectedPlaylist.PlaylistName);
+        }
 
 
         public MainViewModel()
@@ -124,6 +143,7 @@ namespace MediaPlayer
             NextButton = new RelayCommand(() => next());
             PreviousButton = new RelayCommand(() => previous());
             AddSongButton = new RelayCommand(() => addsong());
+            DownloadCommand = new RelayCommand(async () => await DownloadSongAsync());
             playlistManager = new PlaylistManager();
             player = new Player();
             Factory.createPlaylistCollection(this.playlistManager);

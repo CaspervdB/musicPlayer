@@ -19,3 +19,4 @@ MediaPlayer/MediaPlayer/obj/Debug/MainWindow.g.cs
 MediaPlayer/MediaPlayer/obj/Debug/MainWindow.g.i.cs
 *.resources
 MediaPlayer/MediaPlayer/obj/Debug/MediaPlayer.pdb
+*.lref
