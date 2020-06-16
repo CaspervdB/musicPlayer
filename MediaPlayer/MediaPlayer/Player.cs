@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
+using System.Linq;
 using System.Windows.Threading;
 using WPFSoundVisualizationLib;
 
@@ -15,7 +16,7 @@ namespace MusicPlayer
         private WaveOut musicPlayer;
         private WaveChannel32 inputStream;
         private WaveStream activeStream;
-        public Playlist playlist { get; set; }
+        public Songlist Songlist { get; set; }
         private String musicFolderPath;
         bool isPlaying = false;
         bool isPaused = false;
@@ -71,7 +72,8 @@ namespace MusicPlayer
         {
             this.currentSong = null;
             this.musicPlayer = new WaveOut();
-            this.playlist = null;
+            this.Songlist = new Songlist();
+            //this.playlist = new Playlist("Default");
             this.musicFolderPath = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName, @"music\");
             positionTimer.Interval = TimeSpan.FromMilliseconds(50);
             positionTimer.Tick += positionTimer_Tick;
@@ -238,7 +240,7 @@ namespace MusicPlayer
 
         private Boolean playlistAndSongNotNull()
         {
-            if (currentSong == null || playlist == null)
+            if (currentSong == null)
             {
                 return false;
             }
@@ -251,14 +253,16 @@ namespace MusicPlayer
         {
             if (CurrentSong == null)
             {
-                if (playlist == null)
+                Song newCurrentSong = this.Songlist.First();
+                if (newCurrentSong != null)
                 {
-                    return;
+                    CurrentSong = newCurrentSong;
                 }
                 else
                 {
-                    CurrentSong = playlist.getFirstSong();
+                    return;
                 }
+                
             }
             this.musicPlayer.Play();
             this.IsPlaying = true;
@@ -299,7 +303,7 @@ namespace MusicPlayer
         {
             if (playlistAndSongNotNull())
             {
-                Song nextSong = this.playlist.getNextSong(this.CurrentSong);
+                Song nextSong = this.Songlist.getNextSong(this.CurrentSong);
                 if (nextSong != null)
                 {
                     this.CurrentSong = nextSong;
@@ -313,7 +317,7 @@ namespace MusicPlayer
         {
             if (playlistAndSongNotNull())
             {
-                Song previousSong = this.playlist.getPreviousSong(this.CurrentSong);
+                Song previousSong = this.Songlist.getPreviousSong(this.CurrentSong);
                 if (previousSong != null)
                 {
                     this.CurrentSong = previousSong;
@@ -327,7 +331,7 @@ namespace MusicPlayer
         {
             if (playlistAndSongNotNull())
             {
-                Song nextRandomSong = this.playlist.getRandomSong();
+                Song nextRandomSong = this.Songlist.getRandomSong();
                 if (nextRandomSong != null)
                 {
                     this.CurrentSong = nextRandomSong;

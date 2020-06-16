@@ -118,7 +118,9 @@
     <Compile Include="AddMusicWindow.xaml.cs">
       <DependentUpon>AddMusicWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Songlist.cs" />
     <Compile Include="MusicExport.cs" />
+    <Compile Include="PlaylistManager.cs" />
     <Compile Include="Visualizer.cs" />
     <Page Include="AddMusicWindow.xaml">
       <SubType>Designer</SubType>

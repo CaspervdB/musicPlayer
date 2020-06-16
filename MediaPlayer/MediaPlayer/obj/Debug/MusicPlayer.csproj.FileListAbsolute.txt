@@ -80,12 +80,6 @@ C:\Users\Gebruiker\Documents\Jochem\Jaar2\Periode_4\C#\musicPlayer\MediaPlayer\M
 C:\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\TagLibSharp.dll
 C:\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\TagLibSharp.pdb
 C:\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\TagLibSharp.xml
-C:\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\PresentationCore.dll
-C:\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\PresentationFramework.dll
-C:\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\System.Design.dll
-C:\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\System.Xaml.dll
-C:\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\UIAutomationProvider.dll
-C:\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\WindowsBase.dll
 C:\musicPlayer - kopie\MediaPlayer\MediaPlayer\obj\Debug\MainWindow.g.cs
 C:\musicPlayer - kopie\MediaPlayer\MediaPlayer\obj\Debug\App.g.cs
 C:\musicPlayer - kopie\MediaPlayer\MediaPlayer\obj\Debug\GeneratedInternalTypeHelper.g.cs
@@ -205,3 +199,28 @@ C:\Users\Gebruiker\Documents\Jochem\Jaar2\Periode_4\C#\musicPlayer\MediaPlayer\M
 C:\Users\Gebruiker\Documents\Jochem\Jaar2\Periode_4\C#\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\YoutubeExplode.xml
 C:\Users\Gebruiker\Documents\Jochem\Jaar2\Periode_4\C#\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\AddMusicWindow.g.cs
 C:\Users\Gebruiker\Documents\Jochem\Jaar2\Periode_4\C#\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\AddMusicWindow.baml
+C:\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\AngleSharp.dll
+C:\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\System.Buffers.dll
+C:\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\System.Memory.dll
+C:\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\System.Numerics.Vectors.dll
+C:\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\System.Text.Encoding.CodePages.dll
+C:\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\System.Text.Encodings.Web.dll
+C:\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\System.Text.Json.dll
+C:\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\System.ValueTuple.dll
+C:\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\YoutubeExplode.dll
+C:\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\AngleSharp.xml
+C:\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\System.Buffers.xml
+C:\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\System.Memory.xml
+C:\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\System.Numerics.Vectors.xml
+C:\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\System.Text.Encodings.Web.xml
+C:\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\System.Text.Json.xml
+C:\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\System.ValueTuple.xml
+C:\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\YoutubeExplode.xml
+C:\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\AddMusicWindow.g.cs
+C:\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\AddMusicWindow.baml
