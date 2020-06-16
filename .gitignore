@@ -7,3 +7,15 @@ MediaPlayer/MediaPlayer/bin/Debug/MediaPlayer.pdb
 MediaPlayer/MediaPlayer/bin/Debug/MediaPlayer.exe
 *.baml
 *.cache
+MediaPlayer/.vs/MusicPlayer/v16/.suo
+*.exe
+MediaPlayer/.vs/MusicPlayer/v16/.suo
+MediaPlayer/.vs/MusicPlayer/v16/.suo
+MediaPlayer/MediaPlayer/bin/Debug/PresentationFramework.dll
+*.dll
+*.cache
+*.baml
+MediaPlayer/MediaPlayer/obj/Debug/MainWindow.g.cs
+MediaPlayer/MediaPlayer/obj/Debug/MainWindow.g.i.cs
+*.resources
+MediaPlayer/MediaPlayer/obj/Debug/MediaPlayer.pdb
