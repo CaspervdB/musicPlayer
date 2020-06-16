@@ -16,9 +16,7 @@ namespace MusicPlayer
                 filetag.Save();
             }
         }
-
-        private int myVar;
-
+        
         public string ArtistName
         {
             get {

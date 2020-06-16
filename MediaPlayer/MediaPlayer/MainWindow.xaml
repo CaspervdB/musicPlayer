@@ -12,6 +12,9 @@
     <Window.DataContext>
         <local:MainViewModel/>
     </Window.DataContext>
+
+    
+
     <Grid>
 
         <Grid.ColumnDefinitions>
@@ -70,18 +73,29 @@
                                   BorderThickness="1" Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="5" />
         <svl:SpectrumAnalyzer x:Name="spectrumAnalyzer"
                                   BarCount="16" Grid.Column="6" Grid.Row="5"/>
-        <DockPanel>
-            <Menu DockPanel.Dock="Top" Grid.Row="1" Grid.ColumnSpan="1" Grid.Column="5" Margin="0,0,-772,0" HorizontalAlignment="Left" Width="792">
+
+        <!--<DockPanel>
+            <Menu DockPanel.Dock="Top" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="8">
                 <MenuItem Header="_Playlist">
-                    <MenuItem Header="_Create Playlist" Icon=" +" Command="{Binding CreatePlaylist}"/>
-                    <MenuItem Header="_Delete Playlist" Icon=" -" Command="{Binding DeletePlaylist}" />
-                    <MenuItem Header="_Add Song" Icon=" +" Command="{Binding AddSong}" />
-                    <MenuItem Header="_Delete Song" Icon=" -" Command="{Binding DeleteSong}" />
+                    <MenuItem Header="_Create Playlist" Command="{Binding CreatePlaylist}"/>
+                    <MenuItem Header="_Delete Playlist" Command="{Binding DeletePlaylist}" />
+                    <MenuItem Header="_Add Song" Command="{Binding AddSong}" />
+                    <MenuItem Header="_Delete Song" Command="{Binding DeleteSong}" />
                 </MenuItem>
                 <MenuItem Header="_Export" Command="{Binding ExportSong}" />
             </Menu>
-            <TextBox AcceptsReturn="True" />
-        </DockPanel>
+            <StackPanel></StackPanel>
+        </DockPanel>-->
+
+        <Menu Grid.Column="0" Grid.ColumnSpan="8" Grid.Row="0">
+            <MenuItem Header="_Playlist">
+                <MenuItem Header="_Create Playlist" Command="{Binding CreatePlaylist}"/>
+                <MenuItem Header="_Delete Playlist" Command="{Binding DeletePlaylist}" />
+                <MenuItem Header="_Add Song" Command="{Binding AddSong}" />
+                <MenuItem Header="_Delete Song" Command="{Binding DeleteSong}" />
+            </MenuItem>
+            <MenuItem Header="_Export" Command="{Binding ExportSong}" />
+        </Menu>
 
         <i:Interaction.Triggers>
             <i:EventTrigger EventName="Closing">
@@ -91,3 +105,4 @@
 
     </Grid>
 </Window>
+  

@@ -20,3 +20,5 @@ MediaPlayer/MediaPlayer/obj/Debug/MainWindow.g.i.cs
 *.resources
 MediaPlayer/MediaPlayer/obj/Debug/MediaPlayer.pdb
 *.lref
+*.baml
+*.pdb
