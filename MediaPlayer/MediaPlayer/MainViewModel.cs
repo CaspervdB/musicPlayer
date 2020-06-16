@@ -18,6 +18,11 @@ namespace MediaPlayer
         public ICommand PreviousButton { get; set; }
         public ICommand AddSongButton { get; set; }
         public ICommand DownloadCommand { get; set; }
+        public ICommand CreatePlaylist { get; set; }
+        public ICommand DeletePlaylist { get; set; }
+        public ICommand AddSong { get; set; }
+        public ICommand DeleteSong { get; set; }
+        public ICommand ExportSong { get; set; }
         public ICommand WindowClosing
         {
             get
