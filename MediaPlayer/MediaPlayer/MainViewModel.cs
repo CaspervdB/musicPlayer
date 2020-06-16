@@ -132,7 +132,7 @@ namespace MediaPlayer
         private async Task DownloadSongAsync()
         {
             MusicExport musicExport = new MusicExport();
-            await musicExport.SaveAudioToDiskAsync(link, SelectedPlaylist.PlaylistName);
+            await musicExport.SaveAudioToDiskAsync(link, "eerste playlist");
         }
 
 
