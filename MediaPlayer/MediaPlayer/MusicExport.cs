@@ -15,8 +15,8 @@ namespace MediaPlayer
     {
         public async Task SaveAudioToDiskAsync(String link, String playListFolder)
         {
-            var source = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName, @"music/");
-            String editedPlayListFolder = playListFolder.Insert(-1, "/");
+            var source = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName, @"music\");
+            playListFolder += @"\";
             var youtube = new YoutubeClient();
             try
             {
@@ -30,7 +30,7 @@ namespace MediaPlayer
                     // Get the actual stream
                     var stream = await youtube.Videos.Streams.GetAsync(streamInfo);
                     // Download the stream to file
-                    await youtube.Videos.Streams.DownloadAsync(streamInfo, $"{source + editedPlayListFolder + legalTitle}.mp3");
+                    await youtube.Videos.Streams.DownloadAsync(streamInfo, $"{source + playListFolder + legalTitle}.mp3");
                 }
             }
             catch
