@@ -285,3 +285,9 @@ C:\Users\caspe\Desktop\New folder\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\
 C:\Users\caspe\Desktop\New folder\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\NewPlaylist.baml
 C:\Users\caspe\Desktop\New folder\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\DeletePlaylist.g.cs
 C:\Users\caspe\Desktop\New folder\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\DeletePlaylist.baml
+C:\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\DeletePlaylist.g.cs
+C:\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\NewPlaylist.g.cs
+C:\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\DeletePlaylist.baml
+C:\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\NewPlaylist.baml
+C:\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\EditSongWindow.g.cs
+C:\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\EditSongWindow.baml

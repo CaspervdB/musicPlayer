@@ -138,8 +138,8 @@ namespace MediaPlayer
         }
         private void editSong()
         {
-           // EditSongWindow esw = new EditSongWindow();
-          //  esw.ShowDialog();
+            EditSongWindow esw = new EditSongWindow();
+            esw.ShowDialog();
         }
         private async Task DownloadSongAsync()
         {

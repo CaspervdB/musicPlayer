@@ -121,6 +121,10 @@
     <Compile Include="DeletePlaylist.xaml.cs">
       <DependentUpon>DeletePlaylist.xaml</DependentUpon>
     </Compile>
+    <Compile Include="EditSongViewModel.cs" />
+    <Compile Include="EditSongWindow.xaml.cs">
+      <DependentUpon>EditSongWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Songlist.cs" />
     <Compile Include="MusicExport.cs" />
     <Compile Include="PlaylistManager.cs" />
@@ -135,6 +139,10 @@
     <Page Include="DeletePlaylist.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EditSongWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
