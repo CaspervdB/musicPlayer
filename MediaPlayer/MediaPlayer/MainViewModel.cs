@@ -157,6 +157,7 @@ namespace MediaPlayer
             AddSongButton = new RelayCommand(() => addsong());
             EditSongContextMenuItem = new RelayCommand(() => editSong());
             DownloadCommand = new RelayCommand(async () => await DownloadSongAsync());
+            createPlaylist = new RelayCommand(() => playlistManager.createPlaylist());
             playlistManager = new PlaylistManager();
             Factory.createPlaylistCollection(this.playlistManager);
 

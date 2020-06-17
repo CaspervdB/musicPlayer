@@ -35,10 +35,9 @@ namespace MediaPlayer
 
         public ObservableCollection<Playlist> Playlists { get; set; }
 
-
-        public void deletePlaylist(string playlistName)
+        public void deletePlaylist(Playlist p)
         {
-            //hier moet een methode komen welke de gekozen playlist map verwijderd icl. inhoud.
+
         }
     }
 }
