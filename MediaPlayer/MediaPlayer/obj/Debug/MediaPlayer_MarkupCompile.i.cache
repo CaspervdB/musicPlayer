@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\User\Documents\GitHub\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\
+C:\xampp\htdocs\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\
 MediaPlayer
 none
 false
 DEBUG;TRACE
-C:\Users\User\Documents\GitHub\musicPlayer\MediaPlayer\MediaPlayer\App.xaml
+C:\xampp\htdocs\musicPlayer\MediaPlayer\MediaPlayer\App.xaml
 671991239
 
-221133299396
-137-132254553
+23-199101689
+137591523953
 AddMusicWindow.xaml;DeletePlaylist.xaml;EditSongWindow.xaml;ExportMp3Window.xaml;MainWindow.xaml;NewPlaylist.xaml;
 
-True
+False
 

@@ -20,8 +20,6 @@ namespace MediaPlayer
             var source = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName, @"music\");
             playList.PlaylistName += @"\"; //playlistname is the foldername
             var youtube = new YoutubeClient();
-            try
-            {
                 Video video = await youtube.Videos.GetAsync(link);
                 string legalTitle = string.Join("", video.Title.Split(Path.GetInvalidFileNameChars())); // Removes all possible illegal filename characetrs from the title
                 StreamManifest streamManifest = await youtube.Videos.Streams.GetManifestAsync(link);
@@ -38,11 +36,7 @@ namespace MediaPlayer
                     song.SongTitle = video.Title;
                     playList.addSong(song); 
                 }
-            }
-            catch
-            {
-             //TODO: actual working error
-            }
+            
         }
 
         public async Task SaveAudioExternal(String Location, String link)

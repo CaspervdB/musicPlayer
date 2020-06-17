@@ -5,16 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MediaPlayer"
         mc:Ignorable="d"
-        Title="Window1" Height="201.874" Width="405.815">
+        Title="Window1" Height="211.874" Width="405.815">
     <Window.DataContext>
-        <local:MainViewModel/>
+        <local:AddMusicViewModel/>
     </Window.DataContext>
-    <Grid Margin="0,0,0,17">
-        <Button Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="363" Margin="10,100,0,0" Height="45" Command="{Binding DownloadCommand}"/>
+    <Grid>
+        <Button Content="Add Song" HorizontalAlignment="Left" VerticalAlignment="Top" Width="363" Margin="10,100,0,0" Height="45" Command="{Binding DownloadCommand}"/>
         <TextBox Name="LinkTextBox" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="{Binding Link}" VerticalAlignment="Top" Width="363" Margin="10,41,0,0"/>
         <Label Content="Into Playlist:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,69,0,0"/>
         <Label Content="Enter Youtube Link" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0"/>
-        <ComboBox DisplayMemberPath="PlaylistName" Name="ComboBox" ItemsSource="{Binding PlaylistCollection}" SelectedItem="{Binding SelectedPlaylistInDownloadWindow}" HorizontalAlignment="Left" Margin="88,73,0,0" VerticalAlignment="Top" Width="120"/>
-        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="137,19,0,0" Width="236" Height="17" Text="{Binding Error}" IsEnabled="False"/>
+        <ComboBox DisplayMemberPath="PlaylistName" Name="ComboBox" ItemsSource="{Binding PlaylistCollection}" SelectedItem="{Binding SelectedPlaylistInDownloadWindow}" HorizontalAlignment="Left" Margin="88,73,0,0" VerticalAlignment="Top" Width="120" SelectedIndex="0"/>
+        <Label Name="ErrorLabel" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,150,0,-13" Width="236" Height="17" Content="{Binding Error, Mode=TwoWay}"/>
     </Grid>
 </Window>

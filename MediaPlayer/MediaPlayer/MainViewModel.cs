@@ -17,7 +17,6 @@ namespace MediaPlayer
         public ICommand NextButton { get; set; }
         public ICommand PreviousButton { get; set; }
         public ICommand AddSongButton { get; set; }
-        public ICommand DownloadCommand { get; set; }
         public ICommand CreatePlaylist { get; set; }
         public ICommand DeletePlaylist { get; set; }
         public ICommand AddSong { get; set; }
@@ -35,26 +34,11 @@ namespace MediaPlayer
                     });
             }
         }
-        private string link;
         private PlaylistManager playlistManager;
 
         public static Player getPlayerInstance()
         {
             return Player.Instance;
-        }
-
-        public Playlist SelectedPlaylistInDownloadWindow { get; set; }
-        public string Link
-        {
-            get { return link; }
-            set
-            {
-                if (!string.Equals(this.link, value))
-                {
-                    this.link = value;
-                }
-                NotifyPropertyChanged("LinkTextBox");
-            }
         }
 
         public ObservableCollection<Playlist> PlaylistCollection
@@ -141,12 +125,6 @@ namespace MediaPlayer
             EditSongWindow esw = new EditSongWindow();
             esw.ShowDialog();
         }
-        private async Task DownloadSongAsync()
-        {
-            MusicExport musicExport = new MusicExport();
-            await musicExport.SaveAudioToDiskAsync(link, SelectedPlaylistInDownloadWindow);
-        }
-
         private void addPlaylist()
         {
             Window1 NewPlaylist = new Window1();
@@ -172,7 +150,6 @@ namespace MediaPlayer
             PreviousButton = new RelayCommand(() => previous());
             AddSongButton = new RelayCommand(() => addsong());
             EditSongContextMenuItem = new RelayCommand(() => editSong());
-            DownloadCommand = new RelayCommand(async () => await DownloadSongAsync());
             CreatePlaylist = new RelayCommand(() => addPlaylist());
             DeletePlaylist = new RelayCommand(() => deletePlaylist());
             ExportSong = new RelayCommand(() => exportSong());

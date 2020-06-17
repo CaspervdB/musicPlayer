@@ -115,6 +115,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AddMusicViewModel.cs" />
     <Compile Include="AddMusicWindow.xaml.cs">
       <DependentUpon>AddMusicWindow.xaml</DependentUpon>
     </Compile>
