@@ -1,8 +1,9 @@
 ﻿
 
-FC:\musicPlayer\MediaPlayer\MediaPlayer\AddMusicWindow.xaml;;
-FC:\musicPlayer\MediaPlayer\MediaPlayer\DeletePlaylist.xaml;;
-FC:\musicPlayer\MediaPlayer\MediaPlayer\MainWindow.xaml;;
-FC:\musicPlayer\MediaPlayer\MediaPlayer\NewPlaylist.xaml;;
-FC:\musicPlayer\MediaPlayer\MediaPlayer\EditSongWindow.xaml;;
+FC:\xampp\htdocs\musicPlayer\MediaPlayer\MediaPlayer\AddMusicWindow.xaml;;
+FC:\xampp\htdocs\musicPlayer\MediaPlayer\MediaPlayer\DeletePlaylist.xaml;;
+FC:\xampp\htdocs\musicPlayer\MediaPlayer\MediaPlayer\EditSongWindow.xaml;;
+FC:\xampp\htdocs\musicPlayer\MediaPlayer\MediaPlayer\ExportMp3Window.xaml;;
+FC:\xampp\htdocs\musicPlayer\MediaPlayer\MediaPlayer\MainWindow.xaml;;
+FC:\xampp\htdocs\musicPlayer\MediaPlayer\MediaPlayer\NewPlaylist.xaml;;
 

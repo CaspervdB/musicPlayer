@@ -17,7 +17,6 @@ namespace MediaPlayer
         public ICommand NextButton { get; set; }
         public ICommand PreviousButton { get; set; }
         public ICommand AddSongButton { get; set; }
-        public ICommand DownloadCommand { get; set; }
         public ICommand CreatePlaylist { get; set; }
         public ICommand DeletePlaylist { get; set; }
         public ICommand AddSong { get; set; }
@@ -35,22 +34,9 @@ namespace MediaPlayer
                     });
             }
         }
-        private string link;              
 
-        public Playlist SelectedPlaylistInDownloadWindow { get; set; }
-        public string Link
-        {
-            get { return link; }
-            set
-            {
-                if (!string.Equals(this.link, value))
-                {
-                    this.link = value;
-                }
-                NotifyPropertyChanged("LinkTextBox");
-            }
-        }
-
+        private string link;
+        
         public ObservableCollection<Playlist> PlaylistCollection
         {
             get { return PlaylistManager.Instance.Playlists; }
@@ -135,12 +121,6 @@ namespace MediaPlayer
             EditSongWindow esw = new EditSongWindow();
             esw.ShowDialog();
         }
-        private async Task DownloadSongAsync()
-        {
-            MusicExport musicExport = new MusicExport();
-            await musicExport.SaveAudioToDiskAsync(link, SelectedPlaylistInDownloadWindow);
-        }
-
         private void addPlaylist()
         {
             Window1 NewPlaylist = new Window1();
@@ -152,6 +132,12 @@ namespace MediaPlayer
             DeletePlaylist deletePlaylist = new DeletePlaylist();
             deletePlaylist.ShowDialog();
         }
+
+        private void exportSong() 
+        {
+            ExportMp3Window export = new ExportMp3Window();
+            export.ShowDialog();
+        }
         public MainViewModel()
         {
             PlayButton = new RelayCommand(() => Player.Instance.play());
@@ -160,17 +146,12 @@ namespace MediaPlayer
             PreviousButton = new RelayCommand(() => previous());
             AddSongButton = new RelayCommand(() => addsong());
             EditSongContextMenuItem = new RelayCommand(() => editSong());
-            DownloadCommand = new RelayCommand(async () => await DownloadSongAsync());
             CreatePlaylist = new RelayCommand(() => addPlaylist());
             DeletePlaylist = new RelayCommand(() => deletePlaylist());
-            
-            //playlistManager = new PlaylistManager();
-            
-            
-            Factory.createPlaylistCollection();
-
+            ExportSong = new RelayCommand(() => exportSong());
+                        
+            Factory.createPlaylistCollection();  
         }
-
 
         private void NotifyPropertyChanged([CallerMemberName] String propertyName = "")
         {
