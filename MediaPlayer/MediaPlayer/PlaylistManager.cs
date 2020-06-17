@@ -11,16 +11,15 @@ namespace MediaPlayer
 {
     class PlaylistManager
     {
-        private ObservableCollection<Playlist> playlists;
         public PlaylistManager()
         {
-            this.playlists = new ObservableCollection<Playlist>();
+            this.Playlists = new ObservableCollection<Playlist>();
 
         }
 
         public void addPlaylist(Playlist p)
         {
-            this.playlists.Add(p);
+            this.Playlists.Add(p);
         }
 
         public void createPlaylist(string newPlaylistName)
@@ -34,14 +33,10 @@ namespace MediaPlayer
             addPlaylist(p);
         }
 
-        public ObservableCollection<Playlist> Playlists
-        {
-            get { return this.playlists; }
-            set { this.playlists = value; }
-        }
+        public ObservableCollection<Playlist> Playlists { get; set; }
 
 
-        public void deletePlaylist()
+        public void deletePlaylist(string playlistName)
         {
             //hier moet een methode komen welke de gekozen playlist map verwijderd icl. inhoud.
         }
