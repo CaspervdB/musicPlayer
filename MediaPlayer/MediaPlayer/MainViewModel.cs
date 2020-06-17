@@ -24,7 +24,6 @@ namespace MediaPlayer
         public ICommand DeleteSong { get; set; }
         public ICommand ExportSong { get; set; }
         public ICommand EditSongContextMenuItem { get; set; }
-        public ICommand SaveEditSongButton { get; set; }
 
         public ICommand WindowClosing
         {
@@ -106,18 +105,6 @@ namespace MediaPlayer
             }
         }
 
-        public string EditArtistName
-        {
-            get { return CurrentSong.ArtistName; }
-            set { CurrentSong.ArtistName = value; }
-        }
-
-        public string EditSongTitle
-        {
-            get { return CurrentSong.SongTitle; }
-            set { CurrentSong.SongTitle = value; }
-        }
-
 
         public Song CurrentSong
         {
@@ -179,7 +166,6 @@ namespace MediaPlayer
             PreviousButton = new RelayCommand(() => previous());
             AddSongButton = new RelayCommand(() => addsong());
             EditSongContextMenuItem = new RelayCommand(() => editSong());
-            SaveEditSongButton = new RelayCommand(() => saveEditSong());
             DownloadCommand = new RelayCommand(async () => await DownloadSongAsync());
             CreatePlaylist = new RelayCommand(() => addPlaylist());
             DeletePlaylist = new RelayCommand(() => deletePlaylist());
@@ -188,12 +174,6 @@ namespace MediaPlayer
 
         }
 
-        private void saveEditSong()
-        {
-            Console.WriteLine("Hello im here");
-            Console.WriteLine(CurrentSong.SongTitle);
-            Console.WriteLine(CurrentSong.ArtistName);
-        }
 
         private void NotifyPropertyChanged([CallerMemberName] String propertyName = "")
         {
