@@ -53,6 +53,11 @@
         </ListBox>
         <ListBox x:Name="PlaylistSongs" ItemsSource="{Binding SelectedPlaylistSongs, Mode=TwoWay}" SelectedItem="{Binding CurrentSong}"
         Grid.Column="3" Grid.Row="1" Grid.RowSpan="4" Grid.ColumnSpan="2" Margin="0.333,7,0,12.667">
+            <ListBox.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="Edit" Command="{Binding EditSongContextMenuItem}"/>
+                </ContextMenu>
+            </ListBox.ContextMenu>
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch">

@@ -23,6 +23,9 @@ namespace MediaPlayer
         public ICommand AddSong { get; set; }
         public ICommand DeleteSong { get; set; }
         public ICommand ExportSong { get; set; }
+        public ICommand EditSongContextMenuItem { get; set; }
+        public ICommand SaveEditSongButton { get; set; }
+
         public ICommand WindowClosing
         {
             get
@@ -34,12 +37,11 @@ namespace MediaPlayer
             }
         }
         private string link;
-        private static Player player;
         private PlaylistManager playlistManager;
 
         public static Player getPlayerInstance()
         {
-            return player;
+            return Player.Instance;
         }
 
         public Playlist SelectedPlaylistInDownloadWindow { get; set; }
@@ -82,9 +84,9 @@ namespace MediaPlayer
         {
             get
             {
-                if (player.Songlist != null)
+                if (Player.Instance.Songlist != null)
                 {
-                    return player.Songlist;
+                    return Player.Instance.Songlist;
                 }
                 else
                 {
@@ -94,47 +96,63 @@ namespace MediaPlayer
             set
             {
 
-                player.Songlist.Clear();
+                Player.Instance.Songlist.Clear();
                 foreach (Song item in value)
                 {
-                    player.Songlist.Add(item);
+                    Player.Instance.Songlist.Add(item);
                 }
 
 
             }
         }
 
+        public string EditArtistName
+        {
+            get { return CurrentSong.ArtistName; }
+            set { CurrentSong.ArtistName = value; }
+        }
+
+        public string EditSongTitle
+        {
+            get { return CurrentSong.SongTitle; }
+            set { CurrentSong.SongTitle = value; }
+        }
+
+
         public Song CurrentSong
         {
-            get { return player.CurrentSong; }
+            get { return Player.Instance.CurrentSong; }
             set
             {
                 if(value == null)
                 {
                     return;
                 }
-                player.CurrentSong = value;
-                player.play();
-                /*
-                NotifyPropertyChanged();*/
+                Player.Instance.CurrentSong = value;
+                Player.Instance.play();
             }
         }
 
         private void previous()
         {
-            CurrentSong = player.getPreviousSong();
+            CurrentSong = Player.Instance.getPreviousSong();
             NotifyPropertyChanged("CurrentSong");
         }
 
         private void next()
         {
-            CurrentSong = player.getNextSong();
+            CurrentSong = Player.Instance.getNextSong();
             NotifyPropertyChanged("CurrentSong");
         }
         private void addsong()
         {
             AddMusicWindow addMusicWindow = new AddMusicWindow();
             addMusicWindow.ShowDialog();
+        }
+        private void editSong()
+        {
+            EditSongWindow esw = new EditSongWindow();
+            esw.ShowDialog();
         }
         private async Task DownloadSongAsync()
         {
@@ -145,19 +163,24 @@ namespace MediaPlayer
 
         public MainViewModel()
         {
-            PlayButton = new RelayCommand(() => player.play());
-            PauseButton = new RelayCommand(() => player.pause());
+            PlayButton = new RelayCommand(() => Player.Instance.play());
+            PauseButton = new RelayCommand(() => Player.Instance.pause());
             NextButton = new RelayCommand(() => next());
             PreviousButton = new RelayCommand(() => previous());
             AddSongButton = new RelayCommand(() => addsong());
+            EditSongContextMenuItem = new RelayCommand(() => editSong());
+            SaveEditSongButton = new RelayCommand(() => saveEditSong());
             DownloadCommand = new RelayCommand(async () => await DownloadSongAsync());
             playlistManager = new PlaylistManager();
-            player = new Player();
             Factory.createPlaylistCollection(this.playlistManager);
-            /*this.player.playlist = playlistCollection[0];*/
 
-            
+        }
 
+        private void saveEditSong()
+        {
+            Console.WriteLine("Hello im here");
+            Console.WriteLine(CurrentSong.SongTitle);
+            Console.WriteLine(CurrentSong.ArtistName);
         }
 
         private void NotifyPropertyChanged([CallerMemberName] String propertyName = "")
