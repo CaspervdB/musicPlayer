@@ -6,7 +6,7 @@ namespace MediaPlayer
     class Factory
     {
         public static string musicFolderPath = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName, @"music\");
-        public static void createPlaylistCollection(PlaylistManager pm)
+        public static void createPlaylistCollection()
         {
             string[] playlists = Directory.GetDirectories(musicFolderPath);
             foreach (string playlistPath in playlists)
@@ -20,7 +20,7 @@ namespace MediaPlayer
                     string songLocation = Path.Combine(playlistFolder, songName);
                     p.addSong(new Song(songLocation));
                 }
-                pm.addPlaylist(p);
+                PlaylistManager.Instance.addPlaylist(p);
             }
         }
     }

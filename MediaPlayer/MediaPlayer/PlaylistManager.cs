@@ -17,6 +17,25 @@ namespace MediaPlayer
 
         }
 
+        private static PlaylistManager instance = null;
+        private static readonly object padlock = new object();
+
+        public static PlaylistManager Instance
+        {
+            get
+            {
+                lock (padlock)
+                {
+                    if (instance == null)
+                    {
+                        instance = new PlaylistManager();
+                    }
+                    return instance;
+                }
+            }
+        }
+
+
         public void addPlaylist(Playlist p)
         {
             this.Playlists.Add(p);

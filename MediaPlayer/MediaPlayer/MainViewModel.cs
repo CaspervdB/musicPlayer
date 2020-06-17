@@ -31,17 +31,11 @@ namespace MediaPlayer
             {
                 return new RelayCommand<CancelEventArgs>(
                     (args) => {
-                        MainViewModel.getPlayerInstance().Dispose();
+                        Player.Instance.Dispose();
                     });
             }
         }
-        private string link;
-        private PlaylistManager playlistManager;
-
-        public static Player getPlayerInstance()
-        {
-            return Player.Instance;
-        }
+        private string link;              
 
         public Playlist SelectedPlaylistInDownloadWindow { get; set; }
         public string Link
@@ -59,10 +53,10 @@ namespace MediaPlayer
 
         public ObservableCollection<Playlist> PlaylistCollection
         {
-            get { return this.playlistManager.Playlists; }
+            get { return PlaylistManager.Instance.Playlists; }
             set
             {
-                this.playlistManager.Playlists = value;
+                PlaylistManager.Instance.Playlists = value;
             }
         }
         public Playlist SelectedPlaylist
@@ -169,8 +163,11 @@ namespace MediaPlayer
             DownloadCommand = new RelayCommand(async () => await DownloadSongAsync());
             CreatePlaylist = new RelayCommand(() => addPlaylist());
             DeletePlaylist = new RelayCommand(() => deletePlaylist());
-            playlistManager = new PlaylistManager();
-            Factory.createPlaylistCollection(this.playlistManager);
+            
+            //playlistManager = new PlaylistManager();
+            
+            
+            Factory.createPlaylistCollection();
 
         }
 

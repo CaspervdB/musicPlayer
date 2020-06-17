@@ -91,33 +91,39 @@ namespace MusicPlayer
                 if (File.Exists(songLocation))
                 {
                     this.currentSong = value;
-                    try
-                    {
-                        if (IsPlaying)
-                        {
-                            stop();
-                        }
-                        musicPlayer = new WaveOut()
-                        {
-                            DesiredLatency = 100
-                        };
-                        ActiveStream = new Mp3FileReader(songLocation);
-                        inputStream = new WaveChannel32(ActiveStream);
-                        this.visualizer = new Visualizer(fftDataSize);
-                        inputStream.Sample += inputStream_Sample;
-                        musicPlayer.Init(inputStream);
-                        ChannelLength = inputStream.TotalTime.TotalSeconds;
-                        GenerateWaveformData(songLocation);
-                    }
-                    catch
-                    {
-                        ActiveStream = null;
-                        isPlaying = false;
-                        Console.WriteLine("catched error");
-                        Console.ReadLine();
-                    }
+                    initializePlayerComponents();
+                    
                 }
 
+            }
+        }
+
+        public void initializePlayerComponents()
+        {
+            try
+            {
+                if (IsPlaying)
+                {
+                    stop();
+                }
+                musicPlayer = new WaveOut()
+                {
+                    DesiredLatency = 100
+                };
+                ActiveStream = new Mp3FileReader(this.currentSong.SongLocation);
+                inputStream = new WaveChannel32(ActiveStream);
+                this.visualizer = new Visualizer(fftDataSize);
+                inputStream.Sample += inputStream_Sample;
+                musicPlayer.Init(inputStream);
+                ChannelLength = inputStream.TotalTime.TotalSeconds;
+                GenerateWaveformData(this.currentSong.SongLocation);
+            }
+            catch
+            {
+                ActiveStream = null;
+                isPlaying = false;
+                Console.WriteLine("catched error");
+                Console.ReadLine();
             }
         }
 
@@ -125,7 +131,7 @@ namespace MusicPlayer
         {
             get { return isPlaying; }
             protected set
-           {
+            {
                 bool oldValue = isPlaying;
                 isPlaying = value;
                 if (oldValue != isPlaying)
@@ -252,7 +258,7 @@ namespace MusicPlayer
                 {
                     return;
                 }
-                
+
             }
             this.musicPlayer.Play();
             this.IsPlaying = true;

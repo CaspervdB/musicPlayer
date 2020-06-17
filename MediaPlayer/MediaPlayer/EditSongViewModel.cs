@@ -36,6 +36,7 @@ namespace MediaPlayer
         private void saveEditSong(Window window)
         {
             Player.Instance.CurrentSong.saveFileTag();
+            Player.Instance.initializePlayerComponents();
             CloseWindow(window);
         }
 

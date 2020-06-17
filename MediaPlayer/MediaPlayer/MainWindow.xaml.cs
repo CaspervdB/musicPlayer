@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MusicPlayer;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -26,8 +27,8 @@ namespace MediaPlayer
         {
             InitializeComponent();
 
-            waveformTimeline.RegisterSoundPlayer(MainViewModel.getPlayerInstance());
-            spectrumAnalyzer.RegisterSoundPlayer(MainViewModel.getPlayerInstance());
+            waveformTimeline.RegisterSoundPlayer(Player.Instance);
+            spectrumAnalyzer.RegisterSoundPlayer(Player.Instance);
         }
 
         //hier mag eigenlijk niks komen te staan ivm true mvvm!
