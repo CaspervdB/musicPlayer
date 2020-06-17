@@ -17,9 +17,9 @@ namespace MediaPlayer
     /// <summary>
     /// Interaction logic for Window1.xaml
     /// </summary>
-    public partial class Window1NewPlaylist : Window
+    public partial class Window1 : Window
     {
-        public NewPlaylist()
+        public Window1()
         {
             InitializeComponent();
         }

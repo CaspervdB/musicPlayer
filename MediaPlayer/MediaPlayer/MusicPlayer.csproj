@@ -118,6 +118,9 @@
     <Compile Include="AddMusicWindow.xaml.cs">
       <DependentUpon>AddMusicWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DeletePlaylist.xaml.cs">
+      <DependentUpon>DeletePlaylist.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Songlist.cs" />
     <Compile Include="MusicExport.cs" />
     <Compile Include="PlaylistManager.cs" />
@@ -126,6 +129,10 @@
       <DependentUpon>NewPlaylist.xaml</DependentUpon>
     </Compile>
     <Page Include="AddMusicWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DeletePlaylist.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

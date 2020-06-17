@@ -30,6 +30,11 @@ namespace MediaPlayer
             //eerst een map aanmaken met de naam van de meegegeven variabele.
             //daarna playlist object aanmaken.
             //daarna het gemaakte playlist object toevoegen.
+
+
+            string Path = Factory.musicFolderPath + newPlaylistName;
+            Console.WriteLine(Path);
+            Directory.CreateDirectory(Path);
             Playlist p = new Playlist(newPlaylistName);
             addPlaylist(p);
         }
@@ -41,9 +46,29 @@ namespace MediaPlayer
         }
 
 
-        public void deletePlaylist(Playlist p)
+        public void deletePlaylist(string playlistName)
         {
+            Playlist playlistToRemove = getPlaylistByName(playlistName);
+            if(playlistName != null)
+            {
+                this.Playlists.Remove(playlistToRemove);
 
+                string Path = Factory.musicFolderPath + playlistName;
+                Console.WriteLine(Path);
+                Directory.Delete(Path);
+            }
+        }
+
+        public Playlist getPlaylistByName(string name)
+        {
+            foreach(Playlist p in Playlists)
+            {
+                if(p.PlaylistName == name)
+                {
+                    return p;
+                }
+            }
+            return null;
         }
     }
 }
