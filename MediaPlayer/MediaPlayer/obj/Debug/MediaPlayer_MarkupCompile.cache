@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Gebruiker\Documents\Jochem\Jaar2\Periode_4\C#\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\
+C:\Users\caspe\Desktop\New folder\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\
 MediaPlayer
 none
 false
 DEBUG;TRACE
-C:\Users\Gebruiker\Documents\Jochem\Jaar2\Periode_4\C#\musicPlayer\MediaPlayer\MediaPlayer\App.xaml
-21403641018
+C:\Users\caspe\Desktop\New folder\musicPlayer\MediaPlayer\MediaPlayer\App.xaml
+4-978479180
 
-15829246961
-1371123260435
-AddMusicWindow.xaml;MainWindow.xaml;
+17163530272
+137-925404215
+AddMusicWindow.xaml;DeletePlaylist.xaml;MainWindow.xaml;NewPlaylist.xaml;
 
 False
 

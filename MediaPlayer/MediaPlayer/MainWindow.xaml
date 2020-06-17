@@ -78,6 +78,18 @@
                                   BorderThickness="1" Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="5" />
         <svl:SpectrumAnalyzer x:Name="spectrumAnalyzer"
                                   BarCount="16" Grid.Column="6" Grid.Row="5"/>
+        <DockPanel>
+            <Menu DockPanel.Dock="Top" Grid.Row="1" Grid.ColumnSpan="1" Grid.Column="5" Margin="0,0,-772,0" HorizontalAlignment="Left" Width="792">
+                <MenuItem Header="_Playlist">
+                    <MenuItem Header="_Create Playlist" Icon=" +" Command="{Binding createPlaylist}"/>
+                    <MenuItem Header="_Delete Playlist" Icon=" -" Command="{Binding deletePlaylist}" />
+                    <MenuItem Header="_Add Song" Icon=" +" Command="{Binding addSong}" />
+                    <MenuItem Header="_Delete Song" Icon=" -" Command="{Binding deleteSong}" />
+                </MenuItem>
+                <MenuItem Header="_Export" Command="{Binding exportSong}" />
+            </Menu>
+            <TextBox AcceptsReturn="True" />
+        </DockPanel>
 
 
         <Menu Grid.Column="0" Grid.ColumnSpan="8" Grid.Row="0">

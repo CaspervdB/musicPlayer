@@ -29,7 +29,7 @@ namespace MediaPlayer
             waveformTimeline.RegisterSoundPlayer(MainViewModel.getPlayerInstance());
             spectrumAnalyzer.RegisterSoundPlayer(MainViewModel.getPlayerInstance());
         }
-        
+
         //hier mag eigenlijk niks komen te staan ivm true mvvm!
 
     }

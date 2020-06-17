@@ -138,8 +138,8 @@ namespace MediaPlayer
         }
         private void editSong()
         {
-            EditSongWindow esw = new EditSongWindow();
-            esw.ShowDialog();
+           // EditSongWindow esw = new EditSongWindow();
+          //  esw.ShowDialog();
         }
         private async Task DownloadSongAsync()
         {
@@ -147,7 +147,17 @@ namespace MediaPlayer
             await musicExport.SaveAudioToDiskAsync(link, SelectedPlaylistInDownloadWindow);
         }
 
+        private void addPlaylist()
+        {
+            Window1 NewPlaylist = new Window1();
+            NewPlaylist.ShowDialog();
+        }
 
+        private void deletePlaylist()
+        {
+            DeletePlaylist deletePlaylist = new DeletePlaylist();
+            deletePlaylist.ShowDialog();
+        }
         public MainViewModel()
         {
             PlayButton = new RelayCommand(() => Player.Instance.play());
@@ -157,6 +167,8 @@ namespace MediaPlayer
             AddSongButton = new RelayCommand(() => addsong());
             EditSongContextMenuItem = new RelayCommand(() => editSong());
             DownloadCommand = new RelayCommand(async () => await DownloadSongAsync());
+            CreatePlaylist = new RelayCommand(() => addPlaylist());
+            DeletePlaylist = new RelayCommand(() => deletePlaylist());
             playlistManager = new PlaylistManager();
             Factory.createPlaylistCollection(this.playlistManager);
 
