@@ -63,6 +63,25 @@ namespace MusicPlayer
             waveformGenerateWorker.WorkerSupportsCancellation = true;
         }
 
+        private static Player instance = null;
+        private static readonly object padlock = new object();
+
+
+        public static Player Instance
+        {
+            get
+            {
+                lock (padlock)
+                {
+                    if (instance == null)
+                    {
+                        instance = new Player();
+                    }
+                    return instance;
+                }
+            }
+        }
+
         public Song CurrentSong
         {
             get { return this.currentSong; }
