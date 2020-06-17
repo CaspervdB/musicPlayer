@@ -67,7 +67,7 @@ namespace MediaPlayer
         {
             DownloadCommand = new RelayCommand(async () => await DownloadSongAsync());
             playlistManager = new PlaylistManager();
-            Factory.createPlaylistCollection(this.playlistManager);
+            Factory.createPlaylistCollection();
         }
 
         private void NotifyPropertyChanged([CallerMemberName] String propertyName = "")
