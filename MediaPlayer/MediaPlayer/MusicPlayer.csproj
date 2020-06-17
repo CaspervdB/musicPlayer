@@ -125,6 +125,10 @@
     <Compile Include="EditSongWindow.xaml.cs">
       <DependentUpon>EditSongWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ExportMp3ViewModel.cs" />
+    <Compile Include="ExportMp3Window.xaml.cs">
+      <DependentUpon>ExportMp3Window.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Songlist.cs" />
     <Compile Include="MusicExport.cs" />
     <Compile Include="PlaylistManager.cs" />
@@ -143,6 +147,10 @@
     <Page Include="EditSongWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ExportMp3Window.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>

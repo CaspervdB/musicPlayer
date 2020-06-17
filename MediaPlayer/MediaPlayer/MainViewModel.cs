@@ -158,6 +158,12 @@ namespace MediaPlayer
             DeletePlaylist deletePlaylist = new DeletePlaylist();
             deletePlaylist.ShowDialog();
         }
+
+        private void exportSong() 
+        {
+            ExportMp3Window export = new ExportMp3Window();
+            export.ShowDialog();
+        }
         public MainViewModel()
         {
             PlayButton = new RelayCommand(() => Player.Instance.play());
@@ -169,6 +175,7 @@ namespace MediaPlayer
             DownloadCommand = new RelayCommand(async () => await DownloadSongAsync());
             CreatePlaylist = new RelayCommand(() => addPlaylist());
             DeletePlaylist = new RelayCommand(() => deletePlaylist());
+            ExportSong = new RelayCommand(() => exportSong());
             playlistManager = new PlaylistManager();
             Factory.createPlaylistCollection(this.playlistManager);
 

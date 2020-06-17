@@ -44,5 +44,29 @@ namespace MediaPlayer
              //TODO: actual working error
             }
         }
+
+        public async Task SaveAudioExternal(String Location, String link)
+        {
+            var youtube = new YoutubeClient();
+            try
+            {
+                Video video = await youtube.Videos.GetAsync(link);
+                string legalTitle = string.Join("", video.Title.Split(Path.GetInvalidFileNameChars())); // Removes all possible illegal filename characetrs from the title
+                StreamManifest streamManifest = await youtube.Videos.Streams.GetManifestAsync(link);
+                IStreamInfo streamInfo = streamManifest.GetAudioOnly().WithHighestBitrate();
+                if (streamInfo != null)
+                {
+                    // Get the actual stream
+                    var stream = await youtube.Videos.Streams.GetAsync(streamInfo);
+                    // Download the stream to file
+                    string songlocation = $"{Location + legalTitle}.mp3";
+                    await youtube.Videos.Streams.DownloadAsync(streamInfo, songlocation);
+                }
+            }
+            catch
+            {
+                //TODO: actual working error
+            }
+        }
     }
 }
