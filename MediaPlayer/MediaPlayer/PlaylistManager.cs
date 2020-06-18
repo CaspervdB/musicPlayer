@@ -6,6 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace MediaPlayer
 {
@@ -41,47 +42,49 @@ namespace MediaPlayer
             this.Playlists.Add(p);
         }
 
-        public void createPlaylist(string newPlaylistName)
+        public void createPlaylist(Playlist p)
         {
             //hier moet een methode komen welke een map aanmaakt in de playlist maps en daarna de factory opnieuw aanroept.
 
             //eerst een map aanmaken met de naam van de meegegeven variabele.
             //daarna playlist object aanmaken.
             //daarna het gemaakte playlist object toevoegen.
+            if (playlistExists(p))
+            {
+                MessageBox.Show("Er bestaat al een playlist met deze naam.");
+                return;
+            }
 
-
-            string Path = Factory.musicFolderPath + newPlaylistName;
+            string Path = Factory.musicFolderPath + p.PlaylistName;
             Console.WriteLine(Path);
             Directory.CreateDirectory(Path);
-            Playlist p = new Playlist(newPlaylistName);
-            addPlaylist(p);
+            this.Playlists.Add(p);
         }
 
         public ObservableCollection<Playlist> Playlists { get; set; }
 
-        public void deletePlaylist(string playlistName)
+        public void deletePlaylist(Playlist p)
         {
-            Playlist playlistToRemove = getPlaylistByName(playlistName);
-            if(playlistName != null)
+            if(p != null)
             {
-                this.Playlists.Remove(playlistToRemove);
+                this.Playlists.Remove(p);
 
-                string Path = Factory.musicFolderPath + playlistName;
+                string Path = Factory.musicFolderPath + p.PlaylistName;
                 Console.WriteLine(Path);
-                Directory.Delete(Path);
+                Directory.Delete(Path, true);
             }
         }
 
-        public Playlist getPlaylistByName(string name)
+        public bool playlistExists(Playlist playlist)
         {
             foreach(Playlist p in Playlists)
             {
-                if(p.PlaylistName == name)
+                if(p.PlaylistName == playlist.PlaylistName)
                 {
-                    return p;
+                    return true;
                 }
             }
-            return null;
+            return false;
         }
     }
 }

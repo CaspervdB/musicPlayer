@@ -14,10 +14,11 @@ namespace MediaPlayer
     {
         public event PropertyChangedEventHandler PropertyChanged;
         public ICommand DownloadCommand { get; set; }
+        //public ICommand SaveEditSongButton { get; set; }
         private string link;
         private string error;
         public Playlist SelectedPlaylistInDownloadWindow { get; set; }
-        private PlaylistManager playlistManager;
+        
         public string Link
         {
             get { return link; }
@@ -44,35 +45,60 @@ namespace MediaPlayer
         }
         public ObservableCollection<Playlist> PlaylistCollection
         {
-            get { return this.playlistManager.Playlists; }
-            set
-            {
-                this.playlistManager.Playlists = value;
-            }
+            get { return PlaylistManager.Instance.Playlists; }            
         }
         private async Task DownloadSongAsync()
         {
-            MusicExport musicExport = new MusicExport();
+            if (link == "" && SelectedPlaylistInDownloadWindow == null)
+            {
+                MessageBox.Show("Voer een URL in en kies een playlist.");
+                return;
+            }
+
+            if (link == "")
+            {
+                MessageBox.Show("Voer een URL in.");
+                return;
+            }
+
+            if (SelectedPlaylistInDownloadWindow == null)
+            {
+                MessageBox.Show("Selecteer een playlist.");
+                return;
+            }            
+            
             try
             {
+                MusicExport musicExport = new MusicExport();
                 await musicExport.SaveAudioToDiskAsync(link, SelectedPlaylistInDownloadWindow);
+                MessageBox.Show("Downloaden voltooid.");
+
             }
             catch
             {
-                error = "Invalid URL";
+                MessageBox.Show("De opgegeven URL is ongeldig.");
             }
         }
 
         public AddMusicViewModel()
         {
             DownloadCommand = new RelayCommand(async () => await DownloadSongAsync());
-            playlistManager = new PlaylistManager();
-            Factory.createPlaylistCollection();
-        }
+            
+
+        //Factory.createPlaylistCollection();
+    }
 
         private void NotifyPropertyChanged([CallerMemberName] String propertyName = "")
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        private void CloseWindow(Window window)
+        {
+            if (window != null)
+            {
+                window.Close();
+            }
         }
     }
 }

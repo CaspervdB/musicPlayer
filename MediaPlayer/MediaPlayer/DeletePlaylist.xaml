@@ -7,12 +7,12 @@
         mc:Ignorable="d"
         Title="DeletePlaylist" Height="328.83" Width="478.105">
     <Window.DataContext>
-        <local:MainViewModel/>
+        <local:DeletePlaylistViewModel/>
     </Window.DataContext>
     <Grid>
-        <ComboBox DisplayMemberPath="PlaylistName" Name="ComboBox" ItemsSource="{Binding PlaylistCollection}" SelectedItem="{Binding SelectedPlaylistInDeleteWindow}" HorizontalAlignment="Left" Margin="193,73,0,0" VerticalAlignment="Top" Width="211"/>
+        <ComboBox DisplayMemberPath="PlaylistName" Name="ComboBox" ItemsSource="{Binding Playlists}" SelectedItem="{Binding SelectedPlaylistInDeleteWindow}" HorizontalAlignment="Left" Margin="193,73,0,0" VerticalAlignment="Top" Width="211"/>
 
-        <Button Content="Delete Playlist" HorizontalAlignment="Left" VerticalAlignment="Top" Width="363" Margin="41,186,0,0" Height="45" Command="{Binding DeleteCommand}"/>
+        <Button Content="Delete Playlist" HorizontalAlignment="Left" VerticalAlignment="Top" Width="363" Margin="41,186,0,0" Height="45" Command="{Binding DeletePlaylist}"/>
         <Label Content="Select a playlist to delete: " HorizontalAlignment="Left" Margin="41,69,0,0" VerticalAlignment="Top"/>
     </Grid>
 </Window>
