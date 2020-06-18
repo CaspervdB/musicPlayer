@@ -5,17 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MediaPlayer"
         mc:Ignorable="d"
-        Title="ExportMp3Window" Height="196.563" Width="238.248">
+        Title="ExportMp3Window" Height="219.086" Width="238.248">
     <Window.DataContext>
         <local:ExportMp3ViewModel/>
     </Window.DataContext>
     <Grid>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="10,96,0,0" TextWrapping="Wrap" Text="{Binding YoutubeLink}" VerticalAlignment="Top" Width="200"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="10,126,0,0" TextWrapping="Wrap" Text="{Binding YoutubeLink}" VerticalAlignment="Top" Width="200"/>
         <Label Content="File Location" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
-        <Label Content="Youtube Link" HorizontalAlignment="Left" Margin="10,65,0,0" VerticalAlignment="Top"/>
-        <Button Content="Download" Command="{Binding DownloadButton}" HorizontalAlignment="Left" Margin="10,135,0,0" VerticalAlignment="Top" Width="200"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="10,41,0,0" TextWrapping="Wrap" Text="{Binding FileLocation}" VerticalAlignment="Top" Width="200"/>
-        <!--<Button Content="File Location" Command="{Binding FileLocationButton}" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top" Width="200"/>-->
-        
+        <Label Content="Youtube Link" HorizontalAlignment="Left" Margin="10,95,0,0" VerticalAlignment="Top"/>
+        <Button Content="Download" Command="{Binding DownloadButton}" HorizontalAlignment="Left" Margin="10,154,0,0" VerticalAlignment="Top" Width="200"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="10,67,0,0" TextWrapping="Wrap" Text="{Binding FileLocation}" VerticalAlignment="Top" Width="200"/>
+        <Button Content="File Location" Command="{Binding FileLocationButton}" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top" Width="200" Height="21"/>
     </Grid>
 </Window>

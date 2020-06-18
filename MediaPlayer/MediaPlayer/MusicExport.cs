@@ -17,9 +17,9 @@ namespace MediaPlayer
     {
         public async Task SaveAudioToDiskAsync(String link, Playlist playList)
         {
-            var source = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName, @"music\");
+            string source = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName, @"music\");
             playList.PlaylistName += @"\"; //playlistname is the foldername
-            var youtube = new YoutubeClient();
+            YoutubeClient youtube = new YoutubeClient();
                 Video video = await youtube.Videos.GetAsync(link);
                 string legalTitle = string.Join("", video.Title.Split(Path.GetInvalidFileNameChars())); // Removes all possible illegal filename characetrs from the title
                 StreamManifest streamManifest = await youtube.Videos.Streams.GetManifestAsync(link);
@@ -41,9 +41,11 @@ namespace MediaPlayer
 
         public async Task SaveAudioExternal(String Location, String link)
         {
-            var youtube = new YoutubeClient();
+            YoutubeClient youtube = new YoutubeClient();
+            Location += @"\";
             try
             {
+
                 Video video = await youtube.Videos.GetAsync(link);
                 string legalTitle = string.Join("", video.Title.Split(Path.GetInvalidFileNameChars())); // Removes all possible illegal filename characetrs from the title
                 StreamManifest streamManifest = await youtube.Videos.Streams.GetManifestAsync(link);
