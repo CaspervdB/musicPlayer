@@ -119,9 +119,14 @@
     <Compile Include="AddMusicWindow.xaml.cs">
       <DependentUpon>AddMusicWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="CreatePlaylist.xaml.cs">
+      <DependentUpon>CreatePlaylist.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CreatePlaylistViewModel.cs" />
     <Compile Include="DeletePlaylist.xaml.cs">
       <DependentUpon>DeletePlaylist.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DeletePlaylistViewModel.cs" />
     <Compile Include="EditSongViewModel.cs" />
     <Compile Include="EditSongWindow.xaml.cs">
       <DependentUpon>EditSongWindow.xaml</DependentUpon>
@@ -134,12 +139,13 @@
     <Compile Include="MusicExport.cs" />
     <Compile Include="PlaylistManager.cs" />
     <Compile Include="Visualizer.cs" />
-    <Compile Include="NewPlaylist.xaml.cs">
-      <DependentUpon>NewPlaylist.xaml</DependentUpon>
-    </Compile>
     <Page Include="AddMusicWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CreatePlaylist.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="DeletePlaylist.xaml">
       <SubType>Designer</SubType>
@@ -170,10 +176,6 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="NewPlaylist.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
