@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace MediaPlayer
 {
     /// <summary>
-    /// Interaction logic for Window1.xaml
+    /// Interaction logic for CreatePlaylist.xaml
     /// </summary>
-    public partial class Window1 : Window
+    public partial class CreatePlaylist : Window
     {
-        public Window1()
+        public CreatePlaylist()
         {
             InitializeComponent();
         }

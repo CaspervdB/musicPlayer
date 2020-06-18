@@ -16,10 +16,9 @@ namespace MediaPlayer
         public ICommand PauseButton { get; set; }
         public ICommand NextButton { get; set; }
         public ICommand PreviousButton { get; set; }
-        public ICommand AddSongButton { get; set; }
+        public ICommand AddSong { get; set; }
         public ICommand CreatePlaylist { get; set; }
         public ICommand DeletePlaylist { get; set; }
-        public ICommand AddSong { get; set; }
         public ICommand DeleteSong { get; set; }
         public ICommand ExportSong { get; set; }
         public ICommand EditSongContextMenuItem { get; set; }
@@ -34,9 +33,7 @@ namespace MediaPlayer
                     });
             }
         }
-
-        private string link;
-        
+               
         public ObservableCollection<Playlist> PlaylistCollection
         {
             get { return PlaylistManager.Instance.Playlists; }
@@ -123,7 +120,7 @@ namespace MediaPlayer
         }
         private void addPlaylist()
         {
-            Window1 NewPlaylist = new Window1();
+            CreatePlaylist NewPlaylist = new CreatePlaylist();
             NewPlaylist.ShowDialog();
         }
 
@@ -144,7 +141,7 @@ namespace MediaPlayer
             PauseButton = new RelayCommand(() => Player.Instance.pause());
             NextButton = new RelayCommand(() => next());
             PreviousButton = new RelayCommand(() => previous());
-            AddSongButton = new RelayCommand(() => addsong());
+            AddSong = new RelayCommand(() => addsong());
             EditSongContextMenuItem = new RelayCommand(() => editSong());
             CreatePlaylist = new RelayCommand(() => addPlaylist());
             DeletePlaylist = new RelayCommand(() => deletePlaylist());
