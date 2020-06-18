@@ -16,7 +16,7 @@ namespace MediaPlayer
 {
     class MusicExport
     {
-        public async Task SaveAudioToDiskAsync(String link, Playlist playList)
+        public async Task SaveAudioToDiskAsync(string link, Playlist playList)
         {
             string source = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName, @"music\");
             playList.PlaylistName += @"\"; //playlistname is the foldername
@@ -43,7 +43,7 @@ namespace MediaPlayer
 
         }
 
-        public async Task SaveAudioExternal(String Location, String link)
+        public async Task SaveAudioExternal(string Location, string link)
         {
             YoutubeClient youtube = new YoutubeClient();
             Location += @"\";
