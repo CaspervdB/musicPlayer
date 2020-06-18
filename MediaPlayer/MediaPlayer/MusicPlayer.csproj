@@ -56,6 +56,9 @@
     <Reference Include="NAudio">
       <HintPath>..\..\..\..\..\..\musicPlayer\MediaPlayer\MediaPlayer\NAudio.dll</HintPath>
     </Reference>
+    <Reference Include="NReco.VideoConverter, Version=1.1.4.0, Culture=neutral, PublicKeyToken=395ccb334978a0cd, processorArchitecture=MSIL">
+      <HintPath>..\packages\NReco.VideoConverter.1.1.4\lib\net40\NReco.VideoConverter.dll</HintPath>
+    </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />

@@ -12,42 +12,28 @@ using System.Windows.Input;
 
 namespace MediaPlayer
 {
-    class ExportMp3ViewModel
+    class ExportMp3ViewModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
         public ICommand DownloadButton { get; set; }
         public ICommand FileLocationButton { get; set; }
 
-        //private String link;
-        private String Location;
+        private String fileLocation;
 
-        /*public string YoutubeLink
-        {
-            get { return link; }
-            set
-            {
-                if (!string.Equals(this.link, value))
-                {
-                    this.link = value;
-                }
-            }
-        }*/
 
         public string YoutubeLink { get; set; }
         public string FileLocation
         {
-            get { return Location; }
+            get { return this.fileLocation; }
             set
             {
-                if (!string.Equals(this.Location, value))
+                if (!string.Equals(this.fileLocation, value))
                 {
-                    this.Location = value;
+                    this.fileLocation = value;
                     NotifyPropertyChanged("FileLocation");
                 }
             }
         }
-
-        //public string FileLocation { get; set; }
 
         private async Task DowloadSongExternal()
         {

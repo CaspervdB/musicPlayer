@@ -1,206 +1,14 @@
-C:\Users\Sietze Koonstra\source\repos\MediaPlayer\MediaPlayer\bin\Debug\MediaPlayer.exe.config
-C:\Users\Sietze Koonstra\source\repos\MediaPlayer\MediaPlayer\bin\Debug\MediaPlayer.exe
-C:\Users\Sietze Koonstra\source\repos\MediaPlayer\MediaPlayer\bin\Debug\MediaPlayer.pdb
-C:\Users\Sietze Koonstra\source\repos\MediaPlayer\MediaPlayer\bin\Debug\NAudio.dll
-C:\Users\Sietze Koonstra\source\repos\MediaPlayer\MediaPlayer\bin\Debug\WPFSoundVisualizationLib.dll
-C:\Users\Sietze Koonstra\source\repos\MediaPlayer\MediaPlayer\bin\Debug\WPFSoundVisualizationLib.pdb
-C:\Users\Sietze Koonstra\source\repos\MediaPlayer\MediaPlayer\bin\Debug\WPFSoundVisualizationLib.xml
-C:\Users\Sietze Koonstra\source\repos\MediaPlayer\MediaPlayer\obj\Debug\MusicPlayer.csprojAssemblyReference.cache
-C:\Users\Sietze Koonstra\source\repos\MediaPlayer\MediaPlayer\obj\Debug\MainWindow.g.cs
-C:\Users\Sietze Koonstra\source\repos\MediaPlayer\MediaPlayer\obj\Debug\App.g.cs
-C:\Users\Sietze Koonstra\source\repos\MediaPlayer\MediaPlayer\obj\Debug\MediaPlayer_MarkupCompile.cache
-C:\Users\Sietze Koonstra\source\repos\MediaPlayer\MediaPlayer\obj\Debug\MediaPlayer_MarkupCompile.lref
-C:\Users\Sietze Koonstra\source\repos\MediaPlayer\MediaPlayer\obj\Debug\MainWindow.baml
-C:\Users\Sietze Koonstra\source\repos\MediaPlayer\MediaPlayer\obj\Debug\MediaPlayer.g.resources
-C:\Users\Sietze Koonstra\source\repos\MediaPlayer\MediaPlayer\obj\Debug\MediaPlayer.Properties.Resources.resources
-C:\Users\Sietze Koonstra\source\repos\MediaPlayer\MediaPlayer\obj\Debug\MusicPlayer.csproj.GenerateResource.cache
-C:\Users\Sietze Koonstra\source\repos\MediaPlayer\MediaPlayer\obj\Debug\MusicPlayer.csproj.CoreCompileInputs.cache
-C:\Users\Sietze Koonstra\source\repos\MediaPlayer\MediaPlayer\obj\Debug\MusicPlayer.csproj.CopyComplete
-C:\Users\Sietze Koonstra\source\repos\MediaPlayer\MediaPlayer\obj\Debug\MediaPlayer.exe
-C:\Users\Sietze Koonstra\source\repos\MediaPlayer\MediaPlayer\obj\Debug\MediaPlayer.pdb
-C:\Users\Sietze Koonstra\source\repos\MediaPlayer\MediaPlayer\obj\Debug\GeneratedInternalTypeHelper.g.cs
 C:\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\MediaPlayer.exe.config
 C:\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\MediaPlayer.exe
 C:\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\MediaPlayer.pdb
-C:\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\NAudio.dll
-C:\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\WPFSoundVisualizationLib.dll
-C:\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\MusicPlayer.csprojAssemblyReference.cache
-C:\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\MainWindow.g.cs
-C:\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\App.g.cs
-C:\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\GeneratedInternalTypeHelper.g.cs
-C:\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\MediaPlayer_MarkupCompile.cache
-C:\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\MediaPlayer_MarkupCompile.lref
-C:\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\MainWindow.baml
-C:\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\MediaPlayer.g.resources
-C:\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\MediaPlayer.Properties.Resources.resources
-C:\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\MusicPlayer.csproj.GenerateResource.cache
-C:\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\MusicPlayer.csproj.CoreCompileInputs.cache
-C:\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\MusicPlayer.csproj.CopyComplete
-C:\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\MediaPlayer.exe
-C:\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\MediaPlayer.pdb
+C:\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\AngleSharp.dll
 C:\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\CommonServiceLocator.dll
 C:\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\GalaSoft.MvvmLight.dll
 C:\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\GalaSoft.MvvmLight.Extras.dll
 C:\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\GalaSoft.MvvmLight.Platform.dll
-C:\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\System.Windows.Interactivity.dll
-C:\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\GalaSoft.MvvmLight.pdb
-C:\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\GalaSoft.MvvmLight.xml
-C:\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\GalaSoft.MvvmLight.Extras.pdb
-C:\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\GalaSoft.MvvmLight.Extras.xml
-C:\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\GalaSoft.MvvmLight.Platform.pdb
-C:\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\GalaSoft.MvvmLight.Platform.xml
-C:\Users\Gebruiker\Documents\Jochem\Jaar2\Periode_4\C#\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\MediaPlayer.exe.config
-C:\Users\Gebruiker\Documents\Jochem\Jaar2\Periode_4\C#\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\MediaPlayer.exe
-C:\Users\Gebruiker\Documents\Jochem\Jaar2\Periode_4\C#\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\MediaPlayer.pdb
-C:\Users\Gebruiker\Documents\Jochem\Jaar2\Periode_4\C#\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\CommonServiceLocator.dll
-C:\Users\Gebruiker\Documents\Jochem\Jaar2\Periode_4\C#\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\GalaSoft.MvvmLight.dll
-C:\Users\Gebruiker\Documents\Jochem\Jaar2\Periode_4\C#\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\GalaSoft.MvvmLight.Extras.dll
-C:\Users\Gebruiker\Documents\Jochem\Jaar2\Periode_4\C#\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\GalaSoft.MvvmLight.Platform.dll
-C:\Users\Gebruiker\Documents\Jochem\Jaar2\Periode_4\C#\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\System.Windows.Interactivity.dll
-C:\Users\Gebruiker\Documents\Jochem\Jaar2\Periode_4\C#\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\GalaSoft.MvvmLight.pdb
-C:\Users\Gebruiker\Documents\Jochem\Jaar2\Periode_4\C#\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\GalaSoft.MvvmLight.xml
-C:\Users\Gebruiker\Documents\Jochem\Jaar2\Periode_4\C#\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\GalaSoft.MvvmLight.Extras.pdb
-C:\Users\Gebruiker\Documents\Jochem\Jaar2\Periode_4\C#\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\GalaSoft.MvvmLight.Extras.xml
-C:\Users\Gebruiker\Documents\Jochem\Jaar2\Periode_4\C#\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\GalaSoft.MvvmLight.Platform.pdb
-C:\Users\Gebruiker\Documents\Jochem\Jaar2\Periode_4\C#\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\GalaSoft.MvvmLight.Platform.xml
-C:\Users\Gebruiker\Documents\Jochem\Jaar2\Periode_4\C#\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\MusicPlayer.csprojAssemblyReference.cache
-C:\Users\Gebruiker\Documents\Jochem\Jaar2\Periode_4\C#\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\MainWindow.g.cs
-C:\Users\Gebruiker\Documents\Jochem\Jaar2\Periode_4\C#\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\App.g.cs
-C:\Users\Gebruiker\Documents\Jochem\Jaar2\Periode_4\C#\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\GeneratedInternalTypeHelper.g.cs
-C:\Users\Gebruiker\Documents\Jochem\Jaar2\Periode_4\C#\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\MediaPlayer_MarkupCompile.cache
-C:\Users\Gebruiker\Documents\Jochem\Jaar2\Periode_4\C#\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\MediaPlayer_MarkupCompile.lref
-C:\Users\Gebruiker\Documents\Jochem\Jaar2\Periode_4\C#\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\MainWindow.baml
-C:\Users\Gebruiker\Documents\Jochem\Jaar2\Periode_4\C#\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\MediaPlayer.g.resources
-C:\Users\Gebruiker\Documents\Jochem\Jaar2\Periode_4\C#\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\MediaPlayer.Properties.Resources.resources
-C:\Users\Gebruiker\Documents\Jochem\Jaar2\Periode_4\C#\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\MusicPlayer.csproj.GenerateResource.cache
-C:\Users\Gebruiker\Documents\Jochem\Jaar2\Periode_4\C#\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\MusicPlayer.csproj.CoreCompileInputs.cache
-C:\Users\Gebruiker\Documents\Jochem\Jaar2\Periode_4\C#\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\MusicPlayer.csproj.CopyComplete
-C:\Users\Gebruiker\Documents\Jochem\Jaar2\Periode_4\C#\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\MediaPlayer.exe
-C:\Users\Gebruiker\Documents\Jochem\Jaar2\Periode_4\C#\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\MediaPlayer.pdb
-C:\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\TagLibSharp.dll
-C:\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\TagLibSharp.pdb
-C:\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\TagLibSharp.xml
-C:\musicPlayer - kopie\MediaPlayer\MediaPlayer\obj\Debug\MainWindow.g.cs
-C:\musicPlayer - kopie\MediaPlayer\MediaPlayer\obj\Debug\App.g.cs
-C:\musicPlayer - kopie\MediaPlayer\MediaPlayer\obj\Debug\GeneratedInternalTypeHelper.g.cs
-C:\musicPlayer - kopie\MediaPlayer\MediaPlayer\obj\Debug\MediaPlayer_MarkupCompile.cache
-C:\musicPlayer - kopie\MediaPlayer\MediaPlayer\obj\Debug\MediaPlayer_MarkupCompile.lref
-C:\musicPlayer - kopie\MediaPlayer\MediaPlayer\bin\Debug\MediaPlayer.exe.config
-C:\musicPlayer - kopie\MediaPlayer\MediaPlayer\bin\Debug\MediaPlayer.exe
-C:\musicPlayer - kopie\MediaPlayer\MediaPlayer\bin\Debug\MediaPlayer.pdb
-C:\musicPlayer - kopie\MediaPlayer\MediaPlayer\bin\Debug\CommonServiceLocator.dll
-C:\musicPlayer - kopie\MediaPlayer\MediaPlayer\bin\Debug\GalaSoft.MvvmLight.dll
-C:\musicPlayer - kopie\MediaPlayer\MediaPlayer\bin\Debug\GalaSoft.MvvmLight.Extras.dll
-C:\musicPlayer - kopie\MediaPlayer\MediaPlayer\bin\Debug\GalaSoft.MvvmLight.Platform.dll
-C:\musicPlayer - kopie\MediaPlayer\MediaPlayer\bin\Debug\NAudio.dll
-C:\musicPlayer - kopie\MediaPlayer\MediaPlayer\bin\Debug\System.Windows.Interactivity.dll
-C:\musicPlayer - kopie\MediaPlayer\MediaPlayer\bin\Debug\TagLibSharp.dll
-C:\musicPlayer - kopie\MediaPlayer\MediaPlayer\bin\Debug\WPFSoundVisualizationLib.dll
-C:\musicPlayer - kopie\MediaPlayer\MediaPlayer\bin\Debug\GalaSoft.MvvmLight.pdb
-C:\musicPlayer - kopie\MediaPlayer\MediaPlayer\bin\Debug\GalaSoft.MvvmLight.xml
-C:\musicPlayer - kopie\MediaPlayer\MediaPlayer\bin\Debug\GalaSoft.MvvmLight.Extras.pdb
-C:\musicPlayer - kopie\MediaPlayer\MediaPlayer\bin\Debug\GalaSoft.MvvmLight.Extras.xml
-C:\musicPlayer - kopie\MediaPlayer\MediaPlayer\bin\Debug\GalaSoft.MvvmLight.Platform.pdb
-C:\musicPlayer - kopie\MediaPlayer\MediaPlayer\bin\Debug\GalaSoft.MvvmLight.Platform.xml
-C:\musicPlayer - kopie\MediaPlayer\MediaPlayer\bin\Debug\TagLibSharp.pdb
-C:\musicPlayer - kopie\MediaPlayer\MediaPlayer\bin\Debug\TagLibSharp.xml
-C:\musicPlayer - kopie\MediaPlayer\MediaPlayer\obj\Debug\MusicPlayer.csprojAssemblyReference.cache
-C:\musicPlayer - kopie\MediaPlayer\MediaPlayer\obj\Debug\MainWindow.baml
-C:\musicPlayer - kopie\MediaPlayer\MediaPlayer\obj\Debug\MediaPlayer.g.resources
-C:\musicPlayer - kopie\MediaPlayer\MediaPlayer\obj\Debug\MediaPlayer.Properties.Resources.resources
-C:\musicPlayer - kopie\MediaPlayer\MediaPlayer\obj\Debug\MusicPlayer.csproj.GenerateResource.cache
-C:\musicPlayer - kopie\MediaPlayer\MediaPlayer\obj\Debug\MusicPlayer.csproj.CoreCompileInputs.cache
-C:\musicPlayer - kopie\MediaPlayer\MediaPlayer\obj\Debug\MusicPlayer.csproj.CopyComplete
-C:\musicPlayer - kopie\MediaPlayer\MediaPlayer\obj\Debug\MediaPlayer.exe
-C:\musicPlayer - kopie\MediaPlayer\MediaPlayer\obj\Debug\MediaPlayer.pdb
-C:\Users\Gebruiker\Documents\Jochem\Jaar2\Periode_4\C#\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\TagLibSharp.dll
-C:\Users\Gebruiker\Documents\Jochem\Jaar2\Periode_4\C#\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\WPFSoundVisualizationLib.dll
-C:\Users\Gebruiker\Documents\Jochem\Jaar2\Periode_4\C#\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\TagLibSharp.pdb
-C:\Users\Gebruiker\Documents\Jochem\Jaar2\Periode_4\C#\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\TagLibSharp.xml
-C:\xampp\htdocs\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\MediaPlayer.exe.config
-C:\xampp\htdocs\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\MediaPlayer.exe
-C:\xampp\htdocs\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\MediaPlayer.pdb
-C:\xampp\htdocs\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\AngleSharp.dll
-C:\xampp\htdocs\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\CommonServiceLocator.dll
-C:\xampp\htdocs\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\GalaSoft.MvvmLight.dll
-C:\xampp\htdocs\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\GalaSoft.MvvmLight.Extras.dll
-C:\xampp\htdocs\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\GalaSoft.MvvmLight.Platform.dll
-C:\xampp\htdocs\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
-C:\xampp\htdocs\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\System.Buffers.dll
-C:\xampp\htdocs\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\System.Memory.dll
-C:\xampp\htdocs\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\System.Numerics.Vectors.dll
-C:\xampp\htdocs\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
-C:\xampp\htdocs\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\System.Text.Encoding.CodePages.dll
-C:\xampp\htdocs\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\System.Text.Encodings.Web.dll
-C:\xampp\htdocs\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\System.Text.Json.dll
-C:\xampp\htdocs\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\System.Threading.Tasks.Extensions.dll
-C:\xampp\htdocs\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\System.ValueTuple.dll
-C:\xampp\htdocs\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\System.Windows.Interactivity.dll
-C:\xampp\htdocs\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\TagLibSharp.dll
-C:\xampp\htdocs\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\WPFSoundVisualizationLib.dll
-C:\xampp\htdocs\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\YoutubeExplode.dll
-C:\xampp\htdocs\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\AngleSharp.xml
-C:\xampp\htdocs\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\GalaSoft.MvvmLight.pdb
-C:\xampp\htdocs\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\GalaSoft.MvvmLight.xml
-C:\xampp\htdocs\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\GalaSoft.MvvmLight.Extras.pdb
-C:\xampp\htdocs\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\GalaSoft.MvvmLight.Extras.xml
-C:\xampp\htdocs\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\GalaSoft.MvvmLight.Platform.pdb
-C:\xampp\htdocs\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\GalaSoft.MvvmLight.Platform.xml
-C:\xampp\htdocs\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
-C:\xampp\htdocs\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\System.Buffers.xml
-C:\xampp\htdocs\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\System.Memory.xml
-C:\xampp\htdocs\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\System.Numerics.Vectors.xml
-C:\xampp\htdocs\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
-C:\xampp\htdocs\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\System.Text.Encodings.Web.xml
-C:\xampp\htdocs\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\System.Text.Json.xml
-C:\xampp\htdocs\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\System.Threading.Tasks.Extensions.xml
-C:\xampp\htdocs\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\System.ValueTuple.xml
-C:\xampp\htdocs\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\TagLibSharp.pdb
-C:\xampp\htdocs\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\TagLibSharp.xml
-C:\xampp\htdocs\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\YoutubeExplode.xml
-C:\xampp\htdocs\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\MusicPlayer.csprojAssemblyReference.cache
-C:\xampp\htdocs\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\AddMusicWindow.g.cs
-C:\xampp\htdocs\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\MainWindow.g.cs
-C:\xampp\htdocs\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\App.g.cs
-C:\xampp\htdocs\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\GeneratedInternalTypeHelper.g.cs
-C:\xampp\htdocs\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\MediaPlayer_MarkupCompile.cache
-C:\xampp\htdocs\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\MediaPlayer_MarkupCompile.lref
-C:\xampp\htdocs\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\AddMusicWindow.baml
-C:\xampp\htdocs\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\MainWindow.baml
-C:\xampp\htdocs\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\MediaPlayer.g.resources
-C:\xampp\htdocs\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\MediaPlayer.Properties.Resources.resources
-C:\xampp\htdocs\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\MusicPlayer.csproj.GenerateResource.cache
-C:\xampp\htdocs\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\MusicPlayer.csproj.CoreCompileInputs.cache
-C:\xampp\htdocs\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\MusicPlayer.csproj.CopyComplete
-C:\xampp\htdocs\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\MediaPlayer.exe
-C:\xampp\htdocs\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\MediaPlayer.pdb
-C:\Users\Gebruiker\Documents\Jochem\Jaar2\Periode_4\C#\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\AngleSharp.dll
-C:\Users\Gebruiker\Documents\Jochem\Jaar2\Periode_4\C#\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
-C:\Users\Gebruiker\Documents\Jochem\Jaar2\Periode_4\C#\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\System.Buffers.dll
-C:\Users\Gebruiker\Documents\Jochem\Jaar2\Periode_4\C#\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\System.Memory.dll
-C:\Users\Gebruiker\Documents\Jochem\Jaar2\Periode_4\C#\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\System.Numerics.Vectors.dll
-C:\Users\Gebruiker\Documents\Jochem\Jaar2\Periode_4\C#\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
-C:\Users\Gebruiker\Documents\Jochem\Jaar2\Periode_4\C#\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\System.Text.Encoding.CodePages.dll
-C:\Users\Gebruiker\Documents\Jochem\Jaar2\Periode_4\C#\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\System.Text.Encodings.Web.dll
-C:\Users\Gebruiker\Documents\Jochem\Jaar2\Periode_4\C#\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\System.Text.Json.dll
-C:\Users\Gebruiker\Documents\Jochem\Jaar2\Periode_4\C#\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\System.Threading.Tasks.Extensions.dll
-C:\Users\Gebruiker\Documents\Jochem\Jaar2\Periode_4\C#\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\System.ValueTuple.dll
-C:\Users\Gebruiker\Documents\Jochem\Jaar2\Periode_4\C#\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\YoutubeExplode.dll
-C:\Users\Gebruiker\Documents\Jochem\Jaar2\Periode_4\C#\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\AngleSharp.xml
-C:\Users\Gebruiker\Documents\Jochem\Jaar2\Periode_4\C#\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
-C:\Users\Gebruiker\Documents\Jochem\Jaar2\Periode_4\C#\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\System.Buffers.xml
-C:\Users\Gebruiker\Documents\Jochem\Jaar2\Periode_4\C#\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\System.Memory.xml
-C:\Users\Gebruiker\Documents\Jochem\Jaar2\Periode_4\C#\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\System.Numerics.Vectors.xml
-C:\Users\Gebruiker\Documents\Jochem\Jaar2\Periode_4\C#\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
-C:\Users\Gebruiker\Documents\Jochem\Jaar2\Periode_4\C#\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\System.Text.Encodings.Web.xml
-C:\Users\Gebruiker\Documents\Jochem\Jaar2\Periode_4\C#\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\System.Text.Json.xml
-C:\Users\Gebruiker\Documents\Jochem\Jaar2\Periode_4\C#\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\System.Threading.Tasks.Extensions.xml
-C:\Users\Gebruiker\Documents\Jochem\Jaar2\Periode_4\C#\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\System.ValueTuple.xml
-C:\Users\Gebruiker\Documents\Jochem\Jaar2\Periode_4\C#\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\YoutubeExplode.xml
-C:\Users\Gebruiker\Documents\Jochem\Jaar2\Periode_4\C#\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\AddMusicWindow.g.cs
-C:\Users\Gebruiker\Documents\Jochem\Jaar2\Periode_4\C#\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\AddMusicWindow.baml
-C:\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\AngleSharp.dll
 C:\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\NAudio.dll
+C:\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\NReco.VideoConverter.dll
 C:\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\System.Buffers.dll
 C:\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\System.Memory.dll
 C:\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\System.Numerics.Vectors.dll
@@ -210,9 +18,19 @@ C:\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\System.Text.Encodings.Web.dll
 C:\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\System.Text.Json.dll
 C:\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\System.Threading.Tasks.Extensions.dll
 C:\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\System.ValueTuple.dll
+C:\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\System.Windows.Interactivity.dll
+C:\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\TagLibSharp.dll
+C:\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\WPFSoundVisualizationLib.dll
 C:\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\YoutubeExplode.dll
 C:\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\AngleSharp.xml
+C:\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\GalaSoft.MvvmLight.pdb
+C:\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\GalaSoft.MvvmLight.xml
+C:\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\GalaSoft.MvvmLight.Extras.pdb
+C:\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\GalaSoft.MvvmLight.Extras.xml
+C:\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\GalaSoft.MvvmLight.Platform.pdb
+C:\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\GalaSoft.MvvmLight.Platform.xml
 C:\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\NReco.VideoConverter.xml
 C:\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\System.Buffers.xml
 C:\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\System.Memory.xml
 C:\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\System.Numerics.Vectors.xml
@@ -221,163 +39,29 @@ C:\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\System.Text.Encodings.Web.xml
 C:\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\System.Text.Json.xml
 C:\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\System.ValueTuple.xml
+C:\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\TagLibSharp.pdb
+C:\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\TagLibSharp.xml
 C:\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\YoutubeExplode.xml
 C:\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\AddMusicWindow.g.cs
-C:\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\AddMusicWindow.baml
-C:\Users\caspe\Desktop\New folder\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\MediaPlayer.exe.config
-C:\Users\caspe\Desktop\New folder\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\MediaPlayer.exe
-C:\Users\caspe\Desktop\New folder\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\MediaPlayer.pdb
-C:\Users\caspe\Desktop\New folder\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\AngleSharp.dll
-C:\Users\caspe\Desktop\New folder\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\CommonServiceLocator.dll
-C:\Users\caspe\Desktop\New folder\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\GalaSoft.MvvmLight.dll
-C:\Users\caspe\Desktop\New folder\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\GalaSoft.MvvmLight.Extras.dll
-C:\Users\caspe\Desktop\New folder\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\GalaSoft.MvvmLight.Platform.dll
-C:\Users\caspe\Desktop\New folder\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
-C:\Users\caspe\Desktop\New folder\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\System.Buffers.dll
-C:\Users\caspe\Desktop\New folder\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\System.Memory.dll
-C:\Users\caspe\Desktop\New folder\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\System.Numerics.Vectors.dll
-C:\Users\caspe\Desktop\New folder\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
-C:\Users\caspe\Desktop\New folder\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\System.Text.Encoding.CodePages.dll
-C:\Users\caspe\Desktop\New folder\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\System.Text.Encodings.Web.dll
-C:\Users\caspe\Desktop\New folder\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\System.Text.Json.dll
-C:\Users\caspe\Desktop\New folder\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\System.Threading.Tasks.Extensions.dll
-C:\Users\caspe\Desktop\New folder\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\System.ValueTuple.dll
-C:\Users\caspe\Desktop\New folder\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\System.Windows.Interactivity.dll
-C:\Users\caspe\Desktop\New folder\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\TagLibSharp.dll
-C:\Users\caspe\Desktop\New folder\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\WPFSoundVisualizationLib.dll
-C:\Users\caspe\Desktop\New folder\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\YoutubeExplode.dll
-C:\Users\caspe\Desktop\New folder\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\AngleSharp.xml
-C:\Users\caspe\Desktop\New folder\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\GalaSoft.MvvmLight.pdb
-C:\Users\caspe\Desktop\New folder\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\GalaSoft.MvvmLight.xml
-C:\Users\caspe\Desktop\New folder\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\GalaSoft.MvvmLight.Extras.pdb
-C:\Users\caspe\Desktop\New folder\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\GalaSoft.MvvmLight.Extras.xml
-C:\Users\caspe\Desktop\New folder\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\GalaSoft.MvvmLight.Platform.pdb
-C:\Users\caspe\Desktop\New folder\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\GalaSoft.MvvmLight.Platform.xml
-C:\Users\caspe\Desktop\New folder\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
-C:\Users\caspe\Desktop\New folder\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\System.Buffers.xml
-C:\Users\caspe\Desktop\New folder\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\System.Memory.xml
-C:\Users\caspe\Desktop\New folder\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\System.Numerics.Vectors.xml
-C:\Users\caspe\Desktop\New folder\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
-C:\Users\caspe\Desktop\New folder\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\System.Text.Encodings.Web.xml
-C:\Users\caspe\Desktop\New folder\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\System.Text.Json.xml
-C:\Users\caspe\Desktop\New folder\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\System.Threading.Tasks.Extensions.xml
-C:\Users\caspe\Desktop\New folder\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\System.ValueTuple.xml
-C:\Users\caspe\Desktop\New folder\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\TagLibSharp.pdb
-C:\Users\caspe\Desktop\New folder\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\TagLibSharp.xml
-C:\Users\caspe\Desktop\New folder\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\YoutubeExplode.xml
-C:\Users\caspe\Desktop\New folder\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\MusicPlayer.csprojAssemblyReference.cache
-C:\Users\caspe\Desktop\New folder\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\AddMusicWindow.g.cs
-C:\Users\caspe\Desktop\New folder\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\MainWindow.g.cs
-C:\Users\caspe\Desktop\New folder\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\App.g.cs
-C:\Users\caspe\Desktop\New folder\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\GeneratedInternalTypeHelper.g.cs
-C:\Users\caspe\Desktop\New folder\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\MediaPlayer_MarkupCompile.cache
-C:\Users\caspe\Desktop\New folder\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\MediaPlayer_MarkupCompile.lref
-C:\Users\caspe\Desktop\New folder\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\AddMusicWindow.baml
-C:\Users\caspe\Desktop\New folder\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\MainWindow.baml
-C:\Users\caspe\Desktop\New folder\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\MediaPlayer.g.resources
-C:\Users\caspe\Desktop\New folder\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\MediaPlayer.Properties.Resources.resources
-C:\Users\caspe\Desktop\New folder\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\MusicPlayer.csproj.GenerateResource.cache
-C:\Users\caspe\Desktop\New folder\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\MusicPlayer.csproj.CoreCompileInputs.cache
-C:\Users\caspe\Desktop\New folder\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\MusicPlayer.csproj.CopyComplete
-C:\Users\caspe\Desktop\New folder\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\MediaPlayer.exe
-C:\Users\caspe\Desktop\New folder\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\MediaPlayer.pdb
-C:\Users\caspe\Desktop\New folder\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\DeletePlaylist.g.cs
-C:\Users\caspe\Desktop\New folder\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\DeletePlaylist.baml
-C:\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\DeletePlaylist.g.cs
-C:\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\DeletePlaylist.baml
-C:\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\EditSongWindow.g.cs
-C:\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\EditSongWindow.baml
-C:\Users\User\Documents\GitHub\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\MediaPlayer.exe.config
-C:\Users\User\Documents\GitHub\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\MediaPlayer.exe
-C:\Users\User\Documents\GitHub\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\MediaPlayer.pdb
-C:\Users\User\Documents\GitHub\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\AngleSharp.dll
-C:\Users\User\Documents\GitHub\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\CommonServiceLocator.dll
-C:\Users\User\Documents\GitHub\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\GalaSoft.MvvmLight.dll
-C:\Users\User\Documents\GitHub\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\GalaSoft.MvvmLight.Extras.dll
-C:\Users\User\Documents\GitHub\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\GalaSoft.MvvmLight.Platform.dll
-C:\Users\User\Documents\GitHub\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
-C:\Users\User\Documents\GitHub\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\System.Buffers.dll
-C:\Users\User\Documents\GitHub\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\System.Memory.dll
-C:\Users\User\Documents\GitHub\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\System.Numerics.Vectors.dll
-C:\Users\User\Documents\GitHub\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
-C:\Users\User\Documents\GitHub\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\System.Text.Encoding.CodePages.dll
-C:\Users\User\Documents\GitHub\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\System.Text.Encodings.Web.dll
-C:\Users\User\Documents\GitHub\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\System.Text.Json.dll
-C:\Users\User\Documents\GitHub\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\System.Threading.Tasks.Extensions.dll
-C:\Users\User\Documents\GitHub\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\System.ValueTuple.dll
-C:\Users\User\Documents\GitHub\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\System.Windows.Interactivity.dll
-C:\Users\User\Documents\GitHub\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\TagLibSharp.dll
-C:\Users\User\Documents\GitHub\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\WPFSoundVisualizationLib.dll
-C:\Users\User\Documents\GitHub\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\YoutubeExplode.dll
-C:\Users\User\Documents\GitHub\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\AngleSharp.xml
-C:\Users\User\Documents\GitHub\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\GalaSoft.MvvmLight.pdb
-C:\Users\User\Documents\GitHub\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\GalaSoft.MvvmLight.xml
-C:\Users\User\Documents\GitHub\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\GalaSoft.MvvmLight.Extras.pdb
-C:\Users\User\Documents\GitHub\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\GalaSoft.MvvmLight.Extras.xml
-C:\Users\User\Documents\GitHub\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\GalaSoft.MvvmLight.Platform.pdb
-C:\Users\User\Documents\GitHub\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\GalaSoft.MvvmLight.Platform.xml
-C:\Users\User\Documents\GitHub\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
-C:\Users\User\Documents\GitHub\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\System.Buffers.xml
-C:\Users\User\Documents\GitHub\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\System.Memory.xml
-C:\Users\User\Documents\GitHub\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\System.Numerics.Vectors.xml
-C:\Users\User\Documents\GitHub\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
-C:\Users\User\Documents\GitHub\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\System.Text.Encodings.Web.xml
-C:\Users\User\Documents\GitHub\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\System.Text.Json.xml
-C:\Users\User\Documents\GitHub\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\System.Threading.Tasks.Extensions.xml
-C:\Users\User\Documents\GitHub\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\System.ValueTuple.xml
-C:\Users\User\Documents\GitHub\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\TagLibSharp.pdb
-C:\Users\User\Documents\GitHub\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\TagLibSharp.xml
-C:\Users\User\Documents\GitHub\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\YoutubeExplode.xml
-C:\Users\User\Documents\GitHub\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\MusicPlayer.csprojAssemblyReference.cache
-C:\Users\User\Documents\GitHub\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\AddMusicWindow.g.cs
-C:\Users\User\Documents\GitHub\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\DeletePlaylist.g.cs
-C:\Users\User\Documents\GitHub\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\EditSongWindow.g.cs
-C:\Users\User\Documents\GitHub\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\ExportMp3Window.g.cs
-C:\Users\User\Documents\GitHub\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\MainWindow.g.cs
-C:\Users\User\Documents\GitHub\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\NewPlaylist.g.cs
-C:\Users\User\Documents\GitHub\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\App.g.cs
-C:\Users\User\Documents\GitHub\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\GeneratedInternalTypeHelper.g.cs
-C:\Users\User\Documents\GitHub\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\MediaPlayer_MarkupCompile.cache
-C:\Users\User\Documents\GitHub\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\MediaPlayer_MarkupCompile.lref
-C:\Users\User\Documents\GitHub\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\AddMusicWindow.baml
-C:\Users\User\Documents\GitHub\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\DeletePlaylist.baml
-C:\Users\User\Documents\GitHub\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\EditSongWindow.baml
-C:\Users\User\Documents\GitHub\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\ExportMp3Window.baml
-C:\Users\User\Documents\GitHub\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\MainWindow.baml
-C:\Users\User\Documents\GitHub\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\NewPlaylist.baml
-C:\Users\User\Documents\GitHub\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\MediaPlayer.g.resources
-C:\Users\User\Documents\GitHub\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\MediaPlayer.Properties.Resources.resources
-C:\Users\User\Documents\GitHub\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\MusicPlayer.csproj.GenerateResource.cache
-C:\Users\User\Documents\GitHub\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\MusicPlayer.csproj.CoreCompileInputs.cache
-C:\Users\User\Documents\GitHub\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\MusicPlayer.csproj.CopyComplete
-C:\Users\User\Documents\GitHub\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\MediaPlayer.exe
-C:\Users\User\Documents\GitHub\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\MediaPlayer.pdb
-C:\xampp\htdocs\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\DeletePlaylist.g.cs
-C:\xampp\htdocs\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\EditSongWindow.g.cs
-C:\xampp\htdocs\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\ExportMp3Window.g.cs
-C:\xampp\htdocs\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\NewPlaylist.g.cs
-C:\xampp\htdocs\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\DeletePlaylist.baml
-C:\xampp\htdocs\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\EditSongWindow.baml
-C:\xampp\htdocs\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\ExportMp3Window.baml
-C:\xampp\htdocs\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\NewPlaylist.baml
-C:\Users\Gebruiker\Documents\Jochem\Jaar2\Periode_4\C#\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\CreatePlaylist.g.cs
-C:\Users\Gebruiker\Documents\Jochem\Jaar2\Periode_4\C#\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\DeletePlaylist.g.cs
-C:\Users\Gebruiker\Documents\Jochem\Jaar2\Periode_4\C#\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\EditSongWindow.g.cs
-C:\Users\Gebruiker\Documents\Jochem\Jaar2\Periode_4\C#\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\ExportMp3Window.g.cs
-C:\Users\Gebruiker\Documents\Jochem\Jaar2\Periode_4\C#\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\CreatePlaylist.baml
-C:\Users\Gebruiker\Documents\Jochem\Jaar2\Periode_4\C#\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\EditSongWindow.baml
-C:\Users\Gebruiker\Documents\Jochem\Jaar2\Periode_4\C#\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\ExportMp3Window.baml
-C:\Users\Gebruiker\Documents\Jochem\Jaar2\Periode_4\C#\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\DeletePlaylist.baml
-<<<<<<< HEAD
-C:\Users\caspe\Desktop\New folder\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\CreatePlaylist.g.cs
-C:\Users\caspe\Desktop\New folder\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\EditSongWindow.g.cs
-C:\Users\caspe\Desktop\New folder\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\ExportMp3Window.g.cs
-C:\Users\caspe\Desktop\New folder\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\CreatePlaylist.baml
-C:\Users\caspe\Desktop\New folder\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\EditSongWindow.baml
-C:\Users\caspe\Desktop\New folder\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\ExportMp3Window.baml
-=======
 C:\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\CreatePlaylist.g.cs
+C:\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\DeletePlaylist.g.cs
+C:\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\EditSongWindow.g.cs
 C:\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\ExportMp3Window.g.cs
+C:\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\MainWindow.g.cs
+C:\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\App.g.cs
+C:\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\MediaPlayer_MarkupCompile.cache
+C:\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\MediaPlayer_MarkupCompile.lref
+C:\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\AddMusicWindow.baml
 C:\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\CreatePlaylist.baml
+C:\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\DeletePlaylist.baml
+C:\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\EditSongWindow.baml
 C:\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\ExportMp3Window.baml
->>>>>>> master
+C:\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\MainWindow.baml
+C:\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\MediaPlayer.g.resources
+C:\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\MediaPlayer.Properties.Resources.resources
+C:\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\MusicPlayer.csproj.GenerateResource.cache
+C:\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\MusicPlayer.csproj.CoreCompileInputs.cache
+C:\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\MusicPlayer.csproj.CopyComplete
+C:\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\MediaPlayer.exe
+C:\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\MediaPlayer.pdb

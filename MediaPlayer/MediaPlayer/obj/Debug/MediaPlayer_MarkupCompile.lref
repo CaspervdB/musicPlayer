@@ -1,14 +1,4 @@
-<<<<<<< HEAD
-﻿C:\Users\caspe\Desktop\New folder\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\GeneratedInternalTypeHelper.g.cs
-
-FC:\Users\caspe\Desktop\New folder\musicPlayer\MediaPlayer\MediaPlayer\AddMusicWindow.xaml;;
-FC:\Users\caspe\Desktop\New folder\musicPlayer\MediaPlayer\MediaPlayer\CreatePlaylist.xaml;;
-FC:\Users\caspe\Desktop\New folder\musicPlayer\MediaPlayer\MediaPlayer\DeletePlaylist.xaml;;
-FC:\Users\caspe\Desktop\New folder\musicPlayer\MediaPlayer\MediaPlayer\EditSongWindow.xaml;;
-FC:\Users\caspe\Desktop\New folder\musicPlayer\MediaPlayer\MediaPlayer\ExportMp3Window.xaml;;
-FC:\Users\caspe\Desktop\New folder\musicPlayer\MediaPlayer\MediaPlayer\MainWindow.xaml;;
-=======
-﻿
+﻿C:\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\GeneratedInternalTypeHelper.g.cs
 
 FC:\musicPlayer\MediaPlayer\MediaPlayer\AddMusicWindow.xaml;;
 FC:\musicPlayer\MediaPlayer\MediaPlayer\CreatePlaylist.xaml;;
@@ -16,5 +6,4 @@ FC:\musicPlayer\MediaPlayer\MediaPlayer\DeletePlaylist.xaml;;
 FC:\musicPlayer\MediaPlayer\MediaPlayer\EditSongWindow.xaml;;
 FC:\musicPlayer\MediaPlayer\MediaPlayer\ExportMp3Window.xaml;;
 FC:\musicPlayer\MediaPlayer\MediaPlayer\MainWindow.xaml;;
->>>>>>> master
 

@@ -1,6 +1,7 @@
 ﻿using AngleSharp;
 using GalaSoft.MvvmLight.Command;
 using MusicPlayer;
+using NReco.VideoConverter;
 using System;
 using System.ComponentModel;
 using System.IO;
@@ -26,17 +27,20 @@ namespace MediaPlayer
                 IStreamInfo streamInfo = streamManifest.GetAudioOnly().WithHighestBitrate();
                 if (streamInfo != null)
                 {
-                    // Get the actual stream
-                    var stream = await youtube.Videos.Streams.GetAsync(streamInfo);
-                    // Download the stream to file
-                    string songlocation = $"{source + playList.PlaylistName + legalTitle}.mp3";
-                    await youtube.Videos.Streams.DownloadAsync(streamInfo, songlocation);
-                    Song song = new Song(songlocation);
-                    song.ArtistName = video.Author;
-                    song.SongTitle = video.Title;
-                    playList.addSong(song); 
-                }
-            
+                // Get the actual stream
+                //var stream = await youtube.Videos.Streams.GetAsync(streamInfo);
+                // Download the stream to file
+                Console.WriteLine("Ik begin nu aan het downloaden jochem en sietze!");
+                    string fileName = $"{source + playList.PlaylistName + legalTitle}";
+                    await youtube.Videos.Streams.DownloadAsync(streamInfo, fileName + ".mp4");
+                    FFMpegConverter ffMpeg = new FFMpegConverter();
+                    ffMpeg.ConvertMedia(fileName + ".mp4", fileName + ".mp3", "mp3");
+                    File.Delete(fileName + ".mp4");
+                    Song newSong = new Song(fileName + ".mp3");
+                    newSong.ArtistName = video.Author;
+                    newSong.SongTitle = video.Title;
+            }
+
         }
 
         public async Task SaveAudioExternal(String Location, String link)
@@ -55,8 +59,11 @@ namespace MediaPlayer
                     // Get the actual stream
                     var stream = await youtube.Videos.Streams.GetAsync(streamInfo);
                     // Download the stream to file
-                    string songlocation = $"{Location + legalTitle}.mp3";
-                    await youtube.Videos.Streams.DownloadAsync(streamInfo, songlocation);
+                    string fileName = $"{Location + legalTitle}";
+                    await youtube.Videos.Streams.DownloadAsync(streamInfo, fileName + ".mp4");
+                    FFMpegConverter ffMpeg = new FFMpegConverter();
+                    ffMpeg.ConvertMedia(fileName + ".mp4", fileName + ".mp3", "mp3");
+                    File.Delete(fileName + ".mp4");
                 }
             }
             catch
