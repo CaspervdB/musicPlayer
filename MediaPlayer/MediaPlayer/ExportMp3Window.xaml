@@ -14,7 +14,7 @@
         <Label Content="File Location" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
         <Label Content="Youtube Link" HorizontalAlignment="Left" Margin="10,95,0,0" VerticalAlignment="Top"/>
         <Button Content="Download" Command="{Binding DownloadButton}" HorizontalAlignment="Left" Margin="10,154,0,0" VerticalAlignment="Top" Width="200"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="10,67,0,0" TextWrapping="Wrap" Text="{Binding FileLocation}" VerticalAlignment="Top" Width="200"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="10,67,0,0" TextWrapping="Wrap" Text="{Binding FileLocation, Mode=TwoWay}" VerticalAlignment="Top" Width="200"/>
         <Button Content="File Location" Command="{Binding FileLocationButton}" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top" Width="200" Height="21"/>
     </Grid>
 </Window>

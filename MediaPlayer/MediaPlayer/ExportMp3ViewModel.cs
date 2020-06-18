@@ -18,10 +18,10 @@ namespace MediaPlayer
         public ICommand DownloadButton { get; set; }
         public ICommand FileLocationButton { get; set; }
 
-        private String link;
-        private String Location;// = "C:/Users/User/Documents/GitHub/musicPlayer/MediaPlayer/MediaPlayer/music/playlist 2/";
+        //private String link;
+        private String Location;
 
-        public string YoutubeLink
+        /*public string YoutubeLink
         {
             get { return link; }
             set
@@ -31,7 +31,9 @@ namespace MediaPlayer
                     this.link = value;
                 }
             }
-        }
+        }*/
+
+        public string YoutubeLink { get; set; }
         public string FileLocation
         {
             get { return Location; }
@@ -45,14 +47,16 @@ namespace MediaPlayer
             }
         }
 
+        //public string FileLocation { get; set; }
+
         private async Task DowloadSongExternal()
         {
-            if(link == "")
+            if(YoutubeLink == null)
             {
                 MessageBox.Show("Voer een URL in");
                 return;
             }
-            if(Location == "")
+            if(FileLocation == null)
             {
                 MessageBox.Show("Kies een Locatie");
                 return;
@@ -61,7 +65,7 @@ namespace MediaPlayer
             try
             {
                 MusicExport musicExport = new MusicExport();
-                await musicExport.SaveAudioExternal(Location, link);
+                await musicExport.SaveAudioExternal(FileLocation, YoutubeLink);
             }
             catch
             {
@@ -75,7 +79,9 @@ namespace MediaPlayer
 
             if (folderBrowserDialog.ShowDialog() == DialogResult.OK)
             {
-                this.Location = folderBrowserDialog.SelectedPath;
+                Console.WriteLine(folderBrowserDialog.SelectedPath);
+                this.FileLocation = folderBrowserDialog.SelectedPath;
+
             }
         }
 
