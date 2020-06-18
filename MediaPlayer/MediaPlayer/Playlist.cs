@@ -27,6 +27,11 @@ namespace MusicPlayer
             this.SongList.Add(song);
         }
 
+        public void removeSong(Song song)
+        {
+            this.SongList.Remove(song);
+        }
+
         
     }
 }

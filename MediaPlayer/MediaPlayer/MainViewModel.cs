@@ -124,6 +124,12 @@ namespace MediaPlayer
             NewPlaylist.ShowDialog();
         }
 
+        private void deleteSong()
+        {
+            DeleteSong deleteSongWindow = new DeleteSong();
+            deleteSongWindow.ShowDialog();
+        }
+
         private void deletePlaylist()
         {
             DeletePlaylist deletePlaylist = new DeletePlaylist();
@@ -145,10 +151,13 @@ namespace MediaPlayer
             EditSongContextMenuItem = new RelayCommand(() => editSong());
             CreatePlaylist = new RelayCommand(() => addPlaylist());
             DeletePlaylist = new RelayCommand(() => deletePlaylist());
+            DeleteSong = new RelayCommand(() => deleteSong());
             ExportSong = new RelayCommand(() => exportSong());
                         
             Factory.createPlaylistCollection();  
         }
+
+        
 
         private void NotifyPropertyChanged([CallerMemberName] String propertyName = "")
         {

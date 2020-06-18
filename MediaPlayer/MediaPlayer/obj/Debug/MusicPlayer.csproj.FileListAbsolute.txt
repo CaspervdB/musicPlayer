@@ -65,3 +65,6 @@ C:\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\MusicPlayer.csproj.CoreCompileI
 C:\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\MusicPlayer.csproj.CopyComplete
 C:\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\MediaPlayer.exe
 C:\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\MediaPlayer.pdb
+C:\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\MusicPlayer.csprojAssemblyReference.cache
+C:\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\DeleteSong.g.cs
+C:\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\DeleteSong.baml
