@@ -154,7 +154,8 @@ namespace MediaPlayer
             DeleteSong = new RelayCommand(() => deleteSong());
             ExportSong = new RelayCommand(() => exportSong());
                         
-            Factory.createPlaylistCollection();  
+            Factory.createPlaylistCollection();
+            Factory.setupDatabase();
         }
 
         
