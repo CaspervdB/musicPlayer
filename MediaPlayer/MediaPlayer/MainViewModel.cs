@@ -21,6 +21,7 @@ namespace MediaPlayer
         public ICommand DeletePlaylist { get; set; }
         public ICommand DeleteSong { get; set; }
         public ICommand ExportSong { get; set; }
+        public ICommand ImportSong { get; set; }
         public ICommand EditSongContextMenuItem { get; set; }
 
         public ICommand WindowClosing
@@ -141,6 +142,12 @@ namespace MediaPlayer
             ExportMp3Window export = new ExportMp3Window();
             export.ShowDialog();
         }
+        
+        private void importSong()
+        {
+            ImportSongWindow import = new ImportSongWindow();
+            import.ShowDialog();
+        }
         public MainViewModel()
         {
             PlayButton = new RelayCommand(() => Player.Instance.play());
@@ -153,9 +160,11 @@ namespace MediaPlayer
             DeletePlaylist = new RelayCommand(() => deletePlaylist());
             DeleteSong = new RelayCommand(() => deleteSong());
             ExportSong = new RelayCommand(() => exportSong());
-                        
+            ImportSong = new RelayCommand(() => importSong());
+
             Factory.createPlaylistCollection();
             Factory.setupDatabase();
+            
         }
 
         

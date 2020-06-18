@@ -99,6 +99,7 @@
                 <MenuItem Header="_Delete Song" Command="{Binding DeleteSong}" />
             </MenuItem>
             <MenuItem Header="_Export" Command="{Binding ExportSong}" />
+            <MenuItem Header="_Import" Command="{Binding ImportSong}" />
         </Menu>
 
         <i:Interaction.Triggers>
