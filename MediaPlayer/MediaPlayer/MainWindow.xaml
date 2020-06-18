@@ -11,9 +11,7 @@
     <!--We link the view to the MainWindowViewModel so it can funtion as the viewmodel voor this view-->
     <Window.DataContext>
         <local:MainViewModel/>
-    </Window.DataContext>
-
-    
+    </Window.DataContext>    
 
     <Grid>
 

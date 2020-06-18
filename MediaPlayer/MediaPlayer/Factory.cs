@@ -26,24 +26,6 @@ namespace MediaPlayer
                 PlaylistManager.Instance.addPlaylist(p);
             }
         }
-
-        public static void setupDatabase()
-        {
-            string cs = "Data Source=:memory:";
-            string stm = "SELECT SQLITE_VERSION()";
-            
-            var con = new SQLiteConnection(cs);
-            con.Open();
-            var cmd = new SQLiteCommand(stm, con);
-            string version = cmd.ExecuteScalar().ToString();
-
-            MessageBox.Show($"SQLite version: {version}");
-
-            Console.WriteLine($"SQLite version: {version}");
-
-        }
-
-
-
+                
     }
 }

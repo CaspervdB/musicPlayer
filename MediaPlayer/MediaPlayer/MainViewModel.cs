@@ -1,4 +1,5 @@
-﻿using GalaSoft.MvvmLight.Command;
+﻿using Database;
+using GalaSoft.MvvmLight.Command;
 using MusicPlayer;
 using System;
 using System.Collections.ObjectModel;
@@ -163,7 +164,12 @@ namespace MediaPlayer
             ImportSong = new RelayCommand(() => importSong());
 
             Factory.createPlaylistCollection();
-            Factory.setupDatabase();
+           
+
+            DbCreator dbCreator = new DbCreator();
+            
+            dbCreator.addSongData("Cold", "Maroon 5");
+            dbCreator.getSongData();
             
         }
 
