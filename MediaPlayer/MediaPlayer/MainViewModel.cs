@@ -5,12 +5,11 @@ using System;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
-using System.Threading.Tasks;
 using System.Windows.Input;
 
 namespace MediaPlayer
 {
-    class MainViewModel
+    class MainViewModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
         public ICommand PlayButton { get; set; }
@@ -25,36 +24,34 @@ namespace MediaPlayer
         public ICommand ImportSong { get; set; }
         public ICommand ReloadDatabase { get; set; }
         public ICommand EditSongContextMenuItem { get; set; }
+        private Playlist selectedPlaylist;
 
         public ICommand WindowClosing
         {
             get
             {
                 return new RelayCommand<CancelEventArgs>(
-                    (args) => {
+                    (args) =>
+                    {
                         Player.Instance.Dispose();
                     });
             }
         }
-               
+
         public ObservableCollection<Playlist> PlaylistCollection
         {
             get { return PlaylistManager.Instance.Playlists; }
-            set
-            {
-                PlaylistManager.Instance.Playlists = value;
-            }
         }
         public Playlist SelectedPlaylist
         {
             get
             {
-                return null;
+                return this.selectedPlaylist;
             }
-            set {
-                SelectedPlaylistSongs = value.SongList;
-                Console.WriteLine("Playlist selected");
-                NotifyPropertyChanged();
+            set
+            {
+                this.selectedPlaylist = value;
+                updateSonglist();
             }
         }
 
@@ -63,25 +60,11 @@ namespace MediaPlayer
         {
             get
             {
-                if (Player.Instance.Songlist != null)
-                {
-                    return Player.Instance.Songlist;
-                }
-                else
+                if (Player.Instance.Songlist == null)
                 {
                     return null;
                 }
-            }
-            set
-            {
-
-                Player.Instance.Songlist.Clear();
-                foreach (Song item in value)
-                {
-                    Player.Instance.Songlist.Add(item);
-                }
-
-
+                return Player.Instance.Songlist;
             }
         }
 
@@ -91,7 +74,7 @@ namespace MediaPlayer
             get { return Player.Instance.CurrentSong; }
             set
             {
-                if(value == null)
+                if (value == null)
                 {
                     return;
                 }
@@ -115,11 +98,13 @@ namespace MediaPlayer
         {
             AddMusicWindow addMusicWindow = new AddMusicWindow();
             addMusicWindow.ShowDialog();
+            updateSonglist();
         }
         private void editSong()
         {
             EditSongWindow esw = new EditSongWindow();
             esw.ShowDialog();
+            updateSonglist();
         }
         private void addPlaylist()
         {
@@ -131,6 +116,7 @@ namespace MediaPlayer
         {
             DeleteSong deleteSongWindow = new DeleteSong();
             deleteSongWindow.ShowDialog();
+            updateSonglist();
         }
 
         private void deletePlaylist()
@@ -139,16 +125,17 @@ namespace MediaPlayer
             deletePlaylist.ShowDialog();
         }
 
-        private void exportSong() 
+        private void exportSong()
         {
             ExportMp3Window export = new ExportMp3Window();
             export.ShowDialog();
         }
-        
+
         private void importSong()
         {
             ImportSongWindow import = new ImportSongWindow();
             import.ShowDialog();
+            updateSonglist();
         }
 
         private void reloadDatabase()
@@ -172,17 +159,20 @@ namespace MediaPlayer
             ReloadDatabase = new RelayCommand(() => reloadDatabase());
 
             Factory.createPlaylistCollection();
-           
-            /*
-
-            DbCreator dbCreator = new DbCreator();            
-            dbCreator.addSongData("Cold", "Maroon 5");
-            dbCreator.getSongData();
-            */
             
-        }
+        }    
 
-       
+        private void updateSonglist()
+        {
+            if (SelectedPlaylist != null)
+            {
+                Player.Instance.Songlist.Clear();
+                foreach (Song item in SelectedPlaylist.SongList)
+                {
+                    Player.Instance.Songlist.Add(item);
+                }
+            }
+        }
 
         private void NotifyPropertyChanged([CallerMemberName] String propertyName = "")
         {

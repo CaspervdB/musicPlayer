@@ -148,3 +148,14 @@ C:\Users\Gebruiker\Documents\Jochem\Jaar2\Periode_4\C#\musicPlayer\MediaPlayer\M
 C:\Users\Gebruiker\Documents\Jochem\Jaar2\Periode_4\C#\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\MusicPlayer.csproj.CopyComplete
 C:\Users\Gebruiker\Documents\Jochem\Jaar2\Periode_4\C#\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\ImportSongWindow.g.cs
 C:\Users\Gebruiker\Documents\Jochem\Jaar2\Periode_4\C#\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\ImportSongWindow.baml
+C:\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\EntityFramework.dll
+C:\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\EntityFramework.SqlServer.dll
+C:\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\System.Data.SQLite.dll
+C:\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\System.Data.SQLite.EF6.dll
+C:\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\System.Data.SQLite.Linq.dll
+C:\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\EntityFramework.xml
+C:\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\EntityFramework.SqlServer.xml
+C:\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\System.Data.SQLite.xml
+C:\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\System.Data.SQLite.dll.config
+C:\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\ImportSongWindow.g.cs
+C:\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\ImportSongWindow.baml

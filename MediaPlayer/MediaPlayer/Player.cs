@@ -123,7 +123,6 @@ namespace MusicPlayer
                 ActiveStream = null;
                 isPlaying = false;
                 Console.WriteLine("catched error");
-                Console.ReadLine();
             }
         }
 
