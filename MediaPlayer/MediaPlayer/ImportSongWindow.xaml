@@ -6,20 +6,41 @@
         xmlns:local="clr-namespace:MediaPlayer"
         mc:Ignorable="d"
         Title="Import a song"
-        Height="322.892" Width="428.098">
+        Height="265.713" Width="428.098" ResizeMode="NoResize">
     <Window.DataContext>
         <local:ImportSongViewModel/>
     </Window.DataContext>
-    <Grid Margin="0,0,2,3">
+    <Grid Margin="0,0,0,0" Background="#64c1ff">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="113*"/>
-            <ColumnDefinition Width="96*"/>
+            <ColumnDefinition Width="5*"/>
+            <ColumnDefinition Width="37*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="160*"/>
+            <ColumnDefinition Width="6*"/>
         </Grid.ColumnDefinitions>
-        <Button Content="File Location" Command="{Binding FileLocationButton}" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="398" Height="26" Grid.ColumnSpan="2"/>
-        <TextBox HorizontalAlignment="Left" Height="37" Margin="10,41,0,0" TextWrapping="Wrap" Text="{Binding FileLocation, Mode=TwoWay}" VerticalAlignment="Top" Width="398" Grid.ColumnSpan="2"/>
-        <Label Content="Into Playlist:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,81,0,0"/>
-        <ComboBox DisplayMemberPath="PlaylistName" Name="ComboBox" ItemsSource="{Binding PlaylistCollection}" SelectedItem="{Binding SelectedPlaylistInImportWindow}" HorizontalAlignment="Left" Margin="88,83,0,0" VerticalAlignment="Top" Width="320" SelectedIndex="0" Grid.ColumnSpan="2"/>
-        <Button Content="Import Song" HorizontalAlignment="Left" VerticalAlignment="Top" Width="398" Margin="10,234,0,0" Height="45" Command="{Binding ImportCommand}" Grid.ColumnSpan="2"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="88,127,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="8*"/>
+            <RowDefinition Height="26*"/>
+            <RowDefinition Height="6*"/>
+            <RowDefinition Height="39*"/>
+            <RowDefinition Height="6*"/>
+            <RowDefinition Height="28*"/>
+            <RowDefinition Height="6*"/>
+            <RowDefinition Height="28*"/>
+            <RowDefinition Height="6*"/>
+            <RowDefinition Height="28*"/>
+            <RowDefinition Height="6*"/>
+            <RowDefinition Height="52*"/>
+            <RowDefinition Height="8*"/>
+        </Grid.RowDefinitions>
+        <Button Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Content="File Location" Command="{Binding FileLocationButton}" Foreground="White" Background="#FF0064B7"/>
+        <TextBox Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" TextWrapping="Wrap" Text="{Binding FileLocation, Mode=TwoWay}" FontSize="10"/>
+        <Label Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="1"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Content="Into Playlist:" Foreground="White"/>
+        <ComboBox Grid.Row="5" Grid.Column="3" Grid.ColumnSpan="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" DisplayMemberPath="PlaylistName" Name="ComboBox" ItemsSource="{Binding PlaylistCollection}" SelectedItem="{Binding SelectedPlaylistInImportWindow}" SelectedIndex="0"/>
+        <Label Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="1"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Content="Artist:" Foreground="White"/>
+        <TextBox Grid.Row="7" Grid.Column="3" Grid.ColumnSpan="1"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" TextWrapping="Wrap" Text="{Binding ArtistName}"/>
+        <Label Grid.Row="9" Grid.Column="1" Grid.ColumnSpan="1"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Content="Songtitle:" Foreground="White"/>
+        <TextBox Grid.Row="9" Grid.Column="3" Grid.ColumnSpan="1"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" TextWrapping="Wrap" Text="{Binding SongTitle}"/>
+        <Button Grid.Row="11" Grid.Column="1" Grid.ColumnSpan="3"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Content="Import Song" Command="{Binding ImportCommand}" Foreground="White" Background="#FF0064B7" />
     </Grid>
 </Window>

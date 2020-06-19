@@ -39,6 +39,8 @@ namespace MediaPlayer
                 }
             }
         }
+        public string ArtistName { get; set; }
+        public string SongTitle { get; set; }
         private void FileManager()
         {
             OpenFileDialog ofd = new OpenFileDialog()
@@ -47,17 +49,40 @@ namespace MediaPlayer
             };
             if (ofd.ShowDialog() == DialogResult.OK)
             {
-
                 this.FileLocation = ofd.FileName;
-
             }
         }
 
         private void songImport(string FileLocation, Playlist playlist)
         {
+            if(FileLocation == null)
+            {
+                System.Windows.MessageBox.Show("Kies een nummer om te importeren");
+                return;
+            }
+            if(playlist == null)
+            {
+                System.Windows.MessageBox.Show("Kies een playlist");
+                return;
+            }
+            if(ArtistName == null)
+            {
+                System.Windows.MessageBox.Show("Vul de artiest van het nummer in");
+                return;
+            }
+            if (SongTitle == null)
+            {
+                System.Windows.MessageBox.Show("Vul de titel van het nummer in");
+                return;
+            }
             string songFilePath = FileLocation;
-            string destPath = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName, @"music\" + playlist.PlaylistName + @"\"); //FIX DIT!! DOET NIET!! KADUUK!!
-            File.Copy(songFilePath, destPath, true);
+            string destPath = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName, @"music\" + playlist.PlaylistName + @"\" + ArtistName + " - " + SongTitle + ".mp3");
+            File.Copy(songFilePath, destPath);
+            Song newSong = new Song(destPath);
+            newSong.ArtistName = ArtistName;
+            newSong.SongTitle = SongTitle;
+            playlist.addSong(newSong);
+            System.Windows.MessageBox.Show("Import succesvol");
         }
 
         public ImportSongViewModel()

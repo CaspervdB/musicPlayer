@@ -10,7 +10,7 @@
     <Window.DataContext>
         <local:ExportMp3ViewModel/>
     </Window.DataContext>
-    <Grid Background="#000000">
+    <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="20"/>
             <ColumnDefinition Width="0.6*"/>
