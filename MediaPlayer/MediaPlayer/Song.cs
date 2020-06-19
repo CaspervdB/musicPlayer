@@ -13,7 +13,7 @@ namespace MusicPlayer
         {
             get { return filetag.Tag.Title; }
             set { filetag.Tag.Title = value;
-                saveFileTag();
+                //saveFileTag();
             }
         }
         
@@ -41,7 +41,7 @@ namespace MusicPlayer
                 string[] newArtist = new string[1];
                 newArtist[0] = value;
                 filetag.Tag.Performers = newArtist;
-                saveFileTag();
+                //saveFileTag();
             }
         }
 
@@ -60,7 +60,10 @@ namespace MusicPlayer
             {
                 Player.Instance.stop();
             }
+            DbCreator dbCreator = new DbCreator();
             this.filetag.Save();
+            dbCreator.updateSongData(this);
+            
         }
     }
 }

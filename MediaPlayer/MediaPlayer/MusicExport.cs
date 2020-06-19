@@ -1,5 +1,4 @@
-﻿using Database;
-using MusicPlayer;
+﻿using MusicPlayer;
 using NReco.VideoConverter;
 using System;
 using System.IO;
@@ -35,6 +34,7 @@ namespace MediaPlayer
                 Song newSong = new Song(fileName + ".mp3");
                 newSong.ArtistName = video.Author;
                 newSong.SongTitle = video.Title;
+                newSong.saveFileTag();
                 playList.addSong(newSong);
                                 
                 //toevoegen aan database

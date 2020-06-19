@@ -14,7 +14,6 @@ namespace MediaPlayer
     {
         public event PropertyChangedEventHandler PropertyChanged;
         public ICommand DownloadCommand { get; set; }
-        //public ICommand SaveEditSongButton { get; set; }
         private string link;
         private string error;
         public Playlist SelectedPlaylistInDownloadWindow { get; set; }

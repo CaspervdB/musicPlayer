@@ -1,5 +1,4 @@
-﻿using Database;
-using GalaSoft.MvvmLight.Command;
+﻿using GalaSoft.MvvmLight.Command;
 using MusicPlayer;
 using System;
 using System.Collections.ObjectModel;
@@ -80,6 +79,8 @@ namespace MediaPlayer
                 }
                 Player.Instance.CurrentSong = value;
                 Player.Instance.play();
+                DbCreator db = new DbCreator();
+                db.incrementTimesPlayed(value);
             }
         }
 

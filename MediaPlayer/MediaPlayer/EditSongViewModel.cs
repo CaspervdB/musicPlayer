@@ -1,5 +1,4 @@
-﻿using Database;
-using GalaSoft.MvvmLight.Command;
+﻿using GalaSoft.MvvmLight.Command;
 using MusicPlayer;
 using System;
 using System.Collections.Generic;
@@ -38,9 +37,6 @@ namespace MediaPlayer
         {
 
             Player.Instance.CurrentSong.saveFileTag();
-
-            DbCreator dbCreator = new DbCreator();
-            dbCreator.updateSongData(Player.Instance.CurrentSong);
 
             Player.Instance.initializePlayerComponents();
             CloseWindow(window);

@@ -1,5 +1,4 @@
-﻿using Database;
-using MusicPlayer;
+﻿using MusicPlayer;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,6 +29,12 @@ namespace MediaPlayer
 
             waveformTimeline.RegisterSoundPlayer(Player.Instance);
             spectrumAnalyzer.RegisterSoundPlayer(Player.Instance);
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            DbCreator db = new DbCreator();
+            db.getTopTenMostListenedSongs();
         }
 
         //hier mag eigenlijk niks komen te staan ivm true mvvm!

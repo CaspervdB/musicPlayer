@@ -1,5 +1,4 @@
-﻿using Database;
-using GalaSoft.MvvmLight.Command;
+﻿using GalaSoft.MvvmLight.Command;
 using MusicPlayer;
 using System;
 using System.Collections.ObjectModel;
@@ -71,6 +70,7 @@ namespace MediaPlayer
 
             File.Delete(SelectedSong.SongLocation);
             SelectedPlaylist.removeSong(SelectedSong);
+            //dbCreator.getSongData();
         }
         private void NotifyPropertyChanged([CallerMemberName] String propertyName = "")
         {
