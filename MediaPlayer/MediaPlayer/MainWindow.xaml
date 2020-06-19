@@ -39,7 +39,7 @@
 
 
         <ListBox x:Name="PlaylistCollectionBox" ItemsSource="{Binding PlaylistCollection}" SelectedItem="{Binding SelectedPlaylist, Mode=TwoWay}"
-        Grid.Column="1" Grid.Row="1" Grid.RowSpan="4" Grid.ColumnSpan="2" Margin="0,7,19.667,12.667">
+        Grid.Column="1" Grid.Row="1" Grid.RowSpan="4" Grid.ColumnSpan="1" >
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch">
