@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-C:\Users\Gebruiker\Documents\Jochem\Jaar2\Periode_4\C#\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\
+C:\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\
 MediaPlayer
 none
 false
 DEBUG;TRACE
-C:\Users\Gebruiker\Documents\Jochem\Jaar2\Periode_4\C#\musicPlayer\MediaPlayer\MediaPlayer\App.xaml
+C:\musicPlayer\MediaPlayer\MediaPlayer\App.xaml
 82105113410
 
 29596855185
-145-2096861602
+1451427012422
 AddMusicWindow.xaml;CreatePlaylist.xaml;DeletePlaylist.xaml;DeleteSong.xaml;EditSongWindow.xaml;ExportMp3Window.xaml;ImportSongWindow.xaml;MainWindow.xaml;
 
 False

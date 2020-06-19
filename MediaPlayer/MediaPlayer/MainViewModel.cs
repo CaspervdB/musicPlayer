@@ -10,7 +10,7 @@ using System.Windows.Input;
 
 namespace MediaPlayer
 {
-    class MainViewModel
+    class MainViewModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
         public ICommand PlayButton { get; set; }
@@ -24,6 +24,7 @@ namespace MediaPlayer
         public ICommand ExportSong { get; set; }
         public ICommand ImportSong { get; set; }
         public ICommand EditSongContextMenuItem { get; set; }
+        private Playlist selectedPlaylist;
 
         public ICommand WindowClosing
         {
@@ -48,9 +49,10 @@ namespace MediaPlayer
         {
             get
             {
-                return null;
+                return this.selectedPlaylist;
             }
             set {
+                this.selectedPlaylist = value;
                 SelectedPlaylistSongs = value.SongList;
                 Console.WriteLine("Playlist selected");
                 NotifyPropertyChanged();
@@ -79,6 +81,7 @@ namespace MediaPlayer
                 {
                     Player.Instance.Songlist.Add(item);
                 }
+                NotifyPropertyChanged();
 
 
             }
@@ -114,6 +117,16 @@ namespace MediaPlayer
         {
             AddMusicWindow addMusicWindow = new AddMusicWindow();
             addMusicWindow.ShowDialog();
+            Console.WriteLine("ik ben hier nu!!!");
+            //NotifyPropertyChanged("SelectedPlaylistSongs");
+            if (SelectedPlaylist != null)
+            {
+                Player.Instance.Songlist.Clear();
+                foreach (Song item in SelectedPlaylist.SongList)
+                {
+                    Player.Instance.Songlist.Add(item);
+                }
+            }
         }
         private void editSong()
         {
