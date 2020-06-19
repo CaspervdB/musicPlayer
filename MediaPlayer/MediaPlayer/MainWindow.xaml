@@ -11,7 +11,7 @@
     <!--We link the view to the MainWindowViewModel so it can funtion as the viewmodel voor this view-->
     <Window.DataContext>
         <local:MainViewModel/>
-    </Window.DataContext>    
+    </Window.DataContext>
 
     <Grid>
 
@@ -98,6 +98,9 @@
             </MenuItem>
             <MenuItem Header="_Export" Command="{Binding ExportSong}" />
             <MenuItem Header="_Import" Command="{Binding ImportSong}" />
+            <MenuItem Header="_Database">
+                <MenuItem Header="_Reload database" Command="{Binding ReloadDatabase}" />
+            </MenuItem>
         </Menu>
 
         <i:Interaction.Triggers>

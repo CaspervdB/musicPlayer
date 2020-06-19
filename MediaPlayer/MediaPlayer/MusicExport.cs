@@ -1,4 +1,5 @@
-﻿using MusicPlayer;
+﻿using Database;
+using MusicPlayer;
 using NReco.VideoConverter;
 using System;
 using System.IO;
@@ -35,10 +36,11 @@ namespace MediaPlayer
                 newSong.ArtistName = video.Author;
                 newSong.SongTitle = video.Title;
                 playList.addSong(newSong);
-                
-                //TODO
+                                
                 //toevoegen aan database
-
+                DbCreator dbCreator = new DbCreator();
+                dbCreator.addSongToDatabase(newSong);
+                
             }
 
         }

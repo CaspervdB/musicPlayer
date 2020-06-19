@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MediaPlayer;
+using MusicPlayer;
+using System;
 using System.Data.SQLite;
 using System.IO;
 
@@ -8,8 +10,7 @@ namespace Database
     {
         private SQLiteConnection dbConnection;
         private string strCon;
-        private string sqlCommand;
-        private string dbPath = Environment.CurrentDirectory + "\\DB";
+        private string dbPath;
         private string dbFilePath;
         private void createDbFile()
         {
@@ -28,28 +29,20 @@ namespace Database
 
         public DbCreator()
         {
+            this.dbPath = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName, @"DB");
             createDbFile();
             this.strCon = string.Format("Data Source={0};", dbFilePath);
             this.dbConnection = new SQLiteConnection(strCon);
             createTable();
         }
 
-        /*public string createDbConnection()
-        {
-            
-            this.dbConnection.Open();
-            this.command = dbConnection.CreateCommand();
-            return strCon;
-        }*/
-
         public void createTable()
         {
             if (!checkIfExist("song_data"))
             {
-                string sqlCommand = "CREATE TABLE song_data(song_id INTEGER PRIMARY KEY AUTOINCREMENT, title VARCHAR(100), artist VARCHAR(100), times_played INT DEFAULT 0)";
+                string sqlCommand = "CREATE TABLE song_data(song_location VARCHAR(300) PRIMARY KEY , title VARCHAR(100), artist VARCHAR(100), times_played INT DEFAULT 0)";
                 executeQuery(sqlCommand);
             }
-
         }
 
         private bool checkIfExist(string tableName)
@@ -74,47 +67,84 @@ namespace Database
             this.dbConnection.Close();
         }
 
-        /*private bool checkIfTableContainsData(string tableName)
+        public void addSongToDatabase(Song song)
         {
-            SQLiteCommand selectCommand = new SQLiteCommand();
+            if (song == null) 
+            { 
+                return; 
+            }
 
-            selectCommand.CommandText = "SELECT count(*) FROM " + tableName;
-            var result = selectCommand.ExecuteScalar();
-
-            return Convert.ToInt32(result) > 0 ? true : false;
-        }*/
-
-
-        public void addSongData(string title, string artist)
-        {
             this.dbConnection.Open();
             SQLiteCommand sqlCommand = new SQLiteCommand(this.dbConnection);
-            sqlCommand.CommandText = "insert into song_data ('title', 'artist') values (@title, @artist)";
-            sqlCommand.Parameters.AddWithValue("@artist", artist);
-            sqlCommand.Parameters.AddWithValue("@title", title);
+            sqlCommand.CommandText = "insert into song_data ('song_location', 'title', 'artist') values (@location, @title, @artist)";
+            sqlCommand.Parameters.AddWithValue("@artist", song.ArtistName);
+            sqlCommand.Parameters.AddWithValue("@title", song.SongTitle);
+            sqlCommand.Parameters.AddWithValue("@location", song.SongLocation);
             sqlCommand.Prepare();
             sqlCommand.ExecuteNonQuery();
             this.dbConnection.Close();
+        }
 
+        public void deleteSongData(Song song)
+        {
+            this.dbConnection.Open();
+            SQLiteCommand sqlCommand = new SQLiteCommand(this.dbConnection);
+            sqlCommand.CommandText = "DELETE FROM song_data WHERE 'title' = '@title' AND 'artist' = '@artist'";
+            sqlCommand.Parameters.AddWithValue("@artist", song.ArtistName);
+            sqlCommand.Parameters.AddWithValue("@title", song.SongTitle);
+            sqlCommand.Prepare();
+            sqlCommand.ExecuteNonQuery();
+            this.dbConnection.Close();
+        }
+
+        private void clearDatabase()
+        {
+            this.dbConnection.Open();
+            SQLiteCommand sqlCommand = new SQLiteCommand(this.dbConnection);
+            sqlCommand.CommandText = "DELETE FROM song_data";
+            sqlCommand.ExecuteNonQuery();
+            this.dbConnection.Close();
+        }
+
+        public void reloadDatabase()
+        {
+            clearDatabase();
+
+            foreach (Playlist p in PlaylistManager.Instance.Playlists)
+            { 
+                foreach(Song s in p.SongList)
+                {
+                    addSongToDatabase(s);
+                }
+            }
+        }
+
+        public void updateSongData(Song song)
+        {
+            this.dbConnection.Open();
+            SQLiteCommand sqlCommand = new SQLiteCommand(this.dbConnection);
+            sqlCommand.CommandText = "UPDATE song_data SET 'title' = @title AND 'artist' = @artist WHERE song_location = '@location'";
+            sqlCommand.Parameters.AddWithValue("@location", song.SongLocation);
+            sqlCommand.Parameters.AddWithValue("@title", song.SongTitle);
+            sqlCommand.Parameters.AddWithValue("@artist", song.ArtistName);
+            sqlCommand.Prepare();
+            sqlCommand.ExecuteNonQuery();
+            this.dbConnection.Close();
         }
 
         public void getSongData()
-        {            
-                string query = "SELECT * FROM song_data";
-                this.dbConnection.Open();
-                SQLiteCommand sqlCommand = new SQLiteCommand(query, this.dbConnection);
-                using (SQLiteDataReader rdr = sqlCommand.ExecuteReader())
+        {
+            string query = "SELECT * FROM song_data";
+            this.dbConnection.Open();
+            SQLiteCommand sqlCommand = new SQLiteCommand(query, this.dbConnection);
+            using (SQLiteDataReader rdr = sqlCommand.ExecuteReader())
+            {
+                while (rdr.Read())
                 {
-                    while (rdr.Read())
-                    {
-
-                        Console.WriteLine($"{rdr.GetInt32(0)} {rdr.GetString(1)} {rdr.GetString(2)} {rdr.GetInt32(3)}");
-                    }
+                    Console.WriteLine($"{rdr.GetString(0)} {rdr.GetString(1)} {rdr.GetString(2)} {rdr.GetInt32(3)}");
                 }
-                this.dbConnection.Close();
-
-         
+            }
+            this.dbConnection.Close();
         }
-
     }
 }

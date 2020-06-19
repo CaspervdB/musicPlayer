@@ -1,4 +1,5 @@
-﻿using GalaSoft.MvvmLight.Command;
+﻿using Database;
+using GalaSoft.MvvmLight.Command;
 using MusicPlayer;
 using System;
 using System.Collections.ObjectModel;
@@ -64,6 +65,10 @@ namespace MediaPlayer
             {
                 Player.Instance.stop();
             }
+
+            DbCreator dbCreator = new DbCreator();
+            dbCreator.deleteSongData(SelectedSong);
+
             File.Delete(SelectedSong.SongLocation);
             SelectedPlaylist.removeSong(SelectedSong);
         }

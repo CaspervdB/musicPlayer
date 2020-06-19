@@ -23,6 +23,7 @@ namespace MediaPlayer
         public ICommand DeleteSong { get; set; }
         public ICommand ExportSong { get; set; }
         public ICommand ImportSong { get; set; }
+        public ICommand ReloadDatabase { get; set; }
         public ICommand EditSongContextMenuItem { get; set; }
 
         public ICommand WindowClosing
@@ -149,6 +150,12 @@ namespace MediaPlayer
             ImportSongWindow import = new ImportSongWindow();
             import.ShowDialog();
         }
+
+        private void reloadDatabase()
+        {
+            DbCreator dbCreator = new DbCreator();
+            dbCreator.reloadDatabase();
+        }
         public MainViewModel()
         {
             PlayButton = new RelayCommand(() => Player.Instance.play());
@@ -162,18 +169,20 @@ namespace MediaPlayer
             DeleteSong = new RelayCommand(() => deleteSong());
             ExportSong = new RelayCommand(() => exportSong());
             ImportSong = new RelayCommand(() => importSong());
+            ReloadDatabase = new RelayCommand(() => reloadDatabase());
 
             Factory.createPlaylistCollection();
            
+            /*
 
-            DbCreator dbCreator = new DbCreator();
-            
+            DbCreator dbCreator = new DbCreator();            
             dbCreator.addSongData("Cold", "Maroon 5");
             dbCreator.getSongData();
+            */
             
         }
 
-        
+       
 
         private void NotifyPropertyChanged([CallerMemberName] String propertyName = "")
         {

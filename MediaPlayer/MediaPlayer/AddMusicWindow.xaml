@@ -13,10 +13,7 @@
         <!--<Grid.ColumnDefinitions>
             <ColumnDefinition Width="20"/>
             <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="20"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
+
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="20"/>
         </Grid.ColumnDefinitions>
@@ -26,16 +23,15 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="20"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="20"/>
         </Grid.RowDefinitions>-->
 
 
-        <Button Content="Add Song" HorizontalAlignment="Left" VerticalAlignment="Top" Width="363" Margin="10,100,0,0" Height="45" Command="{Binding DownloadCommand}"/>
+        <Button Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="2" Content="Add Song" HorizontalAlignment="Left" VerticalAlignment="Top"  Command="{Binding DownloadCommand}" Height="35" Margin="0,35.8,0,0" Grid.RowSpan="2" Width="359"/>
         <TextBox Name="LinkTextBox" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="{Binding Link}" VerticalAlignment="Top" Width="363" Margin="10,41,0,0"/>
         <Label Content="Into Playlist:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,69,0,0"/>
-        <Label Content="Enter Youtube Link" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0"/>
+        <Label Grid.Row="1"  Content="Enter Youtube Link" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0"/>
         <ComboBox DisplayMemberPath="PlaylistName" Name="ComboBox" ItemsSource="{Binding PlaylistCollection}" SelectedItem="{Binding SelectedPlaylistInDownloadWindow}" HorizontalAlignment="Left" Margin="88,73,0,0" VerticalAlignment="Top" Width="120" SelectedIndex="0"/>
         <Label Name="ErrorLabel" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,150,0,-13" Width="236" Height="17" Content="{Binding Error, Mode=TwoWay}"/>
     </Grid>
