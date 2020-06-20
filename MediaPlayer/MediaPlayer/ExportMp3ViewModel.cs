@@ -7,6 +7,7 @@ using System.IO;
 using System.Linq.Expressions;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Forms;
 using System.Windows.Input;
 
@@ -35,16 +36,16 @@ namespace MediaPlayer
             }
         }
 
-        private async Task DowloadSongExternal()
+        private async void DowloadSongExternal(Window window)
         {
             if(YoutubeLink == null)
             {
-                MessageBox.Show("Voer een URL in");
+                System.Windows.MessageBox.Show("Voer een URL in");
                 return;
             }
             if(FileLocation == null)
             {
-                MessageBox.Show("Kies een Locatie");
+                System.Windows.MessageBox.Show("Kies een Locatie");
                 return;
             }
 
@@ -52,10 +53,12 @@ namespace MediaPlayer
             {
                 MusicExport musicExport = new MusicExport();
                 await musicExport.SaveAudioExternal(FileLocation, YoutubeLink);
+                System.Windows.MessageBox.Show("Downloaden voltooid!");
+                CloseWindow(window);
             }
             catch
             {
-                MessageBox.Show("Ongeldige URL");
+                System.Windows.MessageBox.Show("Ongeldige URL");
             }
         }
 
@@ -74,11 +77,19 @@ namespace MediaPlayer
         public ExportMp3ViewModel() 
         {
             FileLocationButton = new RelayCommand(() => FileManager());
-            DownloadButton = new RelayCommand( async () => await DowloadSongExternal());
+            DownloadButton = new RelayCommand<Window>(this.DowloadSongExternal);
         }
         private void NotifyPropertyChanged([CallerMemberName] String propertyName = "")
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        private void CloseWindow(Window window)
+        {
+            if (window != null)
+            {
+                window.Close();
+            }
         }
     }
 }

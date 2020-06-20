@@ -53,14 +53,14 @@ namespace MediaPlayer
             }
         }
 
-        private void songImport(string FileLocation, Playlist playlist)
+        private void songImport(Window window)
         {
             if(FileLocation == null)
             {
                 System.Windows.MessageBox.Show("Kies een nummer om te importeren");
                 return;
             }
-            if(playlist == null)
+            if(SelectedPlaylistInImportWindow == null)
             {
                 System.Windows.MessageBox.Show("Kies een playlist");
                 return;
@@ -76,19 +76,23 @@ namespace MediaPlayer
                 return;
             }
             string songFilePath = FileLocation;
-            string destPath = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName, @"music\" + playlist.PlaylistName + @"\" + ArtistName + " - " + SongTitle + ".mp3");
+            string destPath = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName, @"music\" + SelectedPlaylistInImportWindow.PlaylistName + @"\" + ArtistName + " - " + SongTitle + ".mp3");
             File.Copy(songFilePath, destPath);
             Song newSong = new Song(destPath);
             newSong.ArtistName = ArtistName;
             newSong.SongTitle = SongTitle;
-            playlist.addSong(newSong);
+            newSong.saveFileTag();
+            SelectedPlaylistInImportWindow.addSong(newSong);
+            DbCreator db = new DbCreator();
+            db.addSongToDatabase(newSong);
             System.Windows.MessageBox.Show("Import succesvol");
+            CloseWindow(window);
         }
 
         public ImportSongViewModel()
         {
             FileLocationButton = new RelayCommand(() => FileManager());
-            ImportCommand = new RelayCommand(() => songImport(FileLocation, SelectedPlaylistInImportWindow));
+            ImportCommand = new RelayCommand<Window>(this.songImport);
         }
         private void NotifyPropertyChanged([CallerMemberName] String propertyName = "")
         {

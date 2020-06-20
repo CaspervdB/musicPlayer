@@ -173,6 +173,14 @@
     <Compile Include="Songlist.cs" />
     <Compile Include="MusicExport.cs" />
     <Compile Include="PlaylistManager.cs" />
+    <Compile Include="TopTenArtistsViewModel.cs" />
+    <Compile Include="TopTenSongsViewModel.cs" />
+    <Compile Include="TopTenArtistsWindow.xaml.cs">
+      <DependentUpon>TopTenArtistsWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TopTenSongsWindow.xaml.cs">
+      <DependentUpon>TopTenSongsWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Visualizer.cs" />
     <Page Include="AddMusicWindow.xaml">
       <SubType>Designer</SubType>
@@ -219,6 +227,14 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="TopTenArtistsWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="TopTenSongsWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">

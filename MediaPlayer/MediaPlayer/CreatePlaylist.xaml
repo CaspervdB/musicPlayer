@@ -1,4 +1,5 @@
 ﻿<Window x:Class="MediaPlayer.CreatePlaylist"
+        x:Name="createPlaylistWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -11,7 +12,7 @@
     </Window.DataContext>
     <Grid>
 
-        <Button Content="Add new playlist" HorizontalAlignment="Left" VerticalAlignment="Top" Width="363" Margin="10,109,0,0" Height="45" Command="{Binding CreatePlaylistButton}"/>
+        <Button Content="Add new playlist" HorizontalAlignment="Left" VerticalAlignment="Top" Width="363" Margin="10,109,0,0" Height="45" Command="{Binding CreatePlaylistButton}" CommandParameter="{Binding ElementName=createPlaylistWindow}"/>
         <TextBox Name="NewPlaylistTextBox" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="{Binding NewPlaylistName}" VerticalAlignment="Top" Width="363" Margin="10,71,0,0"/>
         <Label Content="Playlist name:" HorizontalAlignment="Left" Margin="26,40,0,0" VerticalAlignment="Top"/>
 

@@ -1,6 +1,8 @@
 ﻿using MediaPlayer;
 using MusicPlayer;
 using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Data.SQLite;
 using System.IO;
 
@@ -147,9 +149,10 @@ namespace MusicPlayer
             getSongDataBySong(song);
         }
 
-        public void getTopTenMostListenedSongs()
+        public ObservableCollection<KeyValuePair<string, int>> getTopTenMostListenedSongs()
         {
-            string query = "SELECT title, artist, times_played FROM song_data ORDER BY times_played DESC LIMIT 10";
+            ObservableCollection<KeyValuePair<string, int>> data = new ObservableCollection<KeyValuePair<string, int>>();
+            string query = "SELECT title, times_played FROM song_data WHERE times_played != 0 ORDER BY times_played DESC LIMIT 10";
             this.dbConnection.Open();
             SQLiteCommand sqlCommand = new SQLiteCommand(query, this.dbConnection);
             using (SQLiteDataReader rdr = sqlCommand.ExecuteReader())
@@ -157,12 +160,45 @@ namespace MusicPlayer
                 while (rdr.Read())
                 {
                     string title = rdr.GetString(0);
-                    string artist = rdr.GetString(1);
-                    int timesPlayed = rdr.GetInt32(2);
-                    Console.WriteLine($"{title} {artist} {timesPlayed}");
+                    int timesPlayed = rdr.GetInt32(1);
+                    Console.WriteLine($"{title} {timesPlayed}");
+                    if(title.Length > 10)
+                    {
+                        title = title.Substring(0, 9);
+                        title += "...";
+                    }
+                    //string titleAndArtist = title + " - " + artist;
+                    data.Add(new KeyValuePair<string, int>(title, timesPlayed));
                 }
             }
             this.dbConnection.Close();
+            return data;
+        }
+
+        public ObservableCollection<KeyValuePair<string, int>> getTopTenMostPlayedArtists()
+        {
+            ObservableCollection<KeyValuePair<string, int>> data = new ObservableCollection<KeyValuePair<string, int>>();
+            string query = "SELECT artist, SUM(times_played) as tp FROM song_data GROUP BY artist, times_played HAVING tp > 0 ORDER BY times_played DESC LIMIT 10";
+            this.dbConnection.Open();
+            SQLiteCommand sqlCommand = new SQLiteCommand(query, this.dbConnection);
+            using (SQLiteDataReader rdr = sqlCommand.ExecuteReader())
+            {
+                while (rdr.Read())
+                {
+                   string artist = rdr.GetString(0);
+                    int timesPlayed = rdr.GetInt32(1);
+                    //Console.WriteLine($"{title} {artist} {timesPlayed}");
+                    if (artist.Length > 15)
+                    {
+                        artist = artist.Substring(0, 14);
+                        artist += "...";
+                    }
+                    //string titleAndArtist = title + " - " + artist;
+                    data.Add(new KeyValuePair<string, int>(artist, timesPlayed));
+                }
+            }
+            this.dbConnection.Close();
+            return data;
         }
 
         public void getSongData()
