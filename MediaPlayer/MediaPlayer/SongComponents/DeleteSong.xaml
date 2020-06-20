@@ -25,7 +25,7 @@
             <RowDefinition Height="6*"/>
         </Grid.RowDefinitions>
         <Label Content="Select a playlist:" Margin="35.4,29.2,0,0" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" Width="126" Height="26" VerticalAlignment="Top"/>
-        <ComboBox DisplayMemberPath="PlaylistName" Name="ComboBoxPlaylists" ItemsSource="{Binding Playlists}" SelectedItem="{Binding SelectedPlaylist}" HorizontalAlignment="Left" Margin="220.4,30.2,0,0" Width="211" Grid.Column="1" Grid.Row="1" RenderTransformOrigin="0.703,1.322" Height="23" VerticalAlignment="Top" SelectedValue="0"/>
+        <ComboBox DisplayMemberPath="PlaylistName" Name="ComboBoxPlaylists" ItemsSource="{Binding Playlists}" SelectedItem="{Binding SelectedPlaylist}" HorizontalAlignment="Left" Margin="220.4,30.2,0,0" Width="211" Grid.Column="1" Grid.Row="1" RenderTransformOrigin="0.703,1.322" Height="23" VerticalAlignment="Top"/>
         <ComboBox DisplayMemberPath="SongTitle" Name="ComboBoxSongs" ItemsSource="{Binding Songlist}" SelectedItem="{Binding SelectedSong}" Margin="220.6,46,0,0" Grid.Column="1" Grid.Row="3" HorizontalAlignment="Left" Width="211" Height="26" VerticalAlignment="Top" />
         <Button Name="button" Content="Delete" ToolTip="Press to delete song from playlist" Margin="220.6,25.6,0,0" Command="{Binding DeleteSongButton}" Foreground="White" Background="#FF0064B7" Grid.Column="1" Grid.Row="5" Height="45" VerticalAlignment="Top" HorizontalAlignment="Left" Width="211"/>
         <Label Content="Select a song:" Grid.Column="1" HorizontalAlignment="Left" Margin="35.6,45,0,0" Grid.Row="3" VerticalAlignment="Top"/>
