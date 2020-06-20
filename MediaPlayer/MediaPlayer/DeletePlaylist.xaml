@@ -5,14 +5,27 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MediaPlayer"
         mc:Ignorable="d"
-        Title="DeletePlaylist" Height="328.83" Width="478.105">
+        Title="DeletePlaylist" Height="165" Width="400" ResizeMode="NoResize">
     <Window.DataContext>
         <local:DeletePlaylistViewModel/>
     </Window.DataContext>
-    <Grid>
-        <ComboBox DisplayMemberPath="PlaylistName" Name="ComboBox" ItemsSource="{Binding Playlists}" SelectedItem="{Binding SelectedPlaylistInDeleteWindow}" HorizontalAlignment="Left" Margin="193,73,0,0" VerticalAlignment="Top" Width="211"/>
-
-        <Button Content="Delete Playlist" HorizontalAlignment="Left" VerticalAlignment="Top" Width="363" Margin="41,186,0,0" Height="45" Command="{Binding DeletePlaylist}"/>
-        <Label Content="Select a playlist to delete: " HorizontalAlignment="Left" Margin="41,69,0,0" VerticalAlignment="Top"/>
+    <Grid Margin="0,0,0,0" Background="#64c1ff">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="6*"/>
+            <ColumnDefinition Width="150*"/>
+            <ColumnDefinition Width="6*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="6*"/>
+            <RowDefinition Height="24*"/>
+            <RowDefinition Height="6*"/>
+            <RowDefinition Height="27*"/>
+            <RowDefinition Height="6*"/>
+            <RowDefinition Height="27*"/>
+            <RowDefinition Height="6*"/>
+        </Grid.RowDefinitions>
+        <Label Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Content="Select a playlist to delete: " Foreground="White" />
+        <ComboBox Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="1"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" DisplayMemberPath="PlaylistName" Name="ComboBox" ItemsSource="{Binding Playlists}" SelectedItem="{Binding SelectedPlaylistInDeleteWindow}"/>
+        <Button Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Content="Delete Playlist" Command="{Binding DeletePlaylist}" Foreground="White" Background="#FF0064B7"/>
     </Grid>
 </Window>

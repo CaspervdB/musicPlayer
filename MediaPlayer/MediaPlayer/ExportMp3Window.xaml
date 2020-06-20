@@ -5,18 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MediaPlayer"
         mc:Ignorable="d"
-        Title="ExportMp3Window" Height="219.086" Width="238.248"
+        Title="Export MP3" Height="199.916" Width="288.912"
         ResizeMode="NoResize">
     <Window.DataContext>
         <local:ExportMp3ViewModel/>
     </Window.DataContext>
-    <Grid>
+    <Grid Margin="0,0,0,0" Background="#64c1ff">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="20"/>
-            <ColumnDefinition Width="0.6*"/>
-            <ColumnDefinition Width="10"/>
-            <ColumnDefinition Width="1*"/>
-            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="6*"/>
+            <ColumnDefinition Width="82*"/>
+            <ColumnDefinition Width="6*"/>
+            <ColumnDefinition Width="121*"/>
+            <ColumnDefinition Width="6*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="10"/>
@@ -30,14 +30,11 @@
             <RowDefinition Height="10"/>
         </Grid.RowDefinitions>
         <TextBox Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Text="{Binding YoutubeLink}"  TextWrapping="Wrap"/>
-        <Viewbox Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left">
-            <Label Content="File Location" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+        <Viewbox Grid.Row="4" Grid.Column="1" HorizontalAlignment="Left" Width="81">
+            <Label Content="Youtube Link:" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White"/>
         </Viewbox>
-        <Viewbox Grid.Row="4" Grid.Column="1" HorizontalAlignment="Left">
-            <Label Content="Youtube Link"/>
-        </Viewbox>
-        <Button Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Content="Download" Command="{Binding DownloadButton}"/>
+        <Button Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Content="Download" Command="{Binding DownloadButton}" Background="#FF0064B7" Foreground="White"/>
         <TextBox Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" TextWrapping="Wrap" Text="{Binding FileLocation, Mode=TwoWay}"/>
-        <Button Grid.Row="1" Grid.Column="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Content="File Location" Command="{Binding FileLocationButton}"/>
+        <Button Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Content="File Location" Command="{Binding FileLocationButton}" Foreground="White" Background="#FF0064B7"/>
     </Grid>
 </Window>

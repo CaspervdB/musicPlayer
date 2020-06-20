@@ -5,15 +5,27 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MediaPlayer"
         mc:Ignorable="d"
-        Title="CreatePlaylist" Height="235.479" Width="404.247">
+        Title="Create a playlist" Height="165" Width="400" ResizeMode="NoResize">
     <Window.DataContext>
         <local:CreatePlaylistViewModel/>
     </Window.DataContext>
-    <Grid>
-
-        <Button Content="Add new playlist" HorizontalAlignment="Left" VerticalAlignment="Top" Width="363" Margin="10,109,0,0" Height="45" Command="{Binding CreatePlaylistButton}"/>
-        <TextBox Name="NewPlaylistTextBox" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="{Binding NewPlaylistName}" VerticalAlignment="Top" Width="363" Margin="10,71,0,0"/>
-        <Label Content="Playlist name:" HorizontalAlignment="Left" Margin="26,40,0,0" VerticalAlignment="Top"/>
-
+    <Grid Margin="0,0,0,0" Background="#64c1ff">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="5*"/>
+            <ColumnDefinition Width="150*"/>
+            <ColumnDefinition Width="5*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="24*"/>
+            <RowDefinition Height="6*"/>
+            <RowDefinition Height="27*"/>
+            <RowDefinition Height="6*"/>
+            <RowDefinition Height="27*"/>
+            <RowDefinition Height="5*"/>
+        </Grid.RowDefinitions>
+        <Label Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="1" Content="Playlist name:" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White"/>
+        <TextBox Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="1" Name="NewPlaylistTextBox" HorizontalAlignment="Stretch" TextWrapping="Wrap" Text="{Binding NewPlaylistName}" VerticalAlignment="Stretch"/>
+        <Button Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="1" Content="Add new playlist" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Command="{Binding CreatePlaylistButton}" Foreground="White" Background="#FF0064B7"/>
     </Grid>
 </Window>
