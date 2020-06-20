@@ -94,6 +94,7 @@
                 <MenuItem Header="_Top Ten Played Artist" Command="{Binding TopTenPlayedArtistsMenuItem}" />
             </MenuItem>
         </Menu>
+        <Image Source="{Binding AlbumImage}" Grid.Column="6" HorizontalAlignment="Left" Height="110" Margin="9.8,0.2,0,0" Grid.Row="3" Grid.RowSpan="3" VerticalAlignment="Top" Width="127"/>
         <i:Interaction.Triggers>
             <i:EventTrigger EventName="Closing">
                 <command:EventToCommand Command="{Binding WindowClosing}" PassEventArgsToCommand="True" />
