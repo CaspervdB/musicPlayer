@@ -239,3 +239,9 @@ C:\xampp\htdocs\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\MusicPlayer.csproj
 C:\xampp\htdocs\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\MusicPlayer.csproj.CopyComplete
 C:\xampp\htdocs\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\MediaPlayer.exe
 C:\xampp\htdocs\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\MediaPlayer.pdb
+C:\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\System.Windows.Controls.DataVisualization.Toolkit.dll
+C:\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\System.Windows.Controls.DataVisualization.Toolkit.xml
+C:\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\TopTenSongsWindow.g.cs
+C:\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\TopTenSongsWindow.baml
+C:\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\TopTenArtistsWindow.g.cs
+C:\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\TopTenArtistsWindow.baml

@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\musicPlayer\MediaPlayer\MediaPlayer\App.xaml
-82105113410
+101371287830
 
-301683210707
+341900558967
 1461547144578
-AddMusicWindow.xaml;CreatePlaylist.xaml;DeletePlaylist.xaml;DeleteSong.xaml;EditSongWindow.xaml;ExportMp3Window.xaml;ImportSongWindow.xaml;MainWindow.xaml;
+AddMusicWindow.xaml;CreatePlaylist.xaml;DeletePlaylist.xaml;DeleteSong.xaml;EditSongWindow.xaml;ExportMp3Window.xaml;ImportSongWindow.xaml;MainWindow.xaml;TopTenArtistsWindow.xaml;TopTenSongsWindow.xaml;
 
 True
 

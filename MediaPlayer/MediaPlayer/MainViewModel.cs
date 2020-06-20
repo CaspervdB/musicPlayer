@@ -22,6 +22,8 @@ namespace MediaPlayer
         public ICommand ExportSong { get; set; }
         public ICommand ImportSong { get; set; }
         public ICommand ReloadDatabase { get; set; }
+        public ICommand TopTenPlayedSongsMenuItem { get; set; }
+        public ICommand TopTenPlayedArtistsMenuItem { get; set; }
         public ICommand EditSongContextMenuItem { get; set; }
         private Playlist selectedPlaylist;
 
@@ -139,6 +141,19 @@ namespace MediaPlayer
             updateSonglist();
         }
 
+
+        private void topTenPlayedArtists()
+        {
+            TopTenArtistsWindow ttaw = new TopTenArtistsWindow();
+            ttaw.ShowDialog();
+        }
+
+        private void topTenPlayedSongs()
+        {
+            TopTenSongsWindow ttsw = new TopTenSongsWindow();
+            ttsw.ShowDialog();
+        }
+
         private void reloadDatabase()
         {
             DbCreator dbCreator = new DbCreator();
@@ -158,10 +173,13 @@ namespace MediaPlayer
             ExportSong = new RelayCommand(() => exportSong());
             ImportSong = new RelayCommand(() => importSong());
             ReloadDatabase = new RelayCommand(() => reloadDatabase());
+            TopTenPlayedSongsMenuItem = new RelayCommand(() => topTenPlayedSongs());
+            TopTenPlayedArtistsMenuItem = new RelayCommand(() => topTenPlayedArtists());
 
             Factory.createPlaylistCollection();
             
-        }    
+        }
+
 
         private void updateSonglist()
         {

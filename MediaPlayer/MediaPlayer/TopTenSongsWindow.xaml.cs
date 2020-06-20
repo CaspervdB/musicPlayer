@@ -1,5 +1,4 @@
-﻿using MusicPlayer;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,27 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
-
-using WPFSoundVisualizationLib;
 
 namespace MediaPlayer
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for TopTenSongsWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class TopTenSongsWindow : Window
     {
-        public MainWindow()
+        public TopTenSongsWindow()
         {
             InitializeComponent();
-
-            waveformTimeline.RegisterSoundPlayer(Player.Instance);
-            spectrumAnalyzer.RegisterSoundPlayer(Player.Instance);
         }
-
-        //hier mag eigenlijk niks komen te staan ivm true mvvm!
-
     }
 }

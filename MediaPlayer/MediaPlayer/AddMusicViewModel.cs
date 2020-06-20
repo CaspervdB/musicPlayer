@@ -46,7 +46,7 @@ namespace MediaPlayer
         {
             get { return PlaylistManager.Instance.Playlists; }            
         }
-        private async Task DownloadSongAsync()
+        private async void DownloadSongAsync(Window window)
         {
             if (link == "" && SelectedPlaylistInDownloadWindow == null)
             {
@@ -71,6 +71,7 @@ namespace MediaPlayer
                 MusicExport musicExport = new MusicExport();
                 await musicExport.SaveAudioToDiskAsync(link, SelectedPlaylistInDownloadWindow);
                 MessageBox.Show("Downloaden voltooid.");
+                CloseWindow(window);
 
             }
             catch
@@ -81,10 +82,7 @@ namespace MediaPlayer
 
         public AddMusicViewModel()
         {
-            DownloadCommand = new RelayCommand(async () => await DownloadSongAsync());
-            
-
-        //Factory.createPlaylistCollection();
+            DownloadCommand = new RelayCommand<Window>(this.DownloadSongAsync);
     }
 
         private void NotifyPropertyChanged([CallerMemberName] String propertyName = "")

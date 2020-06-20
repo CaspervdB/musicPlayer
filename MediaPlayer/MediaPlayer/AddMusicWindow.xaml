@@ -1,9 +1,11 @@
 ﻿<Window x:Class="MediaPlayer.AddMusicWindow"
+        x:Name="addMusicWindows"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MediaPlayer"
+        
         mc:Ignorable="d"
         Title="Add a song" Height="208.167" Width="400" ResizeMode="NoResize">
     <Window.DataContext>
@@ -33,6 +35,6 @@
         <TextBox Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="3" Name="LinkTextBox" HorizontalAlignment="Stretch" TextWrapping="Wrap" Text="{Binding Link}" VerticalAlignment="Stretch"/>
         <Label Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="1" Content="Into Playlist:" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White"/>
         <ComboBox Grid.Column="3" Grid.Row="5" Grid.ColumnSpan="1" DisplayMemberPath="PlaylistName" Name="ComboBox" ItemsSource="{Binding PlaylistCollection}" SelectedItem="{Binding SelectedPlaylistInDownloadWindow}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" SelectedIndex="0"/>
-        <Button Grid.Column="1" Grid.Row="7" Grid.ColumnSpan="3" Content="Add Song" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  Command="{Binding DownloadCommand}" Foreground="White" Background="#FF0064B7"/>
+        <Button Grid.Column="1" Grid.Row="7" Grid.ColumnSpan="3" Content="Add Song" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  Command="{Binding DownloadCommand}" CommandParameter="{Binding ElementName=addMusicWindows}" Foreground="White" Background="#FF0064B7"/>
     </Grid>
 </Window>

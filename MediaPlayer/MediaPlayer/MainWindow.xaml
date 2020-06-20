@@ -89,9 +89,11 @@
             <MenuItem Header="_Database">
                 <MenuItem Header="_Reload database" Command="{Binding ReloadDatabase}" />
             </MenuItem>
+            <MenuItem Header="_Charts">
+                <MenuItem Header="_Top Ten Played Songs" Command="{Binding TopTenPlayedSongsMenuItem}" />
+                <MenuItem Header="_Top Ten Played Artist" Command="{Binding TopTenPlayedArtistsMenuItem}" />
+            </MenuItem>
         </Menu>
-        <Button Content="Button" Grid.Column="5" HorizontalAlignment="Left" Margin="35.2,49.6,0,0" Grid.Row="2" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
-
         <i:Interaction.Triggers>
             <i:EventTrigger EventName="Closing">
                 <command:EventToCommand Command="{Binding WindowClosing}" PassEventArgsToCommand="True" />
