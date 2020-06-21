@@ -2,6 +2,7 @@
 using NReco.VideoConverter;
 using System;
 using System.IO;
+using System.Net;
 using System.Threading.Tasks;
 using YoutubeExplode;
 using YoutubeExplode.Videos;
@@ -34,6 +35,12 @@ namespace MediaPlayer
                 Song newSong = new Song(fileName + ".mp3");
                 newSong.ArtistName = video.Author;
                 newSong.SongTitle = video.Title;
+                using (WebClient client = new WebClient())
+                {
+                    client.DownloadFile(video.Thumbnails.HighResUrl, fileName + ".jpg");
+                }
+                newSong.setAlbumArt(fileName + ".jpg");
+                File.Delete(fileName + ".jpg");
                 newSong.saveFileTag();
                 playList.addSong(newSong);
                                 
