@@ -3,19 +3,16 @@ using MusicPlayer;
 using System;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
-using System.IO;
 using System.Runtime.CompilerServices;
 using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
 
 namespace MediaPlayer
 {
     class MainViewModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
-        public ICommand PlayButton { get; set; }
-        public ICommand PauseButton { get; set; }
+        public ICommand PlayPauseButton { get; set; }
         public ICommand NextButton { get; set; }
         public ICommand PreviousButton { get; set; }
         public ICommand AddSong { get; set; }
@@ -62,7 +59,9 @@ namespace MediaPlayer
 
         public ImageSource AlbumImage
         {
-            get { if (CurrentSong != null)
+            get
+            {
+                if (CurrentSong != null)
                 {
                     return CurrentSong.getAlbumArt();
                 }
@@ -101,8 +100,26 @@ namespace MediaPlayer
                 DbManager db = new DbManager();
                 db.incrementTimesPlayed(value);
                 NotifyPropertyChanged("AlbumImage");
+                NotifyPropertyChanged("PlayPauseButtonContent");
             }
         }
+
+
+        public string PlayPauseButtonContent
+        {
+            get
+            {
+                if (Player.Instance.IsPlaying)
+                {
+                    return ";";
+                }
+                else
+                {
+                    return "4";
+                }
+            }
+        }
+
 
         private void previous()
         {
@@ -180,8 +197,7 @@ namespace MediaPlayer
         }
         public MainViewModel()
         {
-            PlayButton = new RelayCommand(() => Player.Instance.play());
-            PauseButton = new RelayCommand(() => Player.Instance.pause());
+            PlayPauseButton = new RelayCommand(() => setPlayPause());
             NextButton = new RelayCommand(() => next());
             PreviousButton = new RelayCommand(() => previous());
             AddSong = new RelayCommand(() => addsong());
@@ -198,7 +214,21 @@ namespace MediaPlayer
             Player.Instance.SongEnded += PlayerInstance_SongEnded;
 
             Factory.createPlaylistCollection();
-            
+
+        }
+
+        private void setPlayPause()
+        {
+            if (Player.Instance.IsPlaying)
+            {
+                Player.Instance.pause();
+                NotifyPropertyChanged("PlayPauseButtonContent");
+            }
+            else
+            {
+                Player.Instance.play();
+                NotifyPropertyChanged("PlayPauseButtonContent");
+            }
         }
 
         private void PlayerInstance_SongEnded(object sender, EventArgs e)

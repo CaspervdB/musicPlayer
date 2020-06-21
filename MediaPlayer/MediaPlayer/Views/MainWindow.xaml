@@ -26,7 +26,7 @@
             <ColumnDefinition Width="5*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="19*"/>
+            <RowDefinition Height="19"/>
             <RowDefinition Height="5*"/>
             <RowDefinition Height="76*"/>
             <RowDefinition Height="78*"/>
@@ -82,9 +82,8 @@
             </ListBox.ItemTemplate>
         </ListBox>
         <Button Grid.Column="1" Grid.Row="6" Content="7" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Command="{Binding PreviousButton}" Foreground="#FF0064B7" Background="#FF64C1FF" FontFamily="Webdings" FontSize="72" BorderBrush="#FF0064B7"/>
-        <Button Grid.Column="3" Grid.Row="6" Content=";" HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" Command="{Binding PauseButton}" Foreground="#FF0064B7" Background="#FF64C1FF" FontFamily="Webdings" FontSize="72" BorderBrush="#FF0064B7"/>
-        <Button Grid.Column="5" Grid.Row="6" Content="4" HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" Command="{Binding PlayButton}" Foreground="#FF0064B7" Background="#FF64C1FF" FontFamily="Webdings" FontSize="72" BorderBrush="#FF0064B7"/>
-        <Button Grid.Column="7" Grid.Row="6" Content="8" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Command="{Binding NextButton}"  Foreground="#FF0064B7" Background="#FF64C1FF" FontFamily="Webdings" FontSize="72" BorderBrush="#FF0064B7"/>
+        <Button Grid.Column="3" Grid.Row="6" Content="{Binding PlayPauseButtonContent}" HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" Command="{Binding PlayPauseButton}" Foreground="#FF0064B7" Background="#FF64C1FF" FontFamily="Webdings" FontSize="72" BorderBrush="#FF0064B7"/>
+        <Button Grid.Column="5" Grid.Row="6" Content="8" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Command="{Binding NextButton}"  Foreground="#FF0064B7" Background="#FF64C1FF" FontFamily="Webdings" FontSize="72" BorderBrush="#FF0064B7"/>
         <Image Grid.Column="9" Grid.Row="6" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Source="{Binding AlbumImage}" >
             <Image.Effect>
                 <DropShadowEffect/>
