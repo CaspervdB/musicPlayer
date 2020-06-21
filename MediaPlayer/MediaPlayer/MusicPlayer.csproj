@@ -149,7 +149,7 @@
       <DependentUpon>CreatePlaylist.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\CreatePlaylistViewModel.cs" />
-    <Compile Include="Models\DbCreator.cs" />
+    <Compile Include="Models\DbManager.cs" />
     <Compile Include="Views\DeletePlaylist.xaml.cs">
       <DependentUpon>DeletePlaylist.xaml</DependentUpon>
     </Compile>

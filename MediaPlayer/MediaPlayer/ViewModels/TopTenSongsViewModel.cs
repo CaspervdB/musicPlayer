@@ -15,7 +15,7 @@ namespace MediaPlayer
         public string LegendTitle { get; set; }
         public TopTenSongsViewModel()
         {
-            DbCreator db = new DbCreator();
+            DbManager db = new DbManager();
             this.Data = db.getTopTenMostListenedSongs();
             this.Title = "Top Ten Played Songs";
             this.LegendTitle = "Songs";

@@ -83,7 +83,7 @@ namespace MediaPlayer
             newSong.SongTitle = SongTitle;
             newSong.saveFileTag();
             SelectedPlaylistInImportWindow.addSong(newSong);
-            DbCreator db = new DbCreator();
+            DbManager db = new DbManager();
             db.addSongToDatabase(newSong);
             System.Windows.MessageBox.Show("Import succesvol");
             CloseWindow(window);

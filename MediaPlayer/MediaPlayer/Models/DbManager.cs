@@ -1,5 +1,4 @@
 ﻿using MediaPlayer;
-using MusicPlayer;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -8,7 +7,7 @@ using System.IO;
 
 namespace MusicPlayer
 {
-    public class DbCreator
+    public class DbManager
     {
         private SQLiteConnection dbConnection;
         private string strCon;
@@ -29,7 +28,7 @@ namespace MusicPlayer
             }
         }
 
-        public DbCreator()
+        public DbManager()
         {
             this.dbPath = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName, @"DB");
             createDbFile();
@@ -49,7 +48,6 @@ namespace MusicPlayer
 
         private bool checkIfExist(string tableName)
         {
-
             this.dbConnection.Open();
             SQLiteCommand triggerCommand = dbConnection.CreateCommand();
             triggerCommand.CommandText = "SELECT name FROM sqlite_master WHERE name='" + tableName + "'"; ;
@@ -61,7 +59,6 @@ namespace MusicPlayer
 
         public void executeQuery(string sqlCommand)
         {
-            //SQLiteCommand command = new SQLiteCommand();
             this.dbConnection.Open();
             SQLiteCommand triggerCommand = dbConnection.CreateCommand();
             triggerCommand.CommandText = sqlCommand;
@@ -71,9 +68,9 @@ namespace MusicPlayer
 
         public void addSongToDatabase(Song song)
         {
-            if (song == null) 
-            { 
-                return; 
+            if (song == null)
+            {
+                return;
             }
 
             this.dbConnection.Open();
@@ -85,7 +82,6 @@ namespace MusicPlayer
             sqlCommand.Prepare();
             sqlCommand.ExecuteNonQuery();
             this.dbConnection.Close();
-            //getSongData();
         }
 
         public void deleteSongData(Song song)
@@ -97,8 +93,6 @@ namespace MusicPlayer
             sqlCommand.Prepare();
             sqlCommand.ExecuteNonQuery();
             this.dbConnection.Close();
-            Console.WriteLine("deleted in db!");
-
         }
 
         private void clearDatabase()
@@ -115,13 +109,12 @@ namespace MusicPlayer
             clearDatabase();
 
             foreach (Playlist p in PlaylistManager.Instance.Playlists)
-            { 
-                foreach(Song s in p.SongList)
+            {
+                foreach (Song s in p.SongList)
                 {
                     addSongToDatabase(s);
                 }
             }
-            //getSongData();
         }
 
         public void updateSongData(Song song)
@@ -146,7 +139,6 @@ namespace MusicPlayer
             sqlCommand.Prepare();
             sqlCommand.ExecuteNonQuery();
             this.dbConnection.Close();
-            getSongDataBySong(song);
         }
 
         public ObservableCollection<KeyValuePair<string, int>> getTopTenMostListenedSongs()
@@ -161,13 +153,11 @@ namespace MusicPlayer
                 {
                     string title = rdr.GetString(0);
                     int timesPlayed = rdr.GetInt32(1);
-                    Console.WriteLine($"{title} {timesPlayed}");
-                    if(title.Length > 10)
+                    if (title.Length > 10)
                     {
                         title = title.Substring(0, 9);
                         title += "...";
                     }
-                    //string titleAndArtist = title + " - " + artist;
                     data.Add(new KeyValuePair<string, int>(title, timesPlayed));
                 }
             }
@@ -185,15 +175,13 @@ namespace MusicPlayer
             {
                 while (rdr.Read())
                 {
-                   string artist = rdr.GetString(0);
+                    string artist = rdr.GetString(0);
                     int timesPlayed = rdr.GetInt32(1);
-                    //Console.WriteLine($"{title} {artist} {timesPlayed}");
                     if (artist.Length > 15)
                     {
                         artist = artist.Substring(0, 14);
                         artist += "...";
                     }
-                    //string titleAndArtist = title + " - " + artist;
                     data.Add(new KeyValuePair<string, int>(artist, timesPlayed));
                 }
             }

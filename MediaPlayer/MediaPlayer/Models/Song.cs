@@ -111,7 +111,7 @@ namespace MusicPlayer
             {
                 Player.Instance.stop();
             }
-            DbCreator dbCreator = new DbCreator();
+            DbManager dbCreator = new DbManager();
             this.filetag.Save();
             dbCreator.updateSongData(this);
             

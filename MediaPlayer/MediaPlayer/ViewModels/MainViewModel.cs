@@ -98,7 +98,7 @@ namespace MediaPlayer
                 }
                 Player.Instance.CurrentSong = value;
                 Player.Instance.play();
-                DbCreator db = new DbCreator();
+                DbManager db = new DbManager();
                 db.incrementTimesPlayed(value);
                 NotifyPropertyChanged("AlbumImage");
             }
@@ -175,7 +175,7 @@ namespace MediaPlayer
 
         private void reloadDatabase()
         {
-            DbCreator dbCreator = new DbCreator();
+            DbManager dbCreator = new DbManager();
             dbCreator.reloadDatabase();
         }
         public MainViewModel()

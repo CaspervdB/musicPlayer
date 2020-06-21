@@ -1,6 +1,5 @@
 ﻿using MusicPlayer;
 using NReco.VideoConverter;
-using System;
 using System.IO;
 using System.Net;
 using System.Threading.Tasks;
@@ -23,31 +22,36 @@ namespace MediaPlayer
             IStreamInfo streamInfo = streamManifest.GetAudioOnly().WithHighestBitrate();
             if (streamInfo != null)
             {
-                // Get the actual stream
-                //var stream = await youtube.Videos.Streams.GetAsync(streamInfo);
                 // Download the stream to file
-                Console.WriteLine("Ik begin nu aan het downloaden jochem en sietze!");
                 string fileName = $"{source + playList.PlaylistName + legalTitle}";
-                await youtube.Videos.Streams.DownloadAsync(streamInfo, fileName + ".mp4");
+
+                await youtube.Videos.Streams.DownloadAsync(streamInfo, fileName + ".mp4"); //downloaden van mp4
+
                 FFMpegConverter ffMpeg = new FFMpegConverter();
-                ffMpeg.ConvertMedia(fileName + ".mp4", fileName + ".mp3", "mp3");
+                ffMpeg.ConvertMedia(fileName + ".mp4", fileName + ".mp3", "mp3"); //converteren van mp4 naar mp3
                 File.Delete(fileName + ".mp4");
-                Song newSong = new Song(fileName + ".mp3");
-                newSong.ArtistName = video.Author;
+
+                Song newSong = new Song(fileName + ".mp3"); //aanmaken van songobject
+                newSong.ArtistName = video.Author; //zetten van de filetags
                 newSong.SongTitle = video.Title;
+                /* downloaden van thumbnail*/
                 using (WebClient client = new WebClient())
                 {
                     client.DownloadFile(video.Thumbnails.HighResUrl, fileName + ".jpg");
                 }
-                newSong.setAlbumArt(fileName + ".jpg");
-                File.Delete(fileName + ".jpg");
-                newSong.saveFileTag();
+
+                newSong.setAlbumArt(fileName + ".jpg"); //zetten van albumart metadata
+
+                File.Delete(fileName + ".jpg"); //deleten van thumbnail image file
+
+                newSong.saveFileTag(); //opslaan van filetags
+
                 playList.addSong(newSong);
-                                
+
                 //toevoegen aan database
-                DbCreator dbCreator = new DbCreator();
-                dbCreator.addSongToDatabase(newSong);
-                
+                DbManager db = new DbManager();
+                db.addSongToDatabase(newSong);
+
             }
 
         }
