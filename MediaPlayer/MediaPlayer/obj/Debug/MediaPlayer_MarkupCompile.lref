@@ -1,13 +1,13 @@
-﻿
+﻿C:\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\GeneratedInternalTypeHelper.g.cs
 
-FC:\musicPlayer\MediaPlayer\MediaPlayer\AddMusicWindow.xaml;;
-FC:\musicPlayer\MediaPlayer\MediaPlayer\CreatePlaylist.xaml;;
-FC:\musicPlayer\MediaPlayer\MediaPlayer\DeletePlaylist.xaml;;
-FC:\musicPlayer\MediaPlayer\MediaPlayer\DeleteSong.xaml;;
-FC:\musicPlayer\MediaPlayer\MediaPlayer\EditSongWindow.xaml;;
-FC:\musicPlayer\MediaPlayer\MediaPlayer\ExportMp3Window.xaml;;
-FC:\musicPlayer\MediaPlayer\MediaPlayer\ImportSongWindow.xaml;;
-FC:\musicPlayer\MediaPlayer\MediaPlayer\MainWindow.xaml;;
-FC:\musicPlayer\MediaPlayer\MediaPlayer\TopTenArtistsWindow.xaml;;
-FC:\musicPlayer\MediaPlayer\MediaPlayer\TopTenSongsWindow.xaml;;
+FC:\musicPlayer\MediaPlayer\MediaPlayer\Views\AddMusicWindow.xaml;;
+FC:\musicPlayer\MediaPlayer\MediaPlayer\Views\CreatePlaylist.xaml;;
+FC:\musicPlayer\MediaPlayer\MediaPlayer\Views\DeletePlaylist.xaml;;
+FC:\musicPlayer\MediaPlayer\MediaPlayer\Views\DeleteSong.xaml;;
+FC:\musicPlayer\MediaPlayer\MediaPlayer\Views\EditSongWindow.xaml;;
+FC:\musicPlayer\MediaPlayer\MediaPlayer\Views\ExportMp3Window.xaml;;
+FC:\musicPlayer\MediaPlayer\MediaPlayer\Views\ImportSongWindow.xaml;;
+FC:\musicPlayer\MediaPlayer\MediaPlayer\Views\MainWindow.xaml;;
+FC:\musicPlayer\MediaPlayer\MediaPlayer\Views\TopTenArtistsWindow.xaml;;
+FC:\musicPlayer\MediaPlayer\MediaPlayer\Views\TopTenSongsWindow.xaml;;
 

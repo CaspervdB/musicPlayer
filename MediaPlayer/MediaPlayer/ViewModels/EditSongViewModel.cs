@@ -48,7 +48,7 @@ namespace MediaPlayer
         {
             OpenFileDialog ofd = new OpenFileDialog()
             {
-                Filter = "*.jpeg; | *.jpeg | *.jpg | *.jpg;"
+                Filter = "*.jpg | *.jpg; | *.jpeg; | *.jpeg"
             };
             if (ofd.ShowDialog() == DialogResult.OK)
             {
