@@ -195,10 +195,16 @@ namespace MediaPlayer
             TopTenPlayedSongsMenuItem = new RelayCommand(() => topTenPlayedSongs());
             TopTenPlayedArtistsMenuItem = new RelayCommand(() => topTenPlayedArtists());
 
+            Player.Instance.SongEnded += PlayerInstance_SongEnded;
+
             Factory.createPlaylistCollection();
             
         }
 
+        private void PlayerInstance_SongEnded(object sender, EventArgs e)
+        {
+            next();
+        }
 
         private void updateSonglist()
         {

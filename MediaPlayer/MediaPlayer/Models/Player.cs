@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Windows.Threading;
 using WPFSoundVisualizationLib;
 
@@ -40,14 +41,14 @@ namespace MusicPlayer
         private readonly BackgroundWorker waveformGenerateWorker = new BackgroundWorker();
 
         public event PropertyChangedEventHandler PropertyChanged;
+        public event EventHandler SongEnded;
 
         public WaveStream ActiveStream
         {
             get { return activeStream; }
             protected set
             {
-                WaveStream oldValue = activeStream;
-                activeStream = value;
+               activeStream = value;
             }
         }
         public Player()
@@ -57,10 +58,16 @@ namespace MusicPlayer
             this.Songlist = new Songlist();
             positionTimer.Interval = TimeSpan.FromMilliseconds(50);
             positionTimer.Tick += positionTimer_Tick;
+            
 
             waveformGenerateWorker.DoWork += waveformGenerateWorker_DoWork;
             waveformGenerateWorker.RunWorkerCompleted += waveformGenerateWorker_RunWorkerCompleted;
             waveformGenerateWorker.WorkerSupportsCancellation = true;
+        }
+
+        private void MusicPlayer_PlaybackStopped(object sender, EventArgs e)
+        {
+            SongEnded?.Invoke(this, e);
         }
 
         private static Player instance = null;
@@ -110,8 +117,13 @@ namespace MusicPlayer
                 {
                     DesiredLatency = 100
                 };
+                this.musicPlayer.PlaybackStopped += MusicPlayer_PlaybackStopped;
+
                 ActiveStream = new Mp3FileReader(this.currentSong.SongLocation);
                 inputStream = new WaveChannel32(ActiveStream);
+
+                this.inputStream.PadWithZeroes = false;
+
                 this.visualizer = new Visualizer(fftDataSize);
                 inputStream.Sample += inputStream_Sample;
                 musicPlayer.Init(inputStream);
@@ -354,9 +366,10 @@ namespace MusicPlayer
                 maxFrequency = 22050; // Assume a default 44.1 kHz sample rate.
             return (int)((frequency / maxFrequency) * (fftDataSize / 2));
         }
-        private void NotifyPropertyChanged(String info)
+
+        private void NotifyPropertyChanged([CallerMemberName] String propertyName = "")
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(info));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
         private void waveformGenerateWorker_DoWork(object sender, DoWorkEventArgs e)
@@ -447,12 +460,12 @@ namespace MusicPlayer
             public string Path { get; protected set; }
         }
 
-        void waveStream_Sample(object sender, SampleEventArgs e)
+        private void waveStream_Sample(object sender, SampleEventArgs e)
         {
             waveFormVisualizer.Add(e.Left, e.Right);
         }
 
-        void positionTimer_Tick(object sender, EventArgs e)
+        private void positionTimer_Tick(object sender, EventArgs e)
         {
             inChannelTimerUpdate = true;
             ChannelPosition = ((double)ActiveStream.Position / (double)ActiveStream.Length) * ActiveStream.TotalTime.TotalSeconds;
