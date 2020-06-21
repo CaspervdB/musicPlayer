@@ -24,14 +24,11 @@ namespace MediaPlayer
         public void deletePlaylist()
         {
             PlaylistManager.Instance.deletePlaylist(SelectedPlaylistInDeleteWindow);
-            
-
         }
 
         public DeletePlaylistViewModel()
         {
             DeletePlaylist = new RelayCommand(() => deletePlaylist());
         }
-
     }
 }

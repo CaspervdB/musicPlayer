@@ -4,7 +4,6 @@ using System;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 
@@ -17,7 +16,7 @@ namespace MediaPlayer
         private string link;
         private string error;
         public Playlist SelectedPlaylistInDownloadWindow { get; set; }
-        
+
         public string Link
         {
             get { return link; }
@@ -44,7 +43,7 @@ namespace MediaPlayer
         }
         public ObservableCollection<Playlist> PlaylistCollection
         {
-            get { return PlaylistManager.Instance.Playlists; }            
+            get { return PlaylistManager.Instance.Playlists; }
         }
         private async void DownloadSongAsync(Window window)
         {
@@ -64,15 +63,14 @@ namespace MediaPlayer
             {
                 MessageBox.Show("Selecteer een playlist.");
                 return;
-            }            
-            
+            }
+
             try
             {
                 MusicExport musicExport = new MusicExport();
                 await musicExport.SaveAudioToDiskAsync(link, SelectedPlaylistInDownloadWindow);
                 MessageBox.Show("Downloaden voltooid.");
                 CloseWindow(window);
-
             }
             catch
             {
@@ -83,13 +81,11 @@ namespace MediaPlayer
         public AddMusicViewModel()
         {
             DownloadCommand = new RelayCommand<Window>(this.DownloadSongAsync);
-    }
-
+        }
         private void NotifyPropertyChanged([CallerMemberName] String propertyName = "")
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
-
         private void CloseWindow(Window window)
         {
             if (window != null)
