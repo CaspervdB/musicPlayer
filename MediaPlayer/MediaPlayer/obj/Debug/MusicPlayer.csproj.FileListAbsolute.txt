@@ -245,3 +245,4 @@ C:\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\Views\ImportSongWindow.baml
 C:\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\Views\MainWindow.baml
 C:\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\Views\TopTenArtistsWindow.baml
 C:\musicPlayer\MediaPlayer\MediaPlayer\obj\Debug\Views\TopTenSongsWindow.baml
+C:\musicPlayer\MediaPlayer\MediaPlayer\bin\Debug\NAudio.xml
