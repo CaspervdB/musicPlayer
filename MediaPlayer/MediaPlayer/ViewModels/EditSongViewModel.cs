@@ -59,7 +59,13 @@ namespace MediaPlayer
         private string albumArtLink;
         public string AlbumArtLink
         {
-            set { Player.Instance.CurrentSong.setAlbumArt(value);
+            set
+            {
+                if (value == null || value == "")
+                {
+                    return;
+                } 
+                Player.Instance.CurrentSong.setAlbumArt(value);
                 this.albumArtLink = value;
                 NotifyPropertyChanged();
             }
