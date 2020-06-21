@@ -6,7 +6,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MediaPlayer"
         mc:Ignorable="d"
-        Title="Create a playlist" Height="165" Width="400" ResizeMode="NoResize">
+        Title="Create A Playlist" Height="165" Width="400" ResizeMode="NoResize">
     <Window.DataContext>
         <local:CreatePlaylistViewModel/>
     </Window.DataContext>
@@ -26,7 +26,7 @@
             <RowDefinition Height="5*"/>
         </Grid.RowDefinitions>
         <Label Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="1" Content="Playlist name:" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="White"/>
-        <TextBox Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="1" Name="NewPlaylistTextBox" HorizontalAlignment="Stretch" TextWrapping="Wrap" Text="{Binding NewPlaylistName}" VerticalAlignment="Stretch"/>
+        <TextBox Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="1" Name="NewPlaylistTextBox" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" TextWrapping="Wrap" Text="{Binding NewPlaylistName}" FontSize="14"/>
         <Button Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="1" Content="Add new playlist" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Command="{Binding CreatePlaylistButton}" CommandParameter="{Binding ElementName=createPlaylistWindow}" Foreground="White" Background="#FF0064B7"/>
     </Grid>
 </Window>

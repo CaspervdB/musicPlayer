@@ -6,7 +6,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MediaPlayer"
         mc:Ignorable="d"
-        Title="Export MP3" Height="199.916" Width="288.912"
+        Title="Export MP3" Height="250" Width="400"
         ResizeMode="NoResize">
     <Window.DataContext>
         <local:ExportMp3ViewModel/>

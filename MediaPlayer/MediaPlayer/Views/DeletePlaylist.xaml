@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MediaPlayer"
         mc:Ignorable="d"
-        Title="DeletePlaylist" Height="165" Width="400" ResizeMode="NoResize">
+        Title="Delete A Playlist" Height="165" Width="400" ResizeMode="NoResize">
     <Window.DataContext>
         <local:DeletePlaylistViewModel/>
     </Window.DataContext>
@@ -25,7 +25,7 @@
             <RowDefinition Height="6*"/>
         </Grid.RowDefinitions>
         <Label Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Content="Select a playlist to delete: " Foreground="White" />
-        <ComboBox Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="1"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" DisplayMemberPath="PlaylistName" Name="ComboBox" ItemsSource="{Binding Playlists}" SelectedItem="{Binding SelectedPlaylistInDeleteWindow}"/>
+        <ComboBox Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="1"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" DisplayMemberPath="PlaylistName" Name="ComboBox" ItemsSource="{Binding Playlists}" SelectedItem="{Binding SelectedPlaylistInDeleteWindow}" FontSize="14"/>
         <Button Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Content="Delete Playlist" Command="{Binding DeletePlaylist}" Foreground="White" Background="#FF0064B7"/>
     </Grid>
 </Window>

@@ -5,29 +5,31 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MediaPlayer"
         mc:Ignorable="d"
-        Title="DeleteSong" Height="334.8" Width="584.8" ResizeMode="NoResize">
+        Title="Delete A Song" Height="156.24" Width="558.295" ResizeMode="NoResize">
     <Window.DataContext>
         <local:DeleteSongViewModel/>
     </Window.DataContext>
-    <Grid Background="#64c1ff" Margin="0,0,0,-0.2" HorizontalAlignment="Left" Width="578" Height="305" VerticalAlignment="Top">
+    <Grid Background="#64c1ff">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="25*"/>
-            <ColumnDefinition Width="234*"/>
-            <ColumnDefinition Width="25*"/>
+            <ColumnDefinition Width="5*"/>
+            <ColumnDefinition Width="89*"/>
+            <ColumnDefinition Width="5*"/>
+            <ColumnDefinition Width="353*"/>
+            <ColumnDefinition Width="5*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="6*"/>
+            <RowDefinition Height="5*"/>
             <RowDefinition Height="24*"/>
-            <RowDefinition Height="6*"/>
-            <RowDefinition Height="27*"/>
-            <RowDefinition Height="6*"/>
-            <RowDefinition Height="27*"/>
-            <RowDefinition Height="6*"/>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="24*"/>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="36*"/>
+            <RowDefinition Height="5*"/>
         </Grid.RowDefinitions>
-        <Label Content="Select a playlist:" Margin="35.4,29.2,0,0" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" Width="126" Height="26" VerticalAlignment="Top"/>
-        <ComboBox DisplayMemberPath="PlaylistName" Name="ComboBoxPlaylists" ItemsSource="{Binding Playlists}" SelectedItem="{Binding SelectedPlaylist}" HorizontalAlignment="Left" Margin="220.4,30.2,0,0" Width="211" Grid.Column="1" Grid.Row="1" RenderTransformOrigin="0.703,1.322" Height="23" VerticalAlignment="Top" SelectedValue="0"/>
-        <ComboBox DisplayMemberPath="SongTitle" Name="ComboBoxSongs" ItemsSource="{Binding Songlist}" SelectedItem="{Binding SelectedSong}" Margin="220.6,46,0,0" Grid.Column="1" Grid.Row="3" HorizontalAlignment="Left" Width="211" Height="26" VerticalAlignment="Top" />
-        <Button Name="button" Content="Delete" ToolTip="Press to delete song from playlist" Margin="220.6,25.6,0,0" Command="{Binding DeleteSongButton}" Foreground="White" Background="#FF0064B7" Grid.Column="1" Grid.Row="5" Height="45" VerticalAlignment="Top" HorizontalAlignment="Left" Width="211"/>
-        <Label Content="Select a song:" Grid.Column="1" HorizontalAlignment="Left" Margin="35.6,45,0,0" Grid.Row="3" VerticalAlignment="Top"/>
+        <Label Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="1" Content="Select a playlist:"   HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+        <ComboBox Grid.Column="3" Grid.Row="1" Grid.ColumnSpan="1" DisplayMemberPath="PlaylistName" Name="ComboBoxPlaylists" ItemsSource="{Binding Playlists}" SelectedItem="{Binding SelectedPlaylist}" HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" SelectedValue="0"/>
+        <Label Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="1" Content="Select a song:" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+        <ComboBox Grid.Column="3" Grid.Row="3" Grid.ColumnSpan="1" DisplayMemberPath="SongTitle" Name="ComboBoxSongs" ItemsSource="{Binding Songlist}" SelectedItem="{Binding SelectedSong}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+        <Button Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="3" Name="button" Content="Delete" ToolTip="Press to delete song from playlist" Command="{Binding DeleteSongButton}" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Foreground="White" Background="#FF0064B7" />
     </Grid>
 </Window>
