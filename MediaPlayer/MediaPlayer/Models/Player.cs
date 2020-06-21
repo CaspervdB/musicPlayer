@@ -235,7 +235,7 @@ namespace MusicPlayer
             }
         }
 
-        private Boolean playlistAndSongNotNull()
+        private Boolean currentSongNotNull()
         {
             if (currentSong == null)
             {
@@ -246,8 +246,14 @@ namespace MusicPlayer
 
         public void play()
         {
+            
             if (CurrentSong == null)
             {
+                if(this.Songlist.Count == 0)
+                {
+                    return;
+                }
+                
                 Song newCurrentSong = this.Songlist.First();
                 if (newCurrentSong != null)
                 {
@@ -294,7 +300,7 @@ namespace MusicPlayer
 
         public Song getNextSong()
         {
-            if (playlistAndSongNotNull())
+            if (currentSongNotNull())
             {
                 Song nextSong = this.Songlist.getNextSong(this.CurrentSong);
                 if (nextSong != null)
@@ -308,7 +314,7 @@ namespace MusicPlayer
 
         public Song getPreviousSong()
         {
-            if (playlistAndSongNotNull())
+            if (currentSongNotNull())
             {
                 Song previousSong = this.Songlist.getPreviousSong(this.CurrentSong);
                 if (previousSong != null)
@@ -322,7 +328,7 @@ namespace MusicPlayer
 
         public void nextRandom()
         {
-            if (playlistAndSongNotNull())
+            if (currentSongNotNull())
             {
                 Song nextRandomSong = this.Songlist.getRandomSong();
                 if (nextRandomSong != null)
