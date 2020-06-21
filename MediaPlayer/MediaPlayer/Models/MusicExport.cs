@@ -44,7 +44,7 @@ namespace MediaPlayer
 
                 File.Delete(fileName + ".jpg"); //deleten van thumbnail image file
 
-                newSong.saveFileTag(); //opslaan van filetags
+                newSong.SaveFileTag(); //opslaan van filetags
 
                 playList.addSong(newSong);
 

@@ -81,7 +81,7 @@ namespace MediaPlayer
             Song newSong = new Song(destPath);
             newSong.ArtistName = ArtistName;
             newSong.SongTitle = SongTitle;
-            newSong.saveFileTag();
+            newSong.SaveFileTag();
             SelectedPlaylistInImportWindow.addSong(newSong);
             DbManager db = new DbManager();
             db.addSongToDatabase(newSong);
@@ -94,6 +94,7 @@ namespace MediaPlayer
             FileLocationButton = new RelayCommand(() => FileManager());
             ImportCommand = new RelayCommand<Window>(this.songImport);
         }
+
         private void NotifyPropertyChanged([CallerMemberName] String propertyName = "")
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));

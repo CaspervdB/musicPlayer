@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 
@@ -11,18 +7,19 @@ namespace MusicPlayer
 {
     public class Song
     {
-        
         public string SongTitle
         {
             get { return filetag.Tag.Title; }
-            set { filetag.Tag.Title = value;
-                //saveFileTag();
+            set
+            {
+                filetag.Tag.Title = value;
             }
         }
-        
+
         public string ArtistName
         {
-            get {
+            get
+            {
                 string performersString = "";
                 bool first = true;
                 foreach (string artist in filetag.Tag.Performers)
@@ -40,17 +37,16 @@ namespace MusicPlayer
                 }
                 return performersString;
             }
-            set {
+            set
+            {
                 string[] newArtist = new string[1];
                 newArtist[0] = value;
                 filetag.Tag.Performers = newArtist;
-                //saveFileTag();
             }
         }
 
         public void setAlbumArt(string imagePath)
         {
-            
             TagLib.Picture picture = new TagLib.Picture();
             picture.Type = TagLib.PictureType.FrontCover;
             picture.Description = "Cover";
@@ -94,9 +90,7 @@ namespace MusicPlayer
             }
         }
 
-
-
-        public string SongLocation{ get; set; }
+        public string SongLocation { get; set; }
         private TagLib.File filetag;
 
         public Song(string songLocation)
@@ -105,7 +99,7 @@ namespace MusicPlayer
             this.filetag = TagLib.File.Create(songLocation);
         }
 
-        public void saveFileTag()
+        public void SaveFileTag()
         {
             if (Player.Instance.CurrentSong == this)
             {
@@ -114,7 +108,7 @@ namespace MusicPlayer
             DbManager dbCreator = new DbManager();
             this.filetag.Save();
             dbCreator.updateSongData(this);
-            
+
         }
     }
 }

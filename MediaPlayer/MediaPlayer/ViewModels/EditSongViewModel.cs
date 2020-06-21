@@ -1,12 +1,8 @@
 ﻿using GalaSoft.MvvmLight.Command;
 using MusicPlayer;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
 using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Forms;
 using System.Windows.Input;
@@ -18,7 +14,7 @@ namespace MediaPlayer
         public event PropertyChangedEventHandler PropertyChanged;
         public ICommand SaveEditSongButton { get; set; }
         public ICommand ChooseAlbumArt { get; set; }
-        
+
         public EditSongViewModel()
         {
             SaveEditSongButton = new RelayCommand<Window>(this.saveEditSong);
@@ -38,9 +34,7 @@ namespace MediaPlayer
         }
         private void saveEditSong(Window window)
         {
-
-            Player.Instance.CurrentSong.saveFileTag();
-
+            Player.Instance.CurrentSong.SaveFileTag();
             Player.Instance.initializePlayerComponents();
             CloseWindow(window);
         }
@@ -64,14 +58,13 @@ namespace MediaPlayer
                 if (value == null || value == "")
                 {
                     return;
-                } 
+                }
                 Player.Instance.CurrentSong.setAlbumArt(value);
                 this.albumArtLink = value;
                 NotifyPropertyChanged();
             }
             get { return this.albumArtLink; }
         }
-
 
         private void NotifyPropertyChanged([CallerMemberName] String propertyName = "")
         {
