@@ -1,8 +1,5 @@
 ﻿using MusicPlayer;
 using System.IO;
-using System.Data.SQLite;
-using System;
-using System.Windows;
 
 namespace MediaPlayer
 {
@@ -26,6 +23,6 @@ namespace MediaPlayer
                 PlaylistManager.Instance.addPlaylist(p);
             }
         }
-                
+
     }
 }

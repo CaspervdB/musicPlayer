@@ -1,10 +1,6 @@
 ﻿using MusicPlayer;
 using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MediaPlayer
 {
@@ -39,13 +35,5 @@ namespace MediaPlayer
             }
             return previousSong;
         }
-
-        public Song getRandomSong()
-        {
-            Random random = new Random();
-            int randomIndex = random.Next(this.Count);
-            return this[randomIndex];
-        }
-
     }
 }

@@ -1,11 +1,7 @@
 ﻿using MusicPlayer;
 using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 
 namespace MediaPlayer
@@ -15,7 +11,6 @@ namespace MediaPlayer
         public PlaylistManager()
         {
             this.Playlists = new ObservableCollection<Playlist>();
-
         }
 
         private static PlaylistManager instance = null;
@@ -36,7 +31,6 @@ namespace MediaPlayer
             }
         }
 
-
         public void addPlaylist(Playlist p)
         {
             this.Playlists.Add(p);
@@ -44,11 +38,6 @@ namespace MediaPlayer
 
         public void createPlaylist(Playlist p)
         {
-            //hier moet een methode komen welke een map aanmaakt in de playlist maps en daarna de factory opnieuw aanroept.
-
-            //eerst een map aanmaken met de naam van de meegegeven variabele.
-            //daarna playlist object aanmaken.
-            //daarna het gemaakte playlist object toevoegen.
             if (playlistExists(p))
             {
                 MessageBox.Show("Er bestaat al een playlist met deze naam.");
@@ -56,7 +45,6 @@ namespace MediaPlayer
             }
 
             string Path = Factory.musicFolderPath + p.PlaylistName;
-            Console.WriteLine(Path);
             Directory.CreateDirectory(Path);
             this.Playlists.Add(p);
         }
@@ -65,7 +53,7 @@ namespace MediaPlayer
 
         public void deletePlaylist(Playlist p)
         {
-            if(p != null)
+            if (p != null)
             {
                 this.Playlists.Remove(p);
 
@@ -77,9 +65,9 @@ namespace MediaPlayer
 
         public bool playlistExists(Playlist playlist)
         {
-            foreach(Playlist p in Playlists)
+            foreach (Playlist p in Playlists)
             {
-                if(p.PlaylistName == playlist.PlaylistName)
+                if (p.PlaylistName == playlist.PlaylistName)
                 {
                     return true;
                 }

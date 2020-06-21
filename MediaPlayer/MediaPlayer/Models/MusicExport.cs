@@ -60,8 +60,6 @@ namespace MediaPlayer
         {
             YoutubeClient youtube = new YoutubeClient();
             Location += @"\";
-            try
-            {
 
                 Video video = await youtube.Videos.GetAsync(link);
                 string legalTitle = string.Join("", video.Title.Split(Path.GetInvalidFileNameChars())); // Removes all possible illegal filename characetrs from the title
@@ -69,20 +67,14 @@ namespace MediaPlayer
                 IStreamInfo streamInfo = streamManifest.GetAudioOnly().WithHighestBitrate();
                 if (streamInfo != null)
                 {
-                    // Get the actual stream
-                    var stream = await youtube.Videos.Streams.GetAsync(streamInfo);
                     // Download the stream to file
                     string fileName = $"{Location + legalTitle}";
                     await youtube.Videos.Streams.DownloadAsync(streamInfo, fileName + ".mp4");
+
                     FFMpegConverter ffMpeg = new FFMpegConverter();
-                    ffMpeg.ConvertMedia(fileName + ".mp4", fileName + ".mp3", "mp3");
-                    File.Delete(fileName + ".mp4");
+                    ffMpeg.ConvertMedia(fileName + ".mp4", fileName + ".mp3", "mp3"); //convert mp4 to mp3
+                    File.Delete(fileName + ".mp4"); //delete mp4 file
                 }
-            }
-            catch
-            {
-                //TODO: actual working error
-            }
         }
     }
 }

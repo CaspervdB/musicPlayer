@@ -43,14 +43,6 @@ namespace MusicPlayer
         public event PropertyChangedEventHandler PropertyChanged;
         public event EventHandler SongEnded;
 
-        public WaveStream ActiveStream
-        {
-            get { return activeStream; }
-            protected set
-            {
-               activeStream = value;
-            }
-        }
         public Player()
         {
             this.currentSong = null;
@@ -119,8 +111,8 @@ namespace MusicPlayer
                 };
                 this.musicPlayer.PlaybackStopped += MusicPlayer_PlaybackStopped;
 
-                ActiveStream = new Mp3FileReader(this.currentSong.SongLocation);
-                inputStream = new WaveChannel32(ActiveStream);
+                this.activeStream = new Mp3FileReader(this.currentSong.SongLocation);
+                inputStream = new WaveChannel32(this.activeStream);
 
                 this.inputStream.PadWithZeroes = false;
 
@@ -132,7 +124,7 @@ namespace MusicPlayer
             }
             catch
             {
-                ActiveStream = null;
+                this.activeStream = null;
                 isPlaying = false;
                 Console.WriteLine("catched error");
             }
@@ -180,8 +172,8 @@ namespace MusicPlayer
                     inChannelSet = true; // Avoid recursion
                     double oldValue = channelPosition;
                     double position = Math.Max(0, Math.Min(value, ChannelLength));
-                    if (!inChannelTimerUpdate && ActiveStream != null)
-                        ActiveStream.Position = (long)((position / ActiveStream.TotalTime.TotalSeconds) * ActiveStream.Length);
+                    if (!inChannelTimerUpdate && this.activeStream != null)
+                        this.activeStream.Position = (long)((position / this.activeStream.TotalTime.TotalSeconds) * this.activeStream.Length);
                     channelPosition = position;
                     if (oldValue != channelPosition)
                         NotifyPropertyChanged("ChannelPosition");
@@ -295,12 +287,12 @@ namespace MusicPlayer
             {
                 musicPlayer.Stop();
             }
-            if (activeStream != null)
+            if (this.activeStream != null)
             {
                 inputStream.Close();
                 inputStream = null;
-                activeStream.Close();
-                activeStream = null;
+                this.activeStream.Close();
+                this.activeStream = null;
             }
             if (musicPlayer != null)
             {
@@ -338,19 +330,6 @@ namespace MusicPlayer
             return null;
         }
 
-        public void nextRandom()
-        {
-            if (currentSongNotNull())
-            {
-                Song nextRandomSong = this.Songlist.getRandomSong();
-                if (nextRandomSong != null)
-                {
-                    this.CurrentSong = nextRandomSong;
-                    play();
-                }
-            }
-        }
-
         public bool GetFFTData(float[] fftDataBuffer)
         {
             visualizer.GetFFTResults(fftDataBuffer);
@@ -360,8 +339,8 @@ namespace MusicPlayer
         public int GetFFTFrequencyIndex(int frequency)
         {
             double maxFrequency;
-            if (ActiveStream != null)
-                maxFrequency = ActiveStream.WaveFormat.SampleRate / 2.0d;
+            if (this.activeStream != null)
+                maxFrequency = this.activeStream.WaveFormat.SampleRate / 2.0d;
             else
                 maxFrequency = 22050; // Assume a default 44.1 kHz sample rate.
             return (int)((frequency / maxFrequency) * (fftDataSize / 2));
@@ -468,7 +447,7 @@ namespace MusicPlayer
         private void positionTimer_Tick(object sender, EventArgs e)
         {
             inChannelTimerUpdate = true;
-            ChannelPosition = ((double)ActiveStream.Position / (double)ActiveStream.Length) * ActiveStream.TotalTime.TotalSeconds;
+            ChannelPosition = ((double)this.activeStream.Position / (double)this.activeStream.Length) * this.activeStream.TotalTime.TotalSeconds;
             inChannelTimerUpdate = false;
         }
 
@@ -489,19 +468,19 @@ namespace MusicPlayer
         {
             if (e.Cancelled)
             {
-                if (!waveformGenerateWorker.IsBusy && 2000 != 0) // 2000 is compression count 46
+                if (!waveformGenerateWorker.IsBusy && 2000 != 0)
                     waveformGenerateWorker.RunWorkerAsync(new WaveformGenerationParams(2000, pendingWaveformPath));
             }
         }
         private void inputStream_Sample(object sender, SampleEventArgs e)
         {
             visualizer.Add(e.Left, e.Right);
-            long repeatStartPosition = (long)((SelectionBegin.TotalSeconds / ActiveStream.TotalTime.TotalSeconds) * ActiveStream.Length);
-            long repeatStopPosition = (long)((SelectionEnd.TotalSeconds / ActiveStream.TotalTime.TotalSeconds) * ActiveStream.Length);
-            if (((SelectionEnd - SelectionBegin) >= TimeSpan.FromMilliseconds(200)) && ActiveStream.Position >= repeatStopPosition) // 200 = repeatthreshhold
+            long repeatStartPosition = (long)((SelectionBegin.TotalSeconds / this.activeStream.TotalTime.TotalSeconds) * this.activeStream.Length);
+            long repeatStopPosition = (long)((SelectionEnd.TotalSeconds / this.activeStream.TotalTime.TotalSeconds) * this.activeStream.Length);
+            if (((SelectionEnd - SelectionBegin) >= TimeSpan.FromMilliseconds(200)) && this.activeStream.Position >= repeatStopPosition) // 200 = repeatthreshhold
             {
                 visualizer.Clear();
-                ActiveStream.Position = repeatStartPosition;
+                this.activeStream.Position = repeatStartPosition;
             }
         }
     }
