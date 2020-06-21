@@ -109,7 +109,6 @@ namespace MusicPlayer
             DbManager dbCreator = new DbManager();
             this.filetag.Save();
             dbCreator.updateSongData(this);
-
         }
     }
 }
