@@ -32,7 +32,6 @@ namespace MediaPlayer
             get { return PlaylistManager.Instance.Playlists; }
         }
 
-
         public ObservableCollection<Song> Songlist
         {
             get
@@ -52,7 +51,6 @@ namespace MediaPlayer
         {
             DeleteSongButton = new RelayCommand(() => deleteSong());
         }
-
         private void deleteSong()
         {
             if(SelectedSong == null)
@@ -70,7 +68,6 @@ namespace MediaPlayer
 
             File.Delete(SelectedSong.SongLocation);
             SelectedPlaylist.removeSong(SelectedSong);
-            //dbCreator.getSongData();
         }
         private void NotifyPropertyChanged([CallerMemberName] String propertyName = "")
         {
