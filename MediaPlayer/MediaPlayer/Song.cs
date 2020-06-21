@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
 
 namespace MusicPlayer
 {
@@ -44,6 +47,54 @@ namespace MusicPlayer
                 //saveFileTag();
             }
         }
+
+        public void setAlbumArt(string imagePath)
+        {
+            
+            TagLib.Picture picture = new TagLib.Picture();
+            picture.Type = TagLib.PictureType.FrontCover;
+            picture.Description = "Cover";
+            picture.MimeType = System.Net.Mime.MediaTypeNames.Image.Jpeg;
+
+            try
+            {
+                picture.Data = TagLib.ByteVector.FromPath(imagePath);
+            }
+            catch (Exception)
+            {
+                return;
+            }
+            this.filetag.Tag.Pictures = new TagLib.IPicture[] { picture };
+        }
+
+        public ImageSource getAlbumArt()
+        {
+            if (this.filetag.Tag.Pictures.Length > 0)
+            {
+                using (MemoryStream albumImageStream = new MemoryStream(this.filetag.Tag.Pictures[0].Data.Data))
+                {
+                    try
+                    {
+                        BitmapImage albumImage = new BitmapImage();
+                        albumImage.BeginInit();
+                        albumImage.CacheOption = BitmapCacheOption.OnLoad;
+                        albumImage.StreamSource = albumImageStream;
+                        albumImage.EndInit();
+                        return albumImage;
+                    }
+                    catch (NotSupportedException)
+                    {
+                        return null;
+                    }
+                }
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+
 
         public string SongLocation{ get; set; }
         private TagLib.File filetag;

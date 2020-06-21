@@ -3,8 +3,11 @@ using MusicPlayer;
 using System;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.IO;
 using System.Runtime.CompilerServices;
 using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
 
 namespace MediaPlayer
 {
@@ -57,6 +60,20 @@ namespace MediaPlayer
         }
 
 
+        public ImageSource AlbumImage
+        {
+            get { if (CurrentSong != null)
+                {
+                    return CurrentSong.getAlbumArt();
+                }
+                else
+                {
+                    return null;
+                }
+            }
+        }
+
+
         public ObservableCollection<Song> SelectedPlaylistSongs
         {
             get
@@ -83,6 +100,7 @@ namespace MediaPlayer
                 Player.Instance.play();
                 DbCreator db = new DbCreator();
                 db.incrementTimesPlayed(value);
+                NotifyPropertyChanged("AlbumImage");
             }
         }
 
@@ -108,6 +126,7 @@ namespace MediaPlayer
             EditSongWindow esw = new EditSongWindow();
             esw.ShowDialog();
             updateSonglist();
+            NotifyPropertyChanged("AlbumImage");
         }
         private void addPlaylist()
         {
