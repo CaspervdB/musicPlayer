@@ -3,9 +3,11 @@ using MusicPlayer;
 using System;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.IO;
 using System.Runtime.CompilerServices;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Imaging;
 
 namespace MediaPlayer
 {
@@ -39,6 +41,7 @@ namespace MediaPlayer
                     });
             }
         }
+
         public ObservableCollection<Playlist> PlaylistCollection
         {
             get { return PlaylistManager.Instance.Playlists; }
@@ -55,11 +58,11 @@ namespace MediaPlayer
                 updateSonglist();
             }
         }
+
+
         public ImageSource AlbumImage
         {
-            get
-            {
-                if (CurrentSong != null)
+            get { if (CurrentSong != null)
                 {
                     return CurrentSong.getAlbumArt();
                 }
@@ -69,6 +72,8 @@ namespace MediaPlayer
                 }
             }
         }
+
+
         public ObservableCollection<Song> SelectedPlaylistSongs
         {
             get
@@ -80,6 +85,8 @@ namespace MediaPlayer
                 return Player.Instance.Songlist;
             }
         }
+
+
         public Song CurrentSong
         {
             get { return Player.Instance.CurrentSong; }
@@ -96,6 +103,7 @@ namespace MediaPlayer
                 NotifyPropertyChanged("AlbumImage");
             }
         }
+
         private void previous()
         {
             CurrentSong = Player.Instance.getPreviousSong();
@@ -125,12 +133,14 @@ namespace MediaPlayer
             CreatePlaylist NewPlaylist = new CreatePlaylist();
             NewPlaylist.ShowDialog();
         }
+
         private void deleteSong()
         {
             DeleteSong deleteSongWindow = new DeleteSong();
             deleteSongWindow.ShowDialog();
             updateSonglist();
         }
+
         private void deletePlaylist()
         {
             DeletePlaylist deletePlaylist = new DeletePlaylist();
@@ -188,9 +198,9 @@ namespace MediaPlayer
             Player.Instance.SongEnded += PlayerInstance_SongEnded;
 
             Factory.createPlaylistCollection();
+            
         }
 
-        //Vangt het event op dat gefired wordt als de song is afgelopen
         private void PlayerInstance_SongEnded(object sender, EventArgs e)
         {
             next();
@@ -212,5 +222,7 @@ namespace MediaPlayer
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+
+
     }
 }

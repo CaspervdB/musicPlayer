@@ -63,8 +63,8 @@ namespace MediaPlayer
                 Player.Instance.stop();
             }
 
-            DbManager dbman = new DbManager();
-            dbman.deleteSongData(SelectedSong);
+            DbManager dbCreator = new DbManager();
+            dbCreator.deleteSongData(SelectedSong);
 
             File.Delete(SelectedSong.SongLocation);
             SelectedPlaylist.removeSong(SelectedSong);
