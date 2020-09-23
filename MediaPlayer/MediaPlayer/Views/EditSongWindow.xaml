@@ -38,6 +38,7 @@
         <Label Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="1" Content="Album Art:"/>
         <TextBox Grid.Row="5" Grid.Column="3" Grid.ColumnSpan="1" Text="{Binding AlbumArtLink}" FontSize="14"/>
         <Button Grid.Row="5" Grid.Column="5" Grid.ColumnSpan="1" Content="Choose Image" Command="{Binding ChooseAlbumArt}" Foreground="White" Background="#FF0064B7"/>
-        <Button Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="5" Content="Save" Command="{Binding SaveEditSongButton}" CommandParameter="{Binding ElementName=editSongWindow}"  Foreground="White" Background="#FF0064B7"/>
+        <Button Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="1" Content="Cancel" Foreground="White" Background="#FF0064B7" IsCancel="True"/>
+        <Button Grid.Row="7" Grid.Column="3" Grid.ColumnSpan="3" Content="Apply" Command="{Binding SaveEditSongButton}" CommandParameter="{Binding ElementName=editSongWindow}"  Foreground="White" Background="#FF0064B7"/>
     </Grid>
 </Window>

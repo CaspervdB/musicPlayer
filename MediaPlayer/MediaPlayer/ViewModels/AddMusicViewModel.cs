@@ -4,8 +4,11 @@ using System;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using System.Threading;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
+using System.Windows.Threading;
 
 namespace MediaPlayer
 {
@@ -16,6 +19,24 @@ namespace MediaPlayer
         private string link;
         private string error;
         public Playlist SelectedPlaylistInDownloadWindow { get; set; }
+
+        private Visibility buttonVisibility;
+
+        public bool Downloading
+        { 
+            get { return hasFinishedDownload; }
+            set { this.hasFinishedDownload = value; NotifyPropertyChanged("Downloading"); } 
+        }
+        public Visibility ButtonVisibility
+        {
+            get => buttonVisibility;
+            set {
+                this.buttonVisibility = value;
+                NotifyPropertyChanged("ButtonVisibility");
+            }
+        }
+
+        public bool hasFinishedDownload;
 
         public string Link
         {
@@ -63,14 +84,26 @@ namespace MediaPlayer
             {
                 MessageBox.Show("Selecteer een playlist.");
                 return;
+
             }
 
             try
             {
-                MusicExport musicExport = new MusicExport();
-                await musicExport.SaveAudioToDiskAsync(link, SelectedPlaylistInDownloadWindow);
-                MessageBox.Show("Downloaden voltooid.");
-                CloseWindow(window);
+                Downloading = true;
+                BackgroundWorker worker = new BackgroundWorker();
+                worker.DoWork += async (o, ea) =>
+                {
+                    MusicExport musicExport = new MusicExport();
+                    await musicExport.SaveAudioToDiskAsync(link, SelectedPlaylistInDownloadWindow);
+                    MessageBox.Show("Downloaden voltooid.");
+                };
+
+                worker.RunWorkerCompleted += (o, ea) =>
+                {
+                    Downloading = false;
+
+                    CloseWindow(window);
+                };
             }
             catch
             {
@@ -81,17 +114,22 @@ namespace MediaPlayer
         public AddMusicViewModel()
         {
             DownloadCommand = new RelayCommand<Window>(this.DownloadSongAsync);
+            hasFinishedDownload = false;
+            ButtonVisibility = Visibility.Visible;
+
         }
         private void NotifyPropertyChanged([CallerMemberName] String propertyName = "")
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+
         private void CloseWindow(Window window)
         {
             if (window != null)
             {
                 window.Close();
             }
+
         }
     }
 }
