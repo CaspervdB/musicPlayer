@@ -68,7 +68,7 @@
          Background="#FF64C1FF" Foreground="White" BorderBrush="Black">
             <ListBox.ContextMenu>
                 <ContextMenu>
-                    <MenuItem Header="Edit" Command="{Binding EditSongContextMenuItem}"/>
+                    <MenuItem Header="Properties" Command="{Binding EditSongContextMenuItem}"/>
                 </ContextMenu>
             </ListBox.ContextMenu>
             <ListBox.ItemTemplate>
