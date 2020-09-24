@@ -19,6 +19,41 @@ namespace MusicPlayer
             }
         }
 
+        public string AlbumTitle
+        {
+            get { return filetag.Tag.Album; }
+            set { filetag.Tag.Album = value; }
+        }
+
+        public int Year
+        {
+            get { return (int)filetag.Tag.Year; }
+            set { filetag.Tag.Year = (uint)value; }
+        }
+
+        public int AlbumTrack
+        {
+            get { return (int)filetag.Tag.Track; }
+            set { filetag.Tag.Track = (uint)value; }
+        }
+
+        public int MaxAlbumTrack
+        {
+            get { return (int)filetag.Tag.TrackCount; }
+            set { filetag.Tag.TrackCount = (uint)value; }
+        }
+
+        public int BPM
+        {
+            get { return (int)filetag.Tag.BeatsPerMinute; }
+            set { filetag.Tag.BeatsPerMinute = (uint)value; }
+        }
+
+        public string Copyright
+        {
+            get { return filetag.Tag.Copyright; }
+            set { filetag.Tag.Copyright = value; }
+        }
         public string ArtistName
         {
             get

@@ -36,6 +36,43 @@ namespace MediaPlayer
             get { return Player.Instance.CurrentSong.SongTitle; }
             set { Player.Instance.CurrentSong.SongTitle = value; }
         }
+
+        public string EditAlbumTitle
+        {
+            get { return Player.Instance.CurrentSong.AlbumTitle; }
+            set { Player.Instance.CurrentSong.AlbumTitle = value; }
+        }
+
+        public int EditYear
+        {
+            get { return Player.Instance.CurrentSong.Year; }
+            set { Player.Instance.CurrentSong.Year = value; }
+        }
+
+        public int EditBPM
+        {
+            get { return Player.Instance.CurrentSong.BPM; }
+            set { Player.Instance.CurrentSong.BPM = value; }
+        }
+
+        public int EditTrack
+        {
+            get { return Player.Instance.CurrentSong.AlbumTrack; }
+            set { Player.Instance.CurrentSong.AlbumTrack = value; }
+        }
+
+        public int EditMaxTrack
+        {
+            get { return Player.Instance.CurrentSong.MaxAlbumTrack; }
+            set { Player.Instance.CurrentSong.MaxAlbumTrack = value; }
+        }
+
+        public string EditCopy
+        {
+            get { return Player.Instance.CurrentSong.Copyright; }
+            set { Player.Instance.CurrentSong.Copyright = value; }
+        }
+
         private void saveEditSong(Window window)
         {
 

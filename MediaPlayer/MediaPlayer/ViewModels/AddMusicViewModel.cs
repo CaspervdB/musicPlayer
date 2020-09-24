@@ -89,19 +89,11 @@ namespace MediaPlayer
 
             try
             {
-                Downloading = true;
-                BackgroundWorker worker = new BackgroundWorker();
-                worker.DoWork += async (o, ea) =>
+               
                 {
                     MusicExport musicExport = new MusicExport();
                     await musicExport.SaveAudioToDiskAsync(link, SelectedPlaylistInDownloadWindow);
                     MessageBox.Show("Downloaden voltooid.");
-                };
-
-                worker.RunWorkerCompleted += (o, ea) =>
-                {
-                    Downloading = false;
-
                     CloseWindow(window);
                 };
             }
@@ -114,8 +106,7 @@ namespace MediaPlayer
         public AddMusicViewModel()
         {
             DownloadCommand = new RelayCommand<Window>(this.DownloadSongAsync);
-            hasFinishedDownload = false;
-            ButtonVisibility = Visibility.Visible;
+            
 
         }
         private void NotifyPropertyChanged([CallerMemberName] String propertyName = "")
