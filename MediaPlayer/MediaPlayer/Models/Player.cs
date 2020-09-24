@@ -3,9 +3,11 @@ using NAudio.Wave;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.CompilerServices;
+using System.Threading;
 using System.Windows.Threading;
 using WPFSoundVisualizationLib;
 
@@ -99,15 +101,18 @@ namespace MusicPlayer
 
         public void initializePlayerComponents()
         {
+            Debug.WriteLine($"Thread nr. {Thread.CurrentThread.ManagedThreadId} player 1");
             try
             {
                 if (IsPlaying)
                 {
                     stop();
                 }
-                musicPlayer = new WaveOut()
+
+                musicPlayer = new WaveOut();
+
                 {
-                    DesiredLatency = 100
+                    DesiredLatency = 100;
                 };
                 this.musicPlayer.PlaybackStopped += MusicPlayer_PlaybackStopped;
 
@@ -115,12 +120,16 @@ namespace MusicPlayer
                 inputStream = new WaveChannel32(this.activeStream);
 
                 this.inputStream.PadWithZeroes = false;
-
-                this.visualizer = new Visualizer(fftDataSize);
+                new Thread(() =>
+                {
+                    Debug.WriteLine($"Thread nr. {Thread.CurrentThread.ManagedThreadId} new thread?");
+                    this.visualizer = new Visualizer(fftDataSize);
+                }).Start();
                 inputStream.Sample += inputStream_Sample;
                 musicPlayer.Init(inputStream);
                 ChannelLength = inputStream.TotalTime.TotalSeconds;
                 GenerateWaveformData(this.currentSong.SongLocation);
+                Debug.WriteLine($"Thread nr. {Thread.CurrentThread.ManagedThreadId} player 2");
             }
             catch
             {
@@ -238,6 +247,8 @@ namespace MusicPlayer
                 }
             }
         }
+
+        public int DesiredLatency { get; private set; }
 
         private Boolean currentSongNotNull()
         {

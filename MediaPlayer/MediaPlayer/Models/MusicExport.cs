@@ -1,7 +1,9 @@
 ﻿using MusicPlayer;
 using NReco.VideoConverter;
+using System.Diagnostics;
 using System.IO;
 using System.Net;
+using System.Threading;
 using System.Threading.Tasks;
 using YoutubeExplode;
 using YoutubeExplode.Videos;
@@ -22,6 +24,7 @@ namespace MediaPlayer
             IStreamInfo streamInfo = streamManifest.GetAudioOnly().WithHighestBitrate();
             if (streamInfo != null)
             {
+                Debug.WriteLine($"Thread nr. {Thread.CurrentThread.ManagedThreadId}");
                 // Download the stream to file
                 string fileName = $"{source + playList.PlaylistName + legalTitle}";
 
@@ -61,20 +64,20 @@ namespace MediaPlayer
             YoutubeClient youtube = new YoutubeClient();
             Location += @"\";
 
-                Video video = await youtube.Videos.GetAsync(link);
-                string legalTitle = string.Join("", video.Title.Split(Path.GetInvalidFileNameChars())); // Removes all possible illegal filename characetrs from the title
-                StreamManifest streamManifest = await youtube.Videos.Streams.GetManifestAsync(link);
-                IStreamInfo streamInfo = streamManifest.GetAudioOnly().WithHighestBitrate();
-                if (streamInfo != null)
-                {
-                    // Download the stream to file
-                    string fileName = $"{Location + legalTitle}";
-                    await youtube.Videos.Streams.DownloadAsync(streamInfo, fileName + ".mp4");
+            Video video = await youtube.Videos.GetAsync(link);
+            string legalTitle = string.Join("", video.Title.Split(Path.GetInvalidFileNameChars())); // Removes all possible illegal filename characetrs from the title
+            StreamManifest streamManifest = await youtube.Videos.Streams.GetManifestAsync(link);
+            IStreamInfo streamInfo = streamManifest.GetAudioOnly().WithHighestBitrate();
+            if (streamInfo != null)
+            {
+                // Download the stream to file
+                string fileName = $"{Location + legalTitle}";
+                await youtube.Videos.Streams.DownloadAsync(streamInfo, fileName + ".mp4");
 
-                    FFMpegConverter ffMpeg = new FFMpegConverter();
-                    ffMpeg.ConvertMedia(fileName + ".mp4", fileName + ".mp3", "mp3"); //convert mp4 to mp3
-                    File.Delete(fileName + ".mp4"); //delete mp4 file
-                }
+                FFMpegConverter ffMpeg = new FFMpegConverter();
+                ffMpeg.ConvertMedia(fileName + ".mp4", fileName + ".mp3", "mp3"); //convert mp4 to mp3
+                File.Delete(fileName + ".mp4"); //delete mp4 file
+            }
         }
     }
 }
