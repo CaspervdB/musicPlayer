@@ -19,24 +19,12 @@ namespace MediaPlayer
         private string link;
         private string error;
         public Playlist SelectedPlaylistInDownloadWindow { get; set; }
+        private bool isDownloading;
 
-        private Visibility buttonVisibility;
+        public bool downloading
+        { get { return isDownloading; } }
 
-        public bool Downloading
-        { 
-            get { return hasFinishedDownload; }
-            set { this.hasFinishedDownload = value; NotifyPropertyChanged("Downloading"); } 
-        }
-        public Visibility ButtonVisibility
-        {
-            get => buttonVisibility;
-            set {
-                this.buttonVisibility = value;
-                NotifyPropertyChanged("ButtonVisibility");
-            }
-        }
-
-        public bool hasFinishedDownload;
+        
 
         public string Link
         {

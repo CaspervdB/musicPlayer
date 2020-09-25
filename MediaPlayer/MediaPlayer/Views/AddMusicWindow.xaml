@@ -7,7 +7,7 @@
         xmlns:local="clr-namespace:MediaPlayer"
         xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
         mc:Ignorable="d"
-        Title="Add A Song" Height="200" Width="400" ResizeMode="NoResize">
+        Title="Add A Song" Height="250" Width="400" ResizeMode="NoResize">
     <Window.DataContext>
         <local:AddMusicViewModel/>
     </Window.DataContext>
@@ -36,7 +36,7 @@
         <ComboBox Grid.Column="3" Grid.Row="5" Grid.ColumnSpan="1" DisplayMemberPath="PlaylistName" Name="ComboBox" ItemsSource="{Binding PlaylistCollection}" SelectedItem="{Binding SelectedPlaylistInDownloadWindow}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" SelectedIndex="0"/>
         <Button Grid.Column="2" Grid.Row="7" Grid.ColumnSpan="2" Content="Add Song" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  Command="{Binding DownloadCommand}" CommandParameter="{Binding ElementName=addMusicWindows}" Foreground="White" Background="#FF0064B7" Visibility="{Binding ButtonVisibility}"/>
 
-        <xctk:BusyIndicator IsBusy="{Binding Downloading}" BusyContent="Downloading song..."  Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="2"/>
+        <xctk:BusyIndicator IsBusy="{Binding downloading}" BusyContent="Downloading song..."  Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="3"/>
 
     </Grid>
 </Window>

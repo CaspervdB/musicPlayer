@@ -1,9 +1,7 @@
 ﻿using MusicPlayer;
 using NReco.VideoConverter;
-using System.Diagnostics;
 using System.IO;
 using System.Net;
-using System.Threading;
 using System.Threading.Tasks;
 using YoutubeExplode;
 using YoutubeExplode.Videos;
@@ -24,7 +22,6 @@ namespace MediaPlayer
             IStreamInfo streamInfo = streamManifest.GetAudioOnly().WithHighestBitrate();
             if (streamInfo != null)
             {
-                Debug.WriteLine($"Thread nr. {Thread.CurrentThread.ManagedThreadId}");
                 // Download the stream to file
                 string fileName = $"{source + playList.PlaylistName + legalTitle}";
 
@@ -37,6 +34,11 @@ namespace MediaPlayer
                 Song newSong = new Song(fileName + ".mp3"); //aanmaken van songobject
                 newSong.ArtistName = video.Author; //zetten van de filetags
                 newSong.SongTitle = video.Title;
+                newSong.AlbumTitle = null;
+                newSong.AlbumTrack = 0;
+                newSong.MaxAlbumTrack = 0;
+                newSong.Year = 0;
+                newSong.BPM = 0;
                 /* downloaden van thumbnail*/
                 using (WebClient client = new WebClient())
                 {
